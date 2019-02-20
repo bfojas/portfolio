@@ -63,12 +63,14 @@ class Window extends Component{
     }
 
     menuRender = (e) => {
+        const {id} = e.target;
+
         this.setState({
             about: false,
             portfolio: false
         })
-        if (e.target.id) {
-            this.setState({[e.target.id]: true})
+        if (id) {
+            this.setState({[id]: true})
         }
     }
 

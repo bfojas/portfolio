@@ -11,8 +11,8 @@ export function Home(props) {
             <div className="head-content">
                 <div className="profile-image"></div>
                 <div className="head-info">
-                    <h1>Bradley Fojas</h1>
-                    <h3>Full-Stack Web Developer</h3>
+                    <h1>BRADLEY FOJAS</h1>
+                    <h3>FULL-STACK WEB DEVELOPER</h3>
                 </div>
             </div>
             <div className="icon-container">
@@ -42,7 +42,7 @@ export function Home(props) {
                 </div>
             </div>
             <div className="home-content">
-                <p>After many years as a biomedical technician tackling many complex technical issues, Bradley Fojas recently completed the Full-Stack Web Dev Immersive program at DevMountain Phoenix where he received much praise from his instructors and peers for his enthusiastic approach to learning and troubleshooting.</p>
+                <p>After many years as a biomedical technician tackling many complex technical issues, Bradley recently completed the Full-Stack Web Dev Immersive program at DevMountain Phoenix where he received much praise from his instructors and peers for his enthusiastic approach to learning and troubleshooting.</p>
                 <p>Although he attended the coding bootcamp with no prior coding experience, Bradley was not only able to quickly gain comprehension of JavaScript, HTML and CSS, but also of a full-stack that included ReactJs, NodeJs and PostgreSQL.</p>
                 <p>Feel free to click around the menus above to find more info about Bradley and his projects.</p>
             </div>
