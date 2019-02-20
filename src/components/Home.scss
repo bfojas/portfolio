@@ -1,0 +1,105 @@
+.home-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background-color: #f5f9f6;
+    color: #164e98;
+
+    .head-content {
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        height: 350px;
+        width: 100%;
+        background-color: #164e98;
+        color: white;
+
+
+        .profile-image {
+            position: relative;
+            left: 25px;
+            display: flex;
+            height: 300px;
+            width: 300px;
+            border-radius: 50%;
+            background-image: url('../images//dog_profile.jpg');
+            background-size: cover;
+        }
+
+        .head-info {
+            height: 100%;
+            width: calc(100% - 300px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            h1 {
+                font-size: 100px;
+                font-weight: bold;
+                margin: 0;
+            }
+
+            h3 {
+                font-size: 36px;
+                margin: 10px;
+            }
+        }
+
+    }
+
+    .icon-container {
+        display: flex;
+        width: 100%;
+        height: 100px;
+        margin-top: 5px;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+
+        div {
+            height: 100px;
+            width: 100px;;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 40px;
+            font-weight: bold;
+            font-size: 16px;
+
+            i {
+                font-size: 64px;
+                font-weight: normal;
+            }
+
+            
+
+
+        }
+    }
+
+    .home-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+        overflow: auto;
+        width: 90%;
+        margin-top: 5px;
+        height: calc(100% - 405px);
+        text-indent: 25px;
+        font-size: 2.5vh;
+
+        p {
+            margin: 10px 0;
+        }
+    }
+}
