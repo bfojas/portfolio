@@ -77,7 +77,51 @@
                 width: 95%;
             }
 
+            .tech-used {
+                font-weight: bold;
+            }
 
+
+        }
+    }
+
+    @media(max-width: 680px) {
+        height: auto;
+
+        .project-head {
+            font-size: 36px;
+            height: 200px;
+        }
+
+        .project-body {
+            flex-direction: column;
+            height: auto;
+            align-items: center;
+
+            .image-box {
+                margin-top: 10px;
+                height: auto;
+                width: 95%;
+
+            }
+
+            .summary-box {
+                margin-top: 10px;
+                width: 90%;
+                height: auto;
+                font-size: 20px;
+
+                .project-about {
+                    display: flex;
+                    height: auto;
+                }
+
+                .tech-used {
+                    margin-top: 15px;
+                    margin-bottom: 5px;
+
+                }
+            }
         }
     }
 }

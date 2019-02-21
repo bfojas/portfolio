@@ -4,11 +4,15 @@
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background: url('../images/welcome_large.jpg') no-repeat center center fixed; 
+    background: url('../images/welcome_large.jpg') no-repeat center right fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+
+    @media(max-width: 680px) {
+        background: url('../images/welcome_small.jpg') no-repeat center center fixed; 
+    }
   
     .icon {
         position: absolute;

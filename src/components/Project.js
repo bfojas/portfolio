@@ -39,7 +39,7 @@ class Project extends Component{
                     </div>
                     <div className="summary-box">
                         <div className="project-about">{about}</div>
-                        <div className="tech-used">TECHNOLOGIES USED</div>
+                        <div className="tech-used">TECHNOLOGIES USED:</div>
                         <div className="project-tech">{techUsed}</div>
                     </div>
                 </div>

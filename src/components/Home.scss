@@ -109,4 +109,40 @@
             margin-bottom: 10px;
         }
     }
+
+    @media(max-width: 680px) {
+        
+        .head-content{
+            flex-direction: column;
+            height: 450px;
+
+            .profile-image {
+                left: 0;
+                top: 25px;
+                width: 200px;
+                height: 200px;;
+            }
+
+            .head-info {
+                left: 0;
+                width: 95%;
+                height: 250px;;
+                h1 {
+                    font-size: 36px;
+                }
+
+                h3 {
+                    font-size: 24px;
+                }
+
+            }
+        }
+
+        .icon-container {
+
+            div {
+                margin: 5px;
+            }
+        }
+    }
 }
