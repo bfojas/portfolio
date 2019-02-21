@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "b20269f0185628c6f0385c4df1004c40",
-    "url": "/portfolio/static/media/road_trip.b20269f0.jpg"
+    "revision": "e130884f6ae671983603b0dcd84bbea2",
+    "url": "/portfolio/static/media/card_fun.e130884f.jpg"
   },
   {
-    "revision": "091255eac01f41a23e8c",
-    "url": "/portfolio/static/css/main.5745feda.chunk.css"
+    "revision": "6a5d89b35090e21def42",
+    "url": "/portfolio/static/css/main.36a9d486.chunk.css"
   },
   {
     "revision": "a79feab75fde0444b537",
@@ -20,12 +20,12 @@ self.__precacheManifest = [
     "url": "/portfolio/static/media/dog_profile.da7789ee.jpg"
   },
   {
-    "revision": "091255eac01f41a23e8c",
-    "url": "/portfolio/static/js/main.091255ea.chunk.js"
+    "revision": "6a5d89b35090e21def42",
+    "url": "/portfolio/static/js/main.6a5d89b3.chunk.js"
   },
   {
-    "revision": "e130884f6ae671983603b0dcd84bbea2",
-    "url": "/portfolio/static/media/card_fun.e130884f.jpg"
+    "revision": "b20269f0185628c6f0385c4df1004c40",
+    "url": "/portfolio/static/media/road_trip.b20269f0.jpg"
   },
   {
     "revision": "89245fd9cb5b805f8131bf929f458b25",
@@ -40,7 +40,7 @@ self.__precacheManifest = [
     "url": "/portfolio/static/media/welcome_large.9203bb16.jpg"
   },
   {
-    "revision": "ee452beb26da9f0b7493c9e698dc69a5",
+    "revision": "df7ba40e8de9b1c62a67fbd6c5c74c33",
     "url": "/portfolio/index.html"
   }
 ];
