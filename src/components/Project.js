@@ -19,7 +19,6 @@ class Project extends Component{
     renderProject = () => {
         const { renderCardFun, renderRoadTrip, renderBlackjack } = this.props
         const { id } = this.props.match.params;
-        console.log('----path', id)
         if(id === "roadTrip") {renderRoadTrip()};
         if(id === "cardFun") {renderCardFun()};
         if(id === "blackjack") {renderBlackjack()};
@@ -28,7 +27,6 @@ class Project extends Component{
 
     render(){
     const {name, image, about, techUsed} = this.props
-    // console.log(this.props.renderRoadTrip())
         return(
             <div className="project-container">
                 <div className="project-head">
@@ -36,7 +34,9 @@ class Project extends Component{
                 </div>
                 <div className="project-body">
                     <div className="image-box">
-                        <div className="project-image" style={{backgroundImage: `url("${image}")`}}></div>
+                        <div className="project-image">
+                            <img src={image}/>
+                        </div>
                     </div>
                     <div className="summary-box">
                         <div className="project-about">{about}</div>

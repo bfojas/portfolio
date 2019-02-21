@@ -8,7 +8,6 @@ const initialState = {
 }
 
 export default function reducer (state = initialState, action){
-    console.log('--ACTION--', action)
     switch (action.type) {
         case BLACKJACK:
         case CARD_FUN:

@@ -28,7 +28,6 @@ class Window extends Component{
     // }
 
     windowCheck = () =>{
-        console.log('=-=-=-props', this.props)
         if(this.props.match.path !== "/"){
             this.setState({hidden: 'block'})
         } else {
