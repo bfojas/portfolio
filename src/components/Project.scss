@@ -36,20 +36,24 @@
             height: 100%;
             width: 450px;
 
-            .project-image {
+            .road-trip, .card-fun, .blackjack {
                 width: 400px;
                 height: 300px;
-                line-height: 300px;
+                background-size: cover;
+                background-position: center;
+                border-radius: 10px;
+            }
 
-                img {
-                    max-width: 100%;
-                    max-height: 100%;
-                    display: inline-block;
-                    margin: 0 auto;
-                    vertical-align: middle;
-                    border-radius: 15px;
-                }
+            .road-trip {
+                background-image: url("../images/road_trip.jpg")
+            }
 
+            .card-fun {
+                background-image: url("../images/card_fun.jpg")
+            }
+
+            .blackjack {
+                background-image: url("../images/blackjack.jpg")
             }
 
         }

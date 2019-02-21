@@ -26,7 +26,8 @@ class Project extends Component{
 
 
     render(){
-    const {name, image, about, techUsed} = this.props
+        const {id} = this.props.match.params
+        const {name, image, about, techUsed} = this.props
         return(
             <div className="project-container">
                 <div className="project-head">
@@ -34,9 +35,7 @@ class Project extends Component{
                 </div>
                 <div className="project-body">
                     <div className="image-box">
-                        <div className="project-image">
-                            <img src={image}/>
-                        </div>
+                        <div className={image} ></div>
                     </div>
                     <div className="summary-box">
                         <div className="project-about">{about}</div>
