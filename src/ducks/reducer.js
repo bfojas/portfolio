@@ -40,7 +40,7 @@ export function renderCardFun () {
         payload: {
             name: "THE CARD GAME",
             image: "card-fun",
-            about: "It's a simple card game, but baby got back-end. Users play and chat together over web sockets in this card guessing game. Players have many profile customizations and a bank system to make the fun feel riskier.",
+            about: "It's a simple card game, but baby got back-end. Users play and chat together over web sockets in this card guessing game. Players have many profile customization options and a bank system to make the fun feel riskier.",
             techUsed: "ReactJs  |  Express/NodeJs  |  JavaScript  |  HTML  |  CSS  |  Redux  |  Web Sockets  |  PostgreSQL  |  Nginx  |  Digital Ocean  |  SASS  | Amazon AWS  |  Stripe  |   Auth0  |  ChartJs  |  React-Router"
         }
     }
@@ -52,7 +52,7 @@ export function renderBlackjack () {
         payload: {
             name: "THE BLACKJACK",
             image: "blackjack",
-            about: "A standard blackjack app that I put together after only coding for a few weeks. This app lets the player play hands of blackjack against a dealer. Aces and busting logic are all there.",
+            about: "A standard blackjack app that I put together within my first few weeks of coding. This app lets the player play hands of blackjack against a dealer. Aces and busting logic are all there.",
             techUsed: "ReactJs  |  Express/NodeJs  |  JavaScript  |  HTML  |  CSS"
         }
     }

@@ -12,15 +12,23 @@
 
     @media(max-width: 680px) {
         background: url('../images/welcome_small.jpg') no-repeat center center fixed; 
+
+        .icon {
+            display: none;
+        }
+
+        .icon-mobile {
+            display: flex;
+            bottom: 25px;
+            left: 25px;
+        }
     }
   
-    .icon {
+    .icon, .icon-mobile {
         position: absolute;
-        display: flex;
         flex-direction: column;
         width: 75px;
         height: 75px;
-        // background-color: red;
 
         .fa-keyboard {
             color: black;
@@ -30,6 +38,16 @@
         }
     }
 
+    .icon {
+        display: flex;
+    }
+
+    .icon-mobile {
+        display: none;
+    }
+
+
+
     .window-container {
         position: absolute;
         justify-content: center;
@@ -37,10 +55,6 @@
         width: 95%;
         max-width: 2000px;
         background-color: #f5f9f6;
-        // border-left: 4px solid rgb(173, 173, 173)s;
-        // border-top: 4px solid rgb(173, 173, 173)s;
-        // border-bottom: 4px ridge black;
-        // border-right: 4px ridge black;
         border: 2px solid black;
 
         .window-top {
@@ -50,6 +64,12 @@
             height: 26px;
             width: calc(100% - 4px);
             background-color: blue;
+
+            .window-name {
+                position: absolute;
+                left: 10px;
+                color: white;
+            }
             
             .minimize-button {
                 position: absolute;
@@ -93,7 +113,6 @@
                         position: absolute;
                         padding: 0;
                         display: flex;
-                        // top: 2px;
                         flex-direction: column;
                         width: 100px;
                         height: 85px;
@@ -118,7 +137,6 @@
                             a:hover {
                                 color: white;
                             }
-                            // background-color: red;
                         }
 
                         li:hover {
@@ -140,10 +158,6 @@
         position:absolute; 
         display:block; 
         content:''; 
-        // border-left: 4px ridge black;
-        // border-top: 4px ridge black; 
-        // border-bottom: 4px solid rgb(173, 173, 173);
-        // border-right: 4px solid rgb(173, 173, 173);
         border: 2px solid rgb(173, 173, 173);
         height:100%; 
         width:100%; 
@@ -163,6 +177,18 @@
         top: 2px;
         width: calc(100% - 4px);
         left: 2px;
+    }
+
+    @media(max-width: 680px) {
+        background: url('../images/welcome_small.jpg') no-repeat center center fixed; 
+
+        .icon {
+            display: none;
+        }
+
+        .icon-mobile {
+            display: flex;
+        }
     }
 
 }

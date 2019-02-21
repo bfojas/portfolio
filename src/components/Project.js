@@ -19,9 +19,15 @@ class Project extends Component{
     renderProject = () => {
         const { renderCardFun, renderRoadTrip, renderBlackjack } = this.props
         const { id } = this.props.match.params;
-        if(id === "roadTrip") {renderRoadTrip()};
-        if(id === "cardFun") {renderCardFun()};
-        if(id === "blackjack") {renderBlackjack()};
+        if (id === "roadTrip") {
+            renderRoadTrip()
+        };
+        if (id === "cardFun") {
+            renderCardFun()
+        };
+        if (id === "blackjack") {
+            renderBlackjack()
+        };
     }
 
 

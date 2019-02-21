@@ -23,26 +23,21 @@ class Window extends Component{
         this.windowCheck()
     }
 
-    // componentDidUpdate() {
-    //     this.windowCheck()
-    // }
-
     windowCheck = () =>{
         if(this.props.match.path !== "/"){
             this.setState({hidden: 'block'})
         } else {
-        this.props.history.push('/home')
+            this.props.history.push('/home')
         }
     }
 
-
-    dragOn=()=>{
+    dragOn = () => {
         this.setState({
             dragging: true
         })
     }
-    mouseMove=(e)=>{
-        if(this.state.dragging){
+    mouseMove = (e) => {
+        if (this.state.dragging) {
             this.setState({
                 top: e.clientY-25,
                 left: e.clientX-25
@@ -50,16 +45,16 @@ class Window extends Component{
         }
     }
 
-    dragOff=(e)=>{
+    dragOff = (e) => {
         this.setState({
             dragging: false
         })
     }
-    maximize=()=>{
+    maximize = () => {
         this.setState({hidden: 'block'})
     }
 
-    minimize=()=>{
+    minimize = () => {
         this.setState({hidden: 'none'})
     }
 
@@ -82,15 +77,24 @@ class Window extends Component{
         return(
             <div className="home" onMouseMove={e=>this.mouseMove(e)}>
                 <div className='icon' 
-                    style={{top:`${this.state.top}px`, left: `${this.state.left}px`}} 
-                    onMouseDown={()=>this.dragOn()}
-                    onMouseUp={e=>this.dragOff(e)}
-                    onDoubleClick={()=>this.maximize()}>
+                    style={{
+                        top:`${this.state.top}px`, 
+                        left: `${this.state.left}px`
+                    }} 
+                    onMouseDown={this.dragOn}
+                    onMouseUp={e => this.dragOff(e)}
+                    onDoubleClick={this.maximize}
+                >
+                    <i className="fas fa-keyboard"></i>
+                    Bradley
+                </div>
+                <div className="icon-mobile" onClick={this.maximize}>
                     <i className="fas fa-keyboard"></i>
                     Bradley
                 </div>
                 <div className='window-container'  onClick={e=>this.menuRender(e)} style={{display:`${this.state.hidden}`}}>
                     <div className="window-top">
+                        <div className="window-name">Bradley Fojas</div>
                         <button className="minimize-button" onClick={()=>this.minimize()}>
                             <i className="fas fa-caret-down"></i>
                         </button>
@@ -117,9 +121,16 @@ class Window extends Component{
                             </li>
                             <li id="about" onClick={e=>this.menuRender(e)}>About
                                 <ul className="about-menu" style={aboutStyle}>
-                                    <li><a href="https://www.linkedin.com/in/bradley-fojas/">LinkedIn</a></li>
-                                    <li><a href="https://github.com/bfojas">GitHub</a></li>
-                                    {/* <li> Resume</li> */}
+                                    <li>
+                                        <a href="https://www.linkedin.com/in/bradley-fojas/">
+                                            LinkedIn
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://github.com/bfojas">
+                                            GitHub
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
