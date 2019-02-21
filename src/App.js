@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux'
 import './App.css';
-import {Window} from './components/Window'
-import routes from './routes'
+// import {Window} from './components/Window';
+import routes from './routes';
 
 class App extends Component {
   render() {
@@ -16,4 +17,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);

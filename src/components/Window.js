@@ -1,6 +1,8 @@
-import React, {Component} from 'react'
-import { withRouter, NavLink, Link} from 'react-router-dom'
-import Home from './Home'
+import React, {Component} from 'react';
+import { withRouter, Link} from 'react-router-dom';
+import { connect } from 'react-redux';
+import Home from './Home';
+import Project from './Project';
 
 import "./Window.scss"
 
@@ -103,25 +105,29 @@ class Window extends Component{
                             </Link>      
                             <li id="portfolio" onClick={e=>this.menuRender(e)}>Portfolio
                                 <ul className="portfolio-menu" style={portfolioStyle} >
-                                    <li>Blackjack</li>
-                                    <li>The Fun</li>
-                                    <li>Road Trip</li>
+                                    <li onClick={()=>{this.props.history.push('/project/blackjack')}}>
+                                        Blackjack
+                                    </li>
+                                    <li onClick={()=>{this.props.history.push('/project/cardFun')}}>
+                                        The Fun
+                                    </li>
+                                    <li onClick={()=>{this.props.history.push('/project/roadTrip')}}>
+                                        Road Trip
+                                    </li>
                                 </ul>
                             </li>
                             <li id="about" onClick={e=>this.menuRender(e)}>About
                                 <ul className="about-menu" style={aboutStyle}>
-                                    {/* <Link to="/home" style={{textDecoration: "none"}}> */}
-                                        <li> LinkedIn</li>
-                                    {/* </Link>    */}
-                                    <li> GitHub</li>
-                                    <li> Resume</li>
+                                    <li><a href="https://www.linkedin.com/in/bradley-fojas/">LinkedIn</a></li>
+                                    <li><a href="https://github.com/bfojas">GitHub</a></li>
+                                    {/* <li> Resume</li> */}
                                 </ul>
                             </li>
-                            <li>Contact</li>
                         </ul>
                     </div>
                     <div className="route-container">
                         {this.props.match.path === "/home" && <Home />}
+                        {this.props.match.path === "/project/:id" && <Project />}
                     </div>
                 </div>
             </div>
@@ -131,4 +137,11 @@ class Window extends Component{
 
 }
 
-export default withRouter(Window)
+const mapStateToProps = (state) => {
+    return {
+        projectObject: state.projectObject
+    }
+}
+
+
+export default withRouter(connect(mapStateToProps)(Window))
