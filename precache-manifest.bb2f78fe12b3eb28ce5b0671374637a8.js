@@ -1,5 +1,9 @@
 self.__precacheManifest = [
   {
+    "revision": "f0ce5c5e4fcd2cf516b17276287d26b7",
+    "url": "/portfolio/static/media/welcome_tablet.f0ce5c5e.jpg"
+  },
+  {
     "revision": "77075ea60ad70f1d7531cf5b47f808b1",
     "url": "/portfolio/static/media/welcome_small.77075ea6.jpg"
   },
@@ -16,19 +20,19 @@ self.__precacheManifest = [
     "url": "/portfolio/static/js/runtime~main.ee2a1003.js"
   },
   {
-    "revision": "b688bbb44172d7b26813",
-    "url": "/portfolio/static/js/main.b688bbb4.chunk.js"
+    "revision": "a27f003fbdd157f066ed",
+    "url": "/portfolio/static/js/main.a27f003f.chunk.js"
   },
   {
     "revision": "12c22dabb03e495163eb",
     "url": "/portfolio/static/js/1.12c22dab.chunk.js"
   },
   {
-    "revision": "b688bbb44172d7b26813",
-    "url": "/portfolio/static/css/main.c6d68d7c.chunk.css"
+    "revision": "a27f003fbdd157f066ed",
+    "url": "/portfolio/static/css/main.990c6817.chunk.css"
   },
   {
-    "revision": "a4913c81c58c60481761f5de4140a8e3",
+    "revision": "46b729b86e69a538a1cae468a0b61bc9",
     "url": "/portfolio/index.html"
   }
 ];
