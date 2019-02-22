@@ -1,15 +1,15 @@
 {
-  "main.css": "/portfolio/static/css/main.990c6817.chunk.css",
-  "main.js": "/portfolio/static/js/main.a27f003f.chunk.js",
-  "main.js.map": "/portfolio/static/js/main.a27f003f.chunk.js.map",
+  "main.css": "/portfolio/static/css/main.d1ee2675.chunk.css",
+  "main.js": "/portfolio/static/js/main.4be4398e.chunk.js",
+  "main.js.map": "/portfolio/static/js/main.4be4398e.chunk.js.map",
   "static/js/1.12c22dab.chunk.js": "/portfolio/static/js/1.12c22dab.chunk.js",
   "static/js/1.12c22dab.chunk.js.map": "/portfolio/static/js/1.12c22dab.chunk.js.map",
   "runtime~main.js": "/portfolio/static/js/runtime~main.ee2a1003.js",
   "runtime~main.js.map": "/portfolio/static/js/runtime~main.ee2a1003.js.map",
   "static/media/Home.scss": "/portfolio/static/media/dog_profile.da7789ee.jpg",
-  "static/media/Window.scss": "/portfolio/static/media/welcome_tablet.f0ce5c5e.jpg",
-  "static/css/main.990c6817.chunk.css.map": "/portfolio/static/css/main.990c6817.chunk.css.map",
+  "static/media/Window.scss": "/portfolio/static/media/welcome_small.77075ea6.jpg",
+  "static/css/main.d1ee2675.chunk.css.map": "/portfolio/static/css/main.d1ee2675.chunk.css.map",
   "index.html": "/portfolio/index.html",
-  "precache-manifest.bb2f78fe12b3eb28ce5b0671374637a8.js": "/portfolio/precache-manifest.bb2f78fe12b3eb28ce5b0671374637a8.js",
+  "precache-manifest.c43e3ebc698e446390b59cdcc38ab7d8.js": "/portfolio/precache-manifest.c43e3ebc698e446390b59cdcc38ab7d8.js",
   "service-worker.js": "/portfolio/service-worker.js"
 }
