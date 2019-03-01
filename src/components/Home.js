@@ -42,7 +42,7 @@ export function Home(props) {
                 </div>
             </div>
             <div className="home-content">
-                <p>After many years as a biomedical technician tackling many complex technical issues, Bradley recently completed the Full-Stack Web Dev Immersive program at DevMountain Phoenix where he received much praise from his instructors and peers for his enthusiastic approach to learning and troubleshooting.</p>
+                <p>After many years as a biomedical technician tackling complex technical issues, Bradley recently completed the Full-Stack Web Development Immersive program at DevMountain where he received much praise from his instructors and peers for his enthusiastic approach to learning and troubleshooting.</p>
                 <p>Although he attended the coding bootcamp with no prior coding experience, Bradley was not only able to quickly gain comprehension of JavaScript, HTML and CSS, but also of a full-stack that included ReactJs, NodeJs and PostgreSQL.</p>
                 <p className="last-p">Feel free to click around the menus above to find more info about Bradley and his projects.</p>
             </div>

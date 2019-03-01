@@ -27,6 +27,7 @@
             height: 300px;
             width: 300px;
             border-radius: 50%;
+            border: solid 8px rgba(168, 167, 167, 0.714);
             background-image: url('../images/dog_profile.jpg');
             background-size: cover;
         }
@@ -35,7 +36,7 @@
             height: 100%;
             position: relative;
             left: 25px;
-            width: calc(100% - 325px);
+            width: calc(100% - 342px);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -104,8 +105,41 @@
         }
     }
 
-    @media(max-width: 680px) {
-        
+    @media(max-width: 1024px) {
+        .head-content{
+            // flex-direction: column;
+            // height: 450px;
+
+            .profile-image {
+                // left: 0;
+                // top: 25px;
+                width: 200px;
+                height: 200px;;
+            }
+
+            .head-info {
+                // left: 0;
+                width: calc(95% - 200px);
+                height: 250px;;
+                h1 {
+                    font-size: 7vw;
+                }
+
+                h3 {
+                    font-size: 3.5vw;
+                }
+            }
+        }
+
+        .icon-container {
+
+            div {
+                margin: 5px;
+            }
+        }
+    }
+
+    @media(max-width: 680px){
         .head-content{
             flex-direction: column;
             height: 450px;
@@ -128,13 +162,6 @@
                 h3 {
                     font-size: 24px;
                 }
-            }
-        }
-
-        .icon-container {
-
-            div {
-                margin: 5px;
             }
         }
     }

@@ -29,42 +29,34 @@
         width: 100%;
 
         .image-box {
-            display: flex;
+            // display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             position: relative;
-            height: 100%;
+            // height: 100%;
             width: 450px;
 
-            .road-trip, .card-fun, .blackjack {
+            .images {
+                margin: 10px;
                 width: 400px;
-                height: 300px;
+                height: 250px;
                 background-size: cover;
                 background-position: center;
                 border-radius: 10px;
+                border: 2px solid black;
             }
-
-            .road-trip {
-                background-image: url("../images/road_trip.jpg")
-            }
-
-            .card-fun {
-                background-image: url("../images/card_fun.jpg")
-            }
-
-            .blackjack {
-                background-image: url("../images/blackjack.jpg")
-            }
-
         }
 
         .summary-box {
-            height: 100%;
+            position: relative;
             width: calc(100% - 500px);
+            // height: 100%;
+            padding-top: 15px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            // justify-content: center;
             font-size: 30px;
             color: #164e98;
             
@@ -73,11 +65,12 @@
             }
 
             .project-about {
-                height: 250px;
+                // height: 250px;
                 width: 95%;
             }
 
-            .tech-used {
+            .project-subject {
+                margin-top: 25px;
                 font-weight: bold;
             }
 
@@ -94,7 +87,7 @@
         }
 
         .project-body {
-            flex-direction: column;
+            flex-direction: column-reverse;
             height: auto;
             align-items: center;
 
@@ -102,6 +95,13 @@
                 margin-top: 10px;
                 height: auto;
                 width: 95%;
+
+                .images {
+                    display: flex;
+                    margin: 10px 0;
+                    width: 100%;
+                    height: 200px;
+                }
 
             }
 
@@ -116,7 +116,7 @@
                     height: auto;
                 }
 
-                .tech-used {
+                .project-subject {
                     margin-top: 15px;
                     margin-bottom: 5px;
 

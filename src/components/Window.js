@@ -15,7 +15,8 @@ class Window extends Component{
             dragging: false,
             hidden: 'none',
             about: false,
-            portfolio: false
+            portfolio: false,
+            email: false
         }
     }
 
@@ -59,21 +60,39 @@ class Window extends Component{
     }
 
     menuRender = (e) => {
+        const {portfolio, about, email} = this.state;
         const {id} = e.target;
-
-        this.setState({
-            about: false,
-            portfolio: false
-        })
-        if (id) {
-            this.setState({[id]: true})
+        if (id === "about") {
+            this.setState({
+                about: !about,
+                portfolio: false,
+                email: false
+            })
+        } else if ( id === "portfolio"){
+            this.setState({
+                portfolio: !portfolio,
+                about : false,
+                email: false
+            })
+        } else if ( id === "email"){
+            this.setState({
+                email: !email,
+                about : false,
+                portfolio: false
+            })
+        } else {
+            this.setState({
+                about: false,
+                portfolio: false
+            })
         }
     }
 
     render(){
-        const {about, portfolio} = this.state
+        const {about, portfolio, email} = this.state
         const aboutStyle = about ? {display: "flex"} : {display: "none"}
         const portfolioStyle = portfolio ? {display: "flex"} : {display: "none"}
+        const emailStyle = email ?  {display: "flex"} : {display: "none"}
         return(
             <div className="home" onMouseMove={e=>this.mouseMove(e)}>
                 <div className='icon' 
@@ -116,6 +135,15 @@ class Window extends Component{
                                     </li>
                                     <li onClick={()=>{this.props.history.push('/project/roadTrip')}}>
                                         Road Trip
+                                    </li>
+                                </ul>
+                            </li>
+                            <li id="email" onClick={e=>this.menuRender(e)}>Email
+                                <ul className="email-menu" style={emailStyle}>
+                                    <li>
+                                        <a href="mailto:brad.fojas@yahoo.com" >
+                                            brad.fojas@yahoo.com
+                                        </a>
                                     </li>
                                 </ul>
                             </li>

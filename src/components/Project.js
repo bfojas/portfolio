@@ -5,6 +5,12 @@ import { renderCardFun, renderRoadTrip, renderBlackjack } from '../ducks/reducer
 import './Project.scss'
 
 class Project extends Component{
+    constructor(props){
+        super(props) 
+        this.state = {
+            images: []
+        }
+    }
 
     componentDidMount = () => {
         this.renderProject()
@@ -32,8 +38,11 @@ class Project extends Component{
 
 
     render(){
-        const {id} = this.props.match.params
-        const {name, image, about, techUsed} = this.props
+        const {name, image, about, techUsed, projectLink} = this.props;
+        console.log('-----images', image)
+        const images = image && image.map(val => {
+            return <div className="images" style={{backgroundImage: `url(${val})`}}></div>
+        })
         return(
             <div className="project-container">
                 <div className="project-head">
@@ -41,11 +50,14 @@ class Project extends Component{
                 </div>
                 <div className="project-body">
                     <div className="image-box">
-                        <div className={image} ></div>
+                        {images}
                     </div>
                     <div className="summary-box">
                         <div className="project-about">{about}</div>
-                        <div className="tech-used">TECHNOLOGIES USED:</div>
+                        <div className="project-subject">LINK:</div>
+                        {/* <div className="project-text">{projectLink}</div> */}
+                        <a href={projectLink}>{projectLink}</a>
+                        <div className="project-subject">TECHNOLOGIES USED:</div>
                         <div className="project-tech">{techUsed}</div>
                     </div>
                 </div>
@@ -55,12 +67,13 @@ class Project extends Component{
     }
 }
 
-const mapStateToProps =(state) => {
+const mapStateToProps = (state) => {
     return {
         name: state.name,
         image: state.image,
         about: state.about,
-        techUsed: state.techUsed
+        techUsed: state.techUsed,
+        projectLink: state.projectLink
     }
 }
 
@@ -72,4 +85,4 @@ const mapDispatchToProps = {
 
 
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Project))
+export default withRouter(connect( mapStateToProps, mapDispatchToProps )(Project))
