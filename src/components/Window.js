@@ -127,14 +127,17 @@ class Window extends Component{
                             </Link>      
                             <li id="portfolio" onClick={e=>this.menuRender(e)}>Portfolio
                                 <ul className="portfolio-menu" style={portfolioStyle} >
+                                    <li onClick={()=>{this.props.history.push('/project/roadTrip')}}>
+                                        Road Trip
+                                    </li>
+                                    <li onClick={()=>{this.props.history.push('/project/ohmsLaw')}}>
+                                        Ohm's Law
+                                    </li>
                                     <li onClick={()=>{this.props.history.push('/project/blackjack')}}>
                                         Blackjack
                                     </li>
                                     <li onClick={()=>{this.props.history.push('/project/cardFun')}}>
                                         The Fun
-                                    </li>
-                                    <li onClick={()=>{this.props.history.push('/project/roadTrip')}}>
-                                        Road Trip
                                     </li>
                                 </ul>
                             </li>

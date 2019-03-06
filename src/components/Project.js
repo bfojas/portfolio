@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { renderCardFun, renderRoadTrip, renderBlackjack } from '../ducks/reducer';
+import { renderCardFun, renderRoadTrip, renderBlackjack, renderOhms } from '../ducks/reducer';
 import './Project.scss'
 
 class Project extends Component{
@@ -23,7 +23,7 @@ class Project extends Component{
     }
 
     renderProject = () => {
-        const { renderCardFun, renderRoadTrip, renderBlackjack } = this.props
+        const { renderCardFun, renderRoadTrip, renderBlackjack, renderOhms } = this.props
         const { id } = this.props.match.params;
         if (id === "roadTrip") {
             renderRoadTrip()
@@ -34,14 +34,17 @@ class Project extends Component{
         if (id === "blackjack") {
             renderBlackjack()
         };
+        if (id === "ohmsLaw") {
+            renderOhms()
+        };
     }
 
 
     render(){
-        const {name, image, about, techUsed, projectLink} = this.props;
+        const {name, image, imageHeight, about, techUsed, projectLink} = this.props;
         console.log('-----images', image)
         const images = image && image.map(val => {
-            return <div className="images" style={{backgroundImage: `url(${val})`}}></div>
+            return <div className="images" style={{backgroundImage: `url(${val})`, height: imageHeight}}></div>
         })
         return(
             <div className="project-container">
@@ -71,6 +74,7 @@ const mapStateToProps = (state) => {
     return {
         name: state.name,
         image: state.image,
+        imageHeight: state.imageHeight,
         about: state.about,
         techUsed: state.techUsed,
         projectLink: state.projectLink
@@ -80,7 +84,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
     renderCardFun, 
     renderRoadTrip,
-    renderBlackjack
+    renderBlackjack,
+    renderOhms
 }
 
 
