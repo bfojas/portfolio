@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { renderCardFun, renderRoadTrip, renderBlackjack, renderOhms } from '../ducks/reducer';
+import { renderCardFun, renderRoadTrip, renderBlackjack, renderOhms, renderPortfolio } from '../ducks/reducer';
 import './Project.scss'
 
 class Project extends Component{
@@ -23,7 +23,7 @@ class Project extends Component{
     }
 
     renderProject = () => {
-        const { renderCardFun, renderRoadTrip, renderBlackjack, renderOhms } = this.props
+        const { renderCardFun, renderRoadTrip, renderBlackjack, renderOhms, renderPortfolio } = this.props
         const { id } = this.props.match.params;
         if (id === "roadTrip") {
             renderRoadTrip()
@@ -37,6 +37,9 @@ class Project extends Component{
         if (id === "ohmsLaw") {
             renderOhms()
         };
+        if (id === "portfolio") {
+            renderPortfolio()
+        }
     }
 
 
@@ -44,6 +47,13 @@ class Project extends Component{
         const {name, image, imageHeight, about, techUsed, projectLink} = this.props;
         const images = image && image.map((val, i) => {
             return <div key={i} className="images" style={{backgroundImage: `url(${val})`, height: imageHeight}}></div>
+        })
+        const links = projectLink && projectLink.map((val, i) => {
+            return (
+                <a key={i} href={val.link}>
+                <i className={val.linkType}></i>
+                </a>
+            )
         })
         return(
             <div className="project-container">
@@ -58,7 +68,10 @@ class Project extends Component{
                         <div className="project-about">{about}</div>
                         <div className="project-subject">LINK:</div>
                         {/* <div className="project-text">{projectLink}</div> */}
-                        <a href={projectLink}>{projectLink}</a>
+                        {/* <a href={projectLink}>{projectLink}</a> */}
+                        <div className="links-box">
+                            {links}
+                        </div>
                         <div className="project-subject">TECHNOLOGIES USED:</div>
                         <div className="project-tech">{techUsed}</div>
                     </div>
@@ -84,7 +97,8 @@ const mapDispatchToProps = {
     renderCardFun, 
     renderRoadTrip,
     renderBlackjack,
-    renderOhms
+    renderOhms,
+    renderPortfolio
 }
 
 

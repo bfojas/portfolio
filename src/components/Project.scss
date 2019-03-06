@@ -74,7 +74,18 @@
                 font-weight: bold;
             }
 
+            .links-box {
+                height: 50px;
+                
+                a {
+                    margin: 10px;
 
+                    i {
+                        color: #164e98;
+                        font-size: 48px;
+                    }
+                }
+            }
         }
     }
 

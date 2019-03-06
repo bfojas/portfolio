@@ -90,15 +90,21 @@ class Window extends Component{
 
     render(){
         const {about, portfolio, email} = this.state
-        const aboutStyle = about ? {display: "flex"} : {display: "none"}
-        const portfolioStyle = portfolio ? {display: "flex"} : {display: "none"}
-        const emailStyle = email ?  {display: "flex"} : {display: "none"}
         const portfolioArray = [
             {name: "Road Trip", route: "roadTrip"},
             {name: "Ohm's Law", route: "ohmsLaw"},
             {name: "Blackjack", route: "blackjack"},
-            {name: "Card Fun", route: "cardFun"}
+            {name: "Card Fun", route: "cardFun"},
+            {name: "Portfolio", route: "portfolio"}
         ]
+        const portfolioStyle = portfolio 
+        ? {display: "flex", 
+            height: `${portfolioArray.length * 30}px`} 
+        : {display: "none"}
+
+        const aboutStyle = about ? {display: "flex"} : {display: "none"}
+        const emailStyle = email ?  {display: "flex"} : {display: "none"}
+
         const portfolioMap = portfolioArray.map((val, i)=>{
             return (
             <li key={i} onClick={()=>{this.props.history.push(`/project/${val.route}`)}}>
@@ -106,6 +112,7 @@ class Window extends Component{
             </li>
             )
         })
+
         return(
             <div className="home" onMouseMove={e=>this.mouseMove(e)}>
                 <div className='icon' 
@@ -141,18 +148,6 @@ class Window extends Component{
                             <li id="portfolio" onClick={e=>this.menuRender(e)}>Portfolio
                                 <ul className="portfolio-menu" style={portfolioStyle} >
                                     {portfolioMap}
-                                    {/* <li onClick={()=>{this.props.history.push('/project/roadTrip')}}>
-                                        Road Trip
-                                    </li>
-                                    <li onClick={()=>{this.props.history.push('/project/ohmsLaw')}}>
-                                        Ohm's Law
-                                    </li>
-                                    <li onClick={()=>{this.props.history.push('/project/blackjack')}}>
-                                        Blackjack
-                                    </li>
-                                    <li onClick={()=>{this.props.history.push('/project/cardFun')}}>
-                                        The Fun
-                                    </li> */}
                                 </ul>
                             </li>
                             <li id="email" onClick={e=>this.menuRender(e)}>Email
