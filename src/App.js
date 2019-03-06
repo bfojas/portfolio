@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import { connect } from 'react-redux'
 import './App.css';
 // import {Window} from './components/Window';
 import routes from './routes';

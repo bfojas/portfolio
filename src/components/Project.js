@@ -42,9 +42,8 @@ class Project extends Component{
 
     render(){
         const {name, image, imageHeight, about, techUsed, projectLink} = this.props;
-        console.log('-----images', image)
-        const images = image && image.map(val => {
-            return <div className="images" style={{backgroundImage: `url(${val})`, height: imageHeight}}></div>
+        const images = image && image.map((val, i) => {
+            return <div key={i} className="images" style={{backgroundImage: `url(${val})`, height: imageHeight}}></div>
         })
         return(
             <div className="project-container">
