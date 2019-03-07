@@ -1,257 +1,246 @@
 .home {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-    background: url('../images/welcome_large.jpg') no-repeat center right fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  
-    .icon, .icon-mobile {
-        position: absolute;
-        flex-direction: column;
-        width: 75px;
-        height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: url("../images/welcome_large.jpg") no-repeat center right fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
-        .fa-keyboard {
-            color: black;
-            height: 100%;
-            width: 100%;
-            font-size: 50px;
-        }
+  .icon,
+  .icon-mobile {
+    position: absolute;
+    flex-direction: column;
+    width: 75px;
+    height: 75px;
+
+    .fa-keyboard {
+      color: black;
+      height: 100%;
+      width: 100%;
+      font-size: 50px;
+    }
+  }
+
+  .icon {
+    display: flex;
+  }
+
+  .icon-mobile {
+    display: none;
+  }
+
+  .window-container {
+    position: fixed;
+    justify-content: center;
+    height: 95%;
+    width: 95%;
+    max-width: 2000px;
+    background-color: #f5f9f6;
+    border: 2px solid black;
+
+    .window-top {
+      display: flex;
+      position: relative;
+      align-items: center;
+      top: 2px;
+      left: 2px;
+      height: 26px;
+      width: calc(100% - 4px);
+      background-color: blue;
+
+      .window-name {
+        position: absolute;
+        left: 10px;
+        color: white;
+      }
+
+      .minimize-button {
+        position: absolute;
+        height: 26px;
+        width: 26px;
+        top: 0;
+        right: 0;
+      }
     }
 
-    .icon {
+    .window-menu {
+      display: flex;
+      position: relative;
+      align-items: center;
+      left: 2px;
+      top: 2px;
+      height: 26px;
+      width: calc(100% - 4px);
+      background-color: rgb(173, 173, 173);
+
+      ul {
+        width: 100%;
+        height: 100%;
         display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: flex-start;
+        margin: 0;
+        padding-left: 4px;
+        list-style: none;
+
+        li {
+          position: relative;
+          margin-left: 5px;
+          margin-right: 5px;
+          text-decoration: none;
+          color: black;
+          cursor: default;
+
+          a {
+            text-decoration: none;
+            color: black;
+          }
+
+          ul {
+            top: 24px;
+            left: -2px;
+            position: absolute;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            width: 100px;
+            // height: 120px;
+            background-color: white;
+            border: 1px solid black;
+            z-index: 100;
+
+            li {
+              display: flex;
+              padding: 0;
+              align-items: center;
+              margin: 0;
+              height: 30px;
+              width: 100%;
+              text-align: left;
+              text-indent: 3px;
+
+              // a {
+              //     text-decoration: none;
+              //     color: black;
+
+              // }
+
+              a:hover {
+                color: white;
+              }
+            }
+
+            li:hover {
+              background-color: blue;
+            }
+          }
+
+          .about-menu {
+            height: 60px;
+
+            li {
+              height: 50%;
+            }
+          }
+
+          .email-menu {
+            width: 200px;
+            height: 30px;
+            li {
+              height: 100%;
+            }
+          }
+        }
+
+        li:hover {
+          color: white;
+        }
+      }
+    }
+  }
+  .window-container::before {
+    position: absolute;
+    display: block;
+    content: "";
+    border: 2px solid rgb(173, 173, 173);
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+
+  .route-container {
+    overflow: auto;
+    display: flex;
+    height: calc(100% - 56px);
+    width: calc(100% - 4px);
+    position: relative;
+    top: 2px;
+    width: calc(100% - 4px);
+    left: 2px;
+  }
+
+  @media (max-width: 1050px) {
+    background: url("../images/welcome_tablet.jpg") no-repeat fixed;
+    background-position: 96% 90%;
+
+    .icon {
+      display: none;
     }
 
     .icon-mobile {
-        display: none;
+      display: flex;
+      bottom: 25px;
+      left: 25px;
     }
 
     .window-container {
-        position: fixed;
-        justify-content: center;
-        height: 95%;
-        width: 95%;
-        max-width: 2000px;
-        background-color: #f5f9f6;
-        border: 2px solid black;
+      font-size: 18px;
 
-        .window-top {
-            display: flex;
-            position: relative;
-            align-items: center;
-            top: 2px;
-            left: 2px;
-            height: 26px;
-            width: calc(100% - 4px);
-            background-color: blue;
+      .window-menu {
+        height: 36px;
 
-            .window-name {
-                position: absolute;
-                left: 10px;
-                color: white;
-            }
-            
-            .minimize-button {
-                position: absolute;
-                height: 26px;
-                width: 26px;
-                top: 0;
-                right: 0;
-            }
-        }
-
-        .window-menu {
-            display: flex;
-            position: relative;
-            align-items: center;
-            left: 2px;
-            top: 2px;
-            height: 26px;
-            width: calc(100% - 4px);
-            background-color: rgb(173, 173, 173);
-
+        ul {
+          li {
             ul {
-                width: 100%;
+              top: 30px;
+              width: 120px;
+            }
+
+            .email-menu {
+              width: 190px;
+              height: 30px;
+              li {
                 height: 100%;
-                display: flex;
-                align-items: center;
-                flex-direction: row;
-                justify-content: flex-start;
-                margin: 0;
-                padding-left: 4px;
-                list-style: none;
-
-                li {
-                    position: relative;
-                    margin-left: 5px;
-                    margin-right: 5px;
-                    text-decoration: none;
-                    color: black;
-                    cursor: default;
-
-                    a {
-                        text-decoration: none;
-                        color: black;
-
-                    }
-
-                    ul {
-                        top: 24px;
-                        left:-2px;
-                        position: absolute;
-                        padding: 0;
-                        display: flex;
-                        flex-direction: column;
-                        width: 100px;
-                        // height: 120px;
-                        background-color: white;
-                        border: 1px solid black;
-                        z-index: 100;
-
-                        li {
-                            display: flex;
-                            padding: 0;
-                            align-items: center;
-                            margin: 0;
-                            height: 30px;
-                            width: 100%;
-                            text-align: left;
-                            text-indent: 3px;
-                            
-                            // a {
-                            //     text-decoration: none;
-                            //     color: black;
-
-                            // }
-
-                            a:hover {
-                                color: white;
-                            }
-                        }
-
-                        li:hover {
-                            background-color: blue;
-                        }
-
-                        
-                    }
-
-                    .about-menu {
-                        height: 60px;
-
-                        li {
-                            height: 50%;
-                        }
-                    }
-
-                    .email-menu {
-                        width: 200px;
-                        height: 30px;
-                        li {
-                            height: 100%;
-                        }
-                    }
-
-                    
-
-                }
-
-                li:hover {
-                    color: white;
-                }
-
-
+              }
             }
+          }
         }
+      }
 
-    }
-    .window-container::before {
-        position:absolute; 
-        display:block; 
-        content:''; 
-        border: 2px solid rgb(173, 173, 173);
-        height:100%; 
-        width:100%; 
-        box-sizing: border-box; 
-        -moz-box-sizing: 
-        border-box; -webkit-box-sizing: 
-        border-box;
+      .window-top {
+        height: 36px;
 
-    }
-
-    .route-container {
-        overflow: auto;
-        display: flex;
-        height: calc(100% - 56px);
-        width: calc(100% - 4px);
-        position: relative;
-        top: 2px;
-        width: calc(100% - 4px);
-        left: 2px;
-    }
-
-    @media(max-width: 1050px) {
-        background: url('../images/welcome_tablet.jpg') no-repeat fixed; 
-        background-position: 96% 90%;
-
-        .icon {
-            display: none;
+        .minimize-button {
+          height: 36px;
+          width: 36px;
         }
+      }
 
-        .icon-mobile {
-            display: flex;
-            bottom: 25px;
-            left: 25px;
-        }
-
-        .window-container {
-            font-size: 18px;
-
-            .window-menu {
-                height: 36px;
-
-                ul {
-                    li {
-                        ul {
-                            top: 30px;
-                            width: 120px;
-                        }
-
-                        .email-menu {
-                            width: 190px;
-                            height: 30px;
-                            li {
-                                height: 100%;
-                            }
-                        }
-                    }
-                }
-            
-            }
-
-            .window-top {
-                height: 36px;
-
-                .minimize-button {
-                    height: 36px;
-                    width: 36px;
-                }
-            }
-
-            .route-container {
-                height: calc(100% - 84px);
-            }
-        }
+      .route-container {
+        height: calc(100% - 84px);
+      }
     }
+  }
 
-    @media(max-width: 680px) {
-        background: url('../images/welcome_small.jpg') no-repeat fixed; 
-        background-position: 100% 60%;
-    }
+  @media (max-width: 680px) {
+    background: url("../images/welcome_small.jpg") no-repeat fixed;
+    background-position: 100% 60%;
+  }
 }
