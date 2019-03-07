@@ -1,0 +1,112 @@
+.image-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: fixed;
+
+  .image-cover {
+    z-index: 900;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.367);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .image-window {
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 75%;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    background-color: black;
+
+    .image-top-bar {
+      display: flex;
+      position: relative;
+      align-items: center;
+      top: 2px;
+      left: 2px;
+      height: 26px;
+      width: calc(100% - 4px);
+      background-color: blue;
+
+      .image-name {
+        position: absolute;
+        left: 10px;
+        color: white;
+      }
+
+      .close-button {
+        position: absolute;
+        height: 26px;
+        width: 26px;
+        top: 0;
+        right: 0;
+      }
+    }
+  }
+
+  .image-content {
+    margin: 5px;
+    overflow: auto;
+    display: flex;
+    height: calc(100% - 38px);
+    width: calc(100% - 14px);
+    position: relative;
+    top: 2px;
+    left: 2px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    i {
+      cursor: pointer;
+      position: absolute;
+      height: 50px;
+      bottom: 10%;
+      font-size: 72px;
+      color: rgba(204, 204, 204, 0.476);
+      background-color: rgba(255, 255, 255, 0);
+      outline: 0;
+    }
+
+    .fa-caret-left {
+      left: 15px;
+    }
+
+    .fa-caret-right {
+      right: 15px;
+    }
+
+    i:hover {
+      color: white;
+      text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+        2px 2px 0 #000;
+    }
+  }
+
+  .image-window::before {
+    position: absolute;
+    display: block;
+    content: "";
+    border: 2px solid rgb(173, 173, 173);
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+
+  @media (max-width: 680px) {
+    display: none;
+  }
+}

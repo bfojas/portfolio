@@ -50,7 +50,9 @@ export function Home(props) {
           Although he attended the coding bootcamp with no prior coding
           experience, Bradley was not only able to quickly gain comprehension of
           JavaScript, HTML and CSS, but also of a full-stack that included
-          ReactJs, NodeJs and PostgreSQL.
+          ReactJs, NodeJs and PostgreSQL. Other technologies Bradley has been
+          able to learn include SASS, React-Native, Firebase, Nginx, Amazon S3,
+          Socket.io, jQuery, and Jest.
         </p>
         <p className="last-p">
           Feel free to click around the menus above to find more info about

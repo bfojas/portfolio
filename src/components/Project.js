@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
+import Images from "./Images";
 import {
   renderCardFun,
   renderRoadTrip,
@@ -14,7 +15,9 @@ class Project extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      images: []
+      //   images: [],
+      imageModal: false,
+      imageStart: 0
     };
   }
 
@@ -27,6 +30,19 @@ class Project extends Component {
       this.renderProject();
     }
   };
+
+  openImages = (index) => {
+      this.setState({
+        imageStart: index,
+        imageModal: true
+      })
+  }
+
+  closeImage = () => {
+      this.setState({
+          imageModal: false
+      })
+  }
 
   renderProject = () => {
     const {
@@ -55,6 +71,7 @@ class Project extends Component {
   };
 
   render() {
+    const { imageModal, imageStart } = this.state;
     const {
       name,
       image,
@@ -65,11 +82,12 @@ class Project extends Component {
     } = this.props;
     const images =
       image &&
-      image.map((val, i) => {
+      image.map((val, i, arr) => {
         return (
           <div
             key={i}
             className="images"
+            onClick={()=>this.openImages(i)}
             style={{ backgroundImage: `url(${val})`, height: imageHeight }}
           />
         );
@@ -78,7 +96,7 @@ class Project extends Component {
       projectLink &&
       projectLink.map((val, i) => {
         return (
-          <a key={i} href={val.link} target="_blank">
+          <a key={i} href={val.link} target="_blank" rel="noopener noreferrer">
             <i className={val.linkType} />
           </a>
         );
@@ -98,6 +116,7 @@ class Project extends Component {
             <div className="project-tech">{techUsed}</div>
           </div>
         </div>
+        {imageModal ? <Images start={imageStart} close={this.closeImage}/> : null}
       </div>
     );
   }
