@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { withRouter, Link } from "react-router-dom";
-import { connect } from "react-redux";
 import Home from "./Home";
 import Project from "./Project";
 
@@ -16,12 +15,14 @@ class Window extends Component {
       hidden: "none",
       about: false,
       portfolio: false,
-      email: false
+      email: false,
+      screenHeight: window.innerHeight
     };
   }
 
   componentDidMount() {
     this.windowCheck();
+    window.addEventListener("resize", this.updateWindow());
   }
 
   windowCheck = () => {
@@ -30,6 +31,16 @@ class Window extends Component {
     } else {
       this.props.history.push("/home");
     }
+  };
+
+  updateWindow = () => {
+    window.addEventListener("resize", () => {
+      this.setState({
+        screenHeight: window.innerHeight,
+        top: `${window.innerHeight - 125}`,
+        left: 50
+      });
+    });
   };
 
   dragOn = () => {
@@ -118,7 +129,11 @@ class Window extends Component {
     });
 
     return (
-      <div className="home" onMouseMove={e => this.mouseMove(e)}>
+      <div
+        className="home"
+        onMouseMove={e => this.mouseMove(e)}
+        style={{ height: this.state.screenHeight }}
+      >
         <div
           className="icon"
           style={{
@@ -203,10 +218,4 @@ class Window extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    projectObject: state.projectObject
-  };
-};
-
-export default withRouter(connect(mapStateToProps)(Window));
+export default withRouter(Window);

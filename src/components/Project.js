@@ -2,71 +2,57 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import Images from "./Images";
-import {
-  renderCardFun,
-  renderRoadTrip,
-  renderBlackjack,
-  renderOhms,
-  renderPortfolio
-} from "../ducks/reducer";
+import { renderProject } from "../ducks/reducer";
 import "./Project.scss";
 
 class Project extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      //   images: [],
       imageModal: false,
       imageStart: 0
     };
   }
 
   componentDidMount = () => {
-    this.renderProject();
+    this.renderPage();
   };
 
   componentDidUpdate = prevProps => {
     if (prevProps.match.params !== this.props.match.params) {
-      this.renderProject();
+      this.renderPage();
     }
   };
 
-  openImages = (index) => {
-      this.setState({
-        imageStart: index,
-        imageModal: true
-      })
-  }
+  openImages = index => {
+    this.setState({
+      imageStart: index,
+      imageModal: true
+    });
+  };
 
   closeImage = () => {
-      this.setState({
-          imageModal: false
-      })
-  }
+    this.setState({
+      imageModal: false
+    });
+  };
 
-  renderProject = () => {
-    const {
-      renderCardFun,
-      renderRoadTrip,
-      renderBlackjack,
-      renderOhms,
-      renderPortfolio
-    } = this.props;
+  renderPage = () => {
+    const { renderProject } = this.props;
     const { id } = this.props.match.params;
-    if (id === "roadTrip") {
-      renderRoadTrip();
-    }
-    if (id === "cardFun") {
-      renderCardFun();
-    }
-    if (id === "blackjack") {
-      renderBlackjack();
-    }
-    if (id === "ohmsLaw") {
-      renderOhms();
-    }
-    if (id === "portfolio") {
-      renderPortfolio();
+    switch (id) {
+      case "roadTrip":
+        return renderProject(0);
+      case "cardFun":
+        return renderProject(1);
+      case "blackjack":
+        return renderProject(2);
+      case "ohmsLaw":
+        return renderProject(3);
+      case "portfolio":
+        return renderProject(4);
+      default:
+        return null;
     }
   };
 
@@ -82,12 +68,12 @@ class Project extends Component {
     } = this.props;
     const images =
       image &&
-      image.map((val, i, arr) => {
+      image.map((val, i) => {
         return (
           <div
             key={i}
             className="images"
-            onClick={()=>this.openImages(i)}
+            onClick={() => this.openImages(i)}
             style={{ backgroundImage: `url(${val})`, height: imageHeight }}
           />
         );
@@ -103,9 +89,7 @@ class Project extends Component {
       });
     return (
       <div className="project-container">
-        <div className="project-head" >
-        {`${name} PROJECT`}
-        </div>
+        <div className="project-head">{`${name} PROJECT`}</div>
         <div className="project-body">
           <div className="image-box">{images}</div>
           <div className="summary-box">
@@ -116,7 +100,9 @@ class Project extends Component {
             <div className="project-tech">{techUsed}</div>
           </div>
         </div>
-        {imageModal ? <Images start={imageStart} close={this.closeImage}/> : null}
+        {imageModal ? (
+          <Images start={imageStart} close={this.closeImage} />
+        ) : null}
       </div>
     );
   }
@@ -129,21 +115,13 @@ const mapStateToProps = state => {
     imageHeight: state.imageHeight,
     about: state.about,
     techUsed: state.techUsed,
-    projectLink: state.projectLink,
+    projectLink: state.projectLink
   };
-};
-
-const mapDispatchToProps = {
-  renderCardFun,
-  renderRoadTrip,
-  renderBlackjack,
-  renderOhms,
-  renderPortfolio
 };
 
 export default withRouter(
   connect(
     mapStateToProps,
-    mapDispatchToProps
+    { renderProject }
   )(Project)
 );
