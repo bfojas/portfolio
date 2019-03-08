@@ -95,7 +95,7 @@ class Window extends Component {
       { name: "Ohm's Law", route: "ohmsLaw" },
       { name: "Blackjack", route: "blackjack" },
       { name: "Card Fun", route: "cardFun" },
-      { name: "Portfolio", route: "portfolio" }
+      { name: "Windows Clone", route: "portfolio" }
     ];
     const portfolioStyle = portfolio
       ? { display: "flex", height: `${portfolioArray.length * 30}px` }
@@ -172,12 +172,22 @@ class Window extends Component {
                 About
                 <ul className="about-menu" style={aboutStyle}>
                   <li>
-                    <a href="https://www.linkedin.com/in/bradley-fojas/">
+                    <a
+                      href="https://www.linkedin.com/in/bradley-fojas/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       LinkedIn
                     </a>
                   </li>
                   <li>
-                    <a href="https://github.com/bfojas">GitHub</a>
+                    <a
+                      href="https://github.com/bfojas"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      GitHub
+                    </a>
                   </li>
                 </ul>
               </li>

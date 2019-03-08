@@ -102,16 +102,17 @@
           }
 
           ul {
-            top: 24px;
+            top: 23px;
             left: -2px;
             position: absolute;
             padding: 0;
             display: flex;
             flex-direction: column;
-            width: 100px;
+            width: 125px;
             // height: 120px;
             background-color: white;
             border: 1px solid black;
+            // border-top: 0px;
             z-index: 100;
 
             li {
@@ -208,8 +209,8 @@
         ul {
           li {
             ul {
-              top: 30px;
-              width: 120px;
+              top: 29px;
+              width: 140px;
             }
 
             .email-menu {

@@ -103,14 +103,14 @@ class Project extends Component {
       });
     return (
       <div className="project-container">
-        <div className="project-head">{`${name} PROJECT`}</div>
+        <div className="project-head" >
+        {`${name} PROJECT`}
+        </div>
         <div className="project-body">
           <div className="image-box">{images}</div>
           <div className="summary-box">
             <div className="project-about">{about}</div>
             <div className="project-subject">LINK:</div>
-            {/* <div className="project-text">{projectLink}</div> */}
-            {/* <a href={projectLink}>{projectLink}</a> */}
             <div className="links-box">{links}</div>
             <div className="project-subject">TECHNOLOGIES USED:</div>
             <div className="project-tech">{techUsed}</div>
@@ -129,7 +129,7 @@ const mapStateToProps = state => {
     imageHeight: state.imageHeight,
     about: state.about,
     techUsed: state.techUsed,
-    projectLink: state.projectLink
+    projectLink: state.projectLink,
   };
 };
 

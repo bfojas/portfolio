@@ -59,9 +59,9 @@ export function renderCardFun() {
       image: [
         "https://s3.amazonaws.com/dev-fun-bucket/card_fun1.png",
         "https://s3.amazonaws.com/dev-fun-bucket/card_fun2.png",
-        "https://s3.amazonaws.com/dev-fun-bucket/card_fun3.png"
+        "https://s3.amazonaws.com/dev-fun-bucket/card_fun4.png"
       ],
-      about: `It's a simple card game, but baby got back-end. Users play and chat together over web sockets in this card guessing game. Players have many profile customization options and a bank system to make the fun feel riskier. Voted as the "Most Technical" project for my DevMountain cohort.`,
+      about: `It's a simple card game, but baby got back-end. Users play and chat together over web sockets in this card guessing game. Players have many profile customization options and a bank system to make the fun feel riskier. I implemented responsive design so it plays comfortably on mobile too. Voted as the "Most Technical" project for my DevMountain cohort.`,
       projectLink: [
         {
           link: "https://www.dev-mountain.fun",
