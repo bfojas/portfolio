@@ -34,14 +34,19 @@ class Window extends Component {
   };
 
   updateWindow = () => {
-    window.addEventListener("resize", () => {
+    window.addEventListener("resize", ()=>{
       this.setState({
-        screenHeight: window.innerHeight,
-        top: `${window.innerHeight - 125}`,
-        left: 50
-      });
+        screenHeight: window.innerHeight
+      })
+        this.mouseDefault()
+    })};
+
+  mouseDefault = () => {
+    this.setState({
+      top: `${window.innerHeight - 125}`,
+      left: 50
     });
-  };
+  }
 
   dragOn = () => {
     this.setState({
@@ -94,7 +99,8 @@ class Window extends Component {
     } else {
       this.setState({
         about: false,
-        portfolio: false
+        portfolio: false,
+        email: false
       });
     }
   };
@@ -109,11 +115,16 @@ class Window extends Component {
       { name: "Windows Clone", route: "portfolio" }
     ];
     const portfolioStyle = portfolio
-      ? { display: "flex", height: `${portfolioArray.length * 30}px` }
-      : { display: "none" };
+      ? { height: `${portfolioArray.length * 30}px` }
+      : { height: 0, border: 0, fontSize: 0 };
 
-    const aboutStyle = about ? { display: "flex" } : { display: "none" };
-    const emailStyle = email ? { display: "flex" } : { display: "none" };
+    const aboutStyle = about
+      ? { height: "60px" }
+      : { height: 0, border: 0, fontSize: 0 };
+    const emailStyle = email
+      ? { height: "30px" }
+      : { height: 0, border: 0, fontSize: 0 };
+    // { display: "flex" } : { display: "none" };
 
     const portfolioMap = portfolioArray.map((val, i) => {
       return (
@@ -133,6 +144,7 @@ class Window extends Component {
         className="home"
         onMouseMove={e => this.mouseMove(e)}
         style={{ height: this.state.screenHeight }}
+        onMouseLeave={this.dragOff}
       >
         <div
           className="icon"
@@ -168,7 +180,7 @@ class Window extends Component {
                 <li>Home</li>
               </Link>
               <li id="portfolio" onClick={e => this.menuRender(e)}>
-                Portfolio
+                Projects
                 <ul className="portfolio-menu" style={portfolioStyle}>
                   {portfolioMap}
                 </ul>

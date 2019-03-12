@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import Images from "./Images";
 import { renderProject } from "../ducks/reducer";
@@ -9,6 +9,7 @@ class Project extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      modalType: "",
       imageModal: false,
       imageStart: 0
     };
@@ -26,10 +27,19 @@ class Project extends Component {
 
   openImages = index => {
     this.setState({
+      modalType: "image",
       imageStart: index,
       imageModal: true
     });
   };
+
+  openVideo = link => {
+    this.setState({
+      modalType: "video",
+      imageStart: link,
+      imageModal: true   
+    })
+  }
 
   closeImage = () => {
     this.setState({
@@ -57,7 +67,7 @@ class Project extends Component {
   };
 
   render() {
-    const { imageModal, imageStart } = this.state;
+    const { imageModal, imageStart, modalType } = this.state;
     const {
       name,
       image,
@@ -82,9 +92,12 @@ class Project extends Component {
       projectLink &&
       projectLink.map((val, i) => {
         return (
+          val.linkType !== "fas fa-video"?
           <a key={i} href={val.link} target="_blank" rel="noopener noreferrer">
             <i className={val.linkType} />
           </a>
+          :
+            <i onClick={()=>this.openVideo(val.link)} className="fas fa-video"/>
         );
       });
     return (
@@ -101,7 +114,7 @@ class Project extends Component {
           </div>
         </div>
         {imageModal ? (
-          <Images start={imageStart} close={this.closeImage} />
+          <Images start={imageStart} type={modalType} close={this.closeImage} />
         ) : null}
       </div>
     );

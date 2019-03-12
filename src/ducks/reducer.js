@@ -38,6 +38,10 @@ const projects = [
       "A collaborative group project to bring the power of the Google Maps API to a user-friendly road trip planning app. Users can edit routes with a quick drag and drop, explore other trips and other road trippers.",
     projectLink: [
       {
+        link: "https://s3.amazonaws.com/dev-fun-bucket/Road-trip-compressed-2.mp4",
+        linkType: "fas fa-video"
+      },
+      {
         link: "https://github.com/bfojas/road-trip.git",
         linkType: "fab fa-github"
       }
@@ -93,7 +97,7 @@ const projects = [
       "https://lh3.googleusercontent.com/daCMT5ioYMFVZgY0ypIsYt14nHg1IAUdtOYvp3gyAjqc_qxo9c5PvhiXB0lFvo4qprLe=w400"
     ],
     about:
-      "I wanted to learn, build, and publish a React-Native-App in one day. This is what I came up with. It's a tool for calculating Ohm's Law. Plenty of apps like it out there, but this one also has a link that takes you back to this portfolio...",
+      "I wanted to learn React-Native, then build and publish an App, all in one day. This is what I came up with. It's a tool for calculating Ohm's Law. Plenty of apps like it out there, but this one also has a link that takes you back to this portfolio...",
     projectLink: [
       {
         link: "http://play.google.com/store/apps/details?id=bfojas.github.io",

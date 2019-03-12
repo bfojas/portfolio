@@ -15,7 +15,14 @@ export class Images extends Component {
     this.setState({
       position: this.props.start
     });
+    if (this.props.type === "image") {
+      this.startInterval();
+    }
   }
+
+  startInterval = () => {
+    setInterval(this.nextImage, 10000);
+  };
 
   previousImage = () => {
     const { position } = this.state;
@@ -47,7 +54,9 @@ export class Images extends Component {
 
   render() {
     const { position } = this.state;
-    const { image, close } = this.props;
+    const { image, close, type } = this.props;
+    const imageHidden = type === "image" ? "flex" : "none";
+    const videoHidden = type === "video" ? "flex" : "none";
     return (
       <div className="image-container">
         <div className="image-cover" onClick={close} />
@@ -60,10 +69,18 @@ export class Images extends Component {
           </div>
           <div
             className="image-content"
-            style={{ backgroundImage: `url(${image[position]})` }}
+            style={{
+              backgroundImage: `url(${image[position]})`,
+              display: imageHidden
+            }}
           >
             <i className="fas fa-caret-left" onClick={this.previousImage} />
             <i className="fas fa-caret-right" onClick={this.nextImage} />
+          </div>
+          <div className="image-content" style={{ display: videoHidden }}>
+            <video controls autoplay height="100%" width="auto">
+              <source src={position} />
+            </video>
           </div>
         </div>
       </div>

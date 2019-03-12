@@ -9,6 +9,7 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  cursor: default;
 
   .icon,
   .icon-mobile {
@@ -51,6 +52,7 @@
       height: 26px;
       width: calc(100% - 4px);
       background-color: blue;
+      // cursor: default;
 
       .window-name {
         position: absolute;
@@ -109,11 +111,10 @@
             display: flex;
             flex-direction: column;
             width: 125px;
-            // height: 120px;
             background-color: white;
             border: 1px solid black;
-            // border-top: 0px;
             z-index: 100;
+            transition: height 200ms, font-size 100ms;
 
             li {
               display: flex;
@@ -124,12 +125,6 @@
               width: 100%;
               text-align: left;
               text-indent: 3px;
-
-              // a {
-              //     text-decoration: none;
-              //     color: black;
-
-              // }
 
               a:hover {
                 color: white;
@@ -142,8 +137,6 @@
           }
 
           .about-menu {
-            height: 60px;
-
             li {
               height: 50%;
             }

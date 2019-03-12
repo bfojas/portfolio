@@ -60,6 +60,8 @@
     margin: 5px;
     overflow: auto;
     display: flex;
+    justify-content: center;
+    align-items: center;
     height: calc(100% - 38px);
     width: calc(100% - 14px);
     position: relative;
