@@ -78,7 +78,7 @@ export class Images extends Component {
             <i className="fas fa-caret-right" onClick={this.nextImage} />
           </div>
           <div className="image-content" style={{ display: videoHidden }}>
-            <video controls autoplay height="100%" width="auto">
+            <video controls autoplay height="100%" width="auto" style={{maxWidth: "calc(100% - 6px"}}>
               <source src={position} />
             </video>
           </div>

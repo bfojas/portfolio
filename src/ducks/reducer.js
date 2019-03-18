@@ -7,23 +7,12 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case BLACKJACK:
-    case CARD_FUN:
-    case ROAD_TRIP:
-    case OHMS_LAW:
-    case PORTFOLIO:
+    case "RENDER_PROJECT":
       return action.payload;
-
     default:
       return state;
   }
 }
-
-const CARD_FUN = "CARD_FUN";
-const ROAD_TRIP = "ROAD_TRIP";
-const BLACKJACK = "BLACKJACK";
-const OHMS_LAW = "OHMS_LAW";
-const PORTFOLIO = "PORTFOLIO";
 
 const projects = [
   {
@@ -38,7 +27,8 @@ const projects = [
       "A collaborative group project to bring the power of the Google Maps API to a user-friendly road trip planning app. Users can edit routes with a quick drag and drop, explore other trips and other road trippers.",
     projectLink: [
       {
-        link: "https://s3.amazonaws.com/dev-fun-bucket/Road-trip-compressed-2.mp4",
+        link:
+          "https://s3.amazonaws.com/dev-fun-bucket/Road-trip-compressed-2.mp4",
         linkType: "fas fa-video"
       },
       {
@@ -137,7 +127,7 @@ const projects = [
 
 export function renderProject(id) {
   return {
-    type: ROAD_TRIP,
+    type: "RENDER_PROJECT",
     payload: projects[id]
   };
 }
