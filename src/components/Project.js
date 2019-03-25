@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter, NavLink } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import Images from "./Images";
 import { renderProject } from "../ducks/reducer";

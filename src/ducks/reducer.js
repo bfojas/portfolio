@@ -37,7 +37,7 @@ const projects = [
       }
     ],
     techUsed:
-      "ReactJs  |  Express/NodeJs  |  JavaScript  |  HTML  |  CSS  |  Redux  |  PostgreSQL  |  SASS  | Amazon AWS  |  B-Crypt  |  React-Router"
+      "ReactJs  |  Express/NodeJs  |  JavaScript  |  HTML  |  CSS/SASS  |  Redux  |  PostgreSQL  |  Axios  |  Amazon AWS  |  React-Router"
   },
   {
     name: "THE CARD GAME",
@@ -59,7 +59,7 @@ const projects = [
       }
     ],
     techUsed:
-      "ReactJs  |  Express/NodeJs  |  JavaScript  |  HTML  |  CSS  |  Redux  |  Web Sockets  |  PostgreSQL  |  Nginx  |  Digital Ocean  |  SASS  | Amazon AWS  |  Stripe  |   Auth0  |  ChartJs  |  React-Router"
+      "ReactJs  |  Express/NodeJs  |  JavaScript  |  HTML  |  CSS/SASS  |  Redux  |  Web Sockets  |  PostgreSQL  |  Axios  |  Nginx  |  Digital Ocean  | Amazon AWS  |  Stripe  |   Auth0  |  ChartJs  |  React-Router"
   },
   {
     name: "THE BLACKJACK",
@@ -78,7 +78,7 @@ const projects = [
       }
     ],
     techUsed:
-      "ReactJs  |  Express/NodeJs  |  JavaScript  |  HTML  |  CSS  | Firebase"
+      "ReactJs  |  Express/NodeJs  |  Axios  |  JavaScript  |  HTML  |  CSS  | Firebase"
   },
   {
     name: "THE OHM'S LAW",
@@ -121,7 +121,7 @@ const projects = [
       }
     ],
     techUsed:
-      "ReactJS  |  Redux  |  Amazon AWS  |  React-Router  |  JavaScript  |  HTML  |  CSS  |  SASS  |  Github Pages"
+      "ReactJS  |  Redux  |  Amazon AWS  |  React-Router  |  JavaScript  |  HTML  |  CSS/SASS  |  Github Pages"
   }
 ];
 
