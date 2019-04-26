@@ -3,6 +3,48 @@ import { withRouter } from "react-router-dom";
 import "./Home.scss";
 
 export function Home(props) {
+  let iconsList = [
+    { icon: "fab fa-react", text: "React/ React-Native" },
+    { icon: "fab fa-node-js", text: "NodeJs/ Express" },
+    { icon: "devicon-postgresql-plain", text: "PostgreSQL" },
+    { icon: "fab fa-js-square", text: "JavaScript ES6" },
+  
+    { icon: "fab fa-html5", text: "HTML5" },
+    // { icon: "fab fa-css3-alt", text: "CSS3"},
+    { icon: "fab fa-sass", text: "CSS/ SASS" },
+    {
+      icon: "https://s3.amazonaws.com/dev-fun-bucket/reduxLogo.png",
+      text: "Redux",
+      type: "image"
+    },
+    // { icon: "devicon-amazonwebservices-original", text: "Amazon Web Services"},
+    {
+      icon: "https://s3.amazonaws.com/dev-fun-bucket/socket_icon.png",
+      text: "Socket.io",
+      type: "image"
+    },
+    { icon: "fab fa-github-square", text: "Git/ GitHub" }
+  ];
+
+  let mapper = (val, i) => {
+    return val.type === "image" ? (
+      <div key={i}> 
+        <img
+          style={{ height: "64px", width: "64px" }}
+          src={val.icon}
+          alt={val.text}
+        />
+        {val.text}
+      </div>
+    ) : (
+      <div key={i}>
+        <i className={val.icon} />
+        {val.text}
+      </div>
+    );
+  };
+
+  let mapIcons = iconsList.map(mapper);
   return (
     <div className="home-container">
       <div className="head-content">
@@ -12,32 +54,7 @@ export function Home(props) {
           <h3>FULL-STACK WEB DEVELOPER</h3>
         </div>
       </div>
-      <div className="icon-container">
-        <div>
-          <i className="fab fa-react" />
-          React
-        </div>
-        <div>
-          <i className="fab fa-node-js" />
-          Node.js
-        </div>
-        <div>
-          <i className="devicon-postgresql-plain" />
-          PostgreSQL
-        </div>
-        <div>
-          <i className="fab fa-js-square" />
-          JavaScript
-        </div>
-        <div>
-          <i className="fab fa-html5" />
-          HTML5
-        </div>
-        <div>
-          <i className="fab fa-css3-alt" />
-          CSS3
-        </div>
-      </div>
+      <div className="icon-container">{mapIcons}</div>
       <div className="home-content">
         <p>
           After many years as a biomedical technician tackling complex technical

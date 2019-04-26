@@ -97,7 +97,7 @@ class Project extends Component {
             <i className={val.linkType} />
           </a>
           :
-            <i onClick={()=>this.openVideo(val.link)} className="fas fa-video"/>
+            <i key={i} onClick={()=>this.openVideo(val.link)} className="fas fa-video"/>
         );
       });
     return (

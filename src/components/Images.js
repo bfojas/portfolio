@@ -7,7 +7,11 @@ export class Images extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      position: 0
+      position: 0,
+      height: `calc(100% - 38px)`,
+      width: `calc(100% - 14px)`,
+      left: "3px",
+      zIndex: "500",
     };
   }
 
@@ -21,12 +25,19 @@ export class Images extends Component {
   }
 
   startInterval = () => {
-    setInterval(this.nextImage, 10000);
+    if (this.props.image.length > 1) {
+      setInterval(this.nextImage, 10000);
+    }
   };
 
   previousImage = () => {
     const { position } = this.state;
     const { image } = this.props;
+    this.setState({
+      width: "0",
+      left: "calc(100% - 14px)",
+      zIndex: "-900",
+    });
     if (position === 0) {
       this.setState({
         position: image.length - 1
@@ -36,11 +47,24 @@ export class Images extends Component {
         position: position - 1
       });
     }
+    setTimeout(() => this.setState({ left: "3px" }), 250);
+    setTimeout(() => {
+      this.setState({
+        zIndex: "500",
+        width: `calc(100% - 14px)`,
+      });
+    }, 500);
   };
 
   nextImage = () => {
     const { position } = this.state;
     const { image } = this.props;
+    this.setState({
+      width: "0",
+      left: "3px",
+      zIndex: "-900",
+      backgroundSize: "cover"
+    });
     if (position === image.length - 1) {
       this.setState({
         position: 0
@@ -50,10 +74,25 @@ export class Images extends Component {
         position: position + 1
       });
     }
+    setTimeout(() => this.setState({ left: "calc(100% - 14px)" }), 250);
+    setTimeout(() => {
+      this.setState({
+        zIndex: "500",
+        width: `calc(100% - 14px)`,
+        backgroundSize: "contain",
+        left: "3px"
+      });
+    }, 500);
   };
 
   render() {
-    const { position } = this.state;
+    const {
+      position,
+      width,
+      height,
+      left,
+      zIndex,
+    } = this.state;
     const { image, close, type } = this.props;
     const imageHidden = type === "image" ? "flex" : "none";
     const videoHidden = type === "video" ? "flex" : "none";
@@ -71,14 +110,28 @@ export class Images extends Component {
             className="image-content"
             style={{
               backgroundImage: `url(${image[position]})`,
-              display: imageHidden
+              display: imageHidden,
+              height: height,
+              width: width,
+              left: left,
+              zIndex: zIndex,
             }}
-          >
-            <i className="fas fa-caret-left" onClick={this.previousImage} />
-            <i className="fas fa-caret-right" onClick={this.nextImage} />
-          </div>
+          />
+          {type === "image" && image.length > 1 ? (
+            <div className="nav-container">
+              <i className="fas fa-caret-left" onClick={this.previousImage} />
+              <i className="fas fa-caret-right" onClick={this.nextImage} />
+            </div>
+          ) : null}
+
           <div className="image-content" style={{ display: videoHidden }}>
-            <video controls autoplay height="100%" width="auto" style={{maxWidth: "calc(100% - 6px"}}>
+            <video
+              controls
+              autoplay
+              height="100%"
+              width="auto"
+              style={{ maxWidth: "calc(100% - 6px" }}
+            >
               <source src={position} />
             </video>
           </div>

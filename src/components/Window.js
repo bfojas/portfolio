@@ -16,7 +16,8 @@ class Window extends Component {
       about: false,
       portfolio: false,
       email: false,
-      screenHeight: window.innerHeight
+      screenHeight: window.innerHeight,
+      background: 0
     };
   }
 
@@ -24,6 +25,10 @@ class Window extends Component {
     this.windowCheck();
     window.addEventListener("resize", this.updateWindow());
   }
+
+  componentWillUnmount = () => {
+    window.removeEventListener("scroll", this.handleScroll);
+  };
 
   windowCheck = () => {
     if (this.props.match.path !== "/") {
@@ -34,19 +39,20 @@ class Window extends Component {
   };
 
   updateWindow = () => {
-    window.addEventListener("resize", ()=>{
+    window.addEventListener("resize", () => {
       this.setState({
         screenHeight: window.innerHeight
-      })
-        this.mouseDefault()
-    })};
+      });
+      this.mouseDefault();
+    });
+  };
 
   mouseDefault = () => {
     this.setState({
       top: `${window.innerHeight - 125}`,
       left: 50
     });
-  }
+  };
 
   dragOn = () => {
     this.setState({
@@ -105,6 +111,12 @@ class Window extends Component {
     }
   };
 
+  changePaper = () => {
+    this.setState({
+      background: Math.floor(Math.random() * 9)
+    });
+  };
+
   render() {
     const { about, portfolio, email } = this.state;
     const portfolioArray = [
@@ -119,12 +131,11 @@ class Window extends Component {
       : { height: 0, border: 0, fontSize: 0 };
 
     const aboutStyle = about
-      ? { height: "60px" }
+      ? { height: "100px" }
       : { height: 0, border: 0, fontSize: 0 };
     const emailStyle = email
       ? { height: "30px" }
       : { height: 0, border: 0, fontSize: 0 };
-    // { display: "flex" } : { display: "none" };
 
     const portfolioMap = portfolioArray.map((val, i) => {
       return (
@@ -143,9 +154,26 @@ class Window extends Component {
       <div
         className="home"
         onMouseMove={e => this.mouseMove(e)}
-        style={{ height: this.state.screenHeight }}
+        style={{
+          height: this.state.screenHeight,
+          background: this.state.background
+          ?
+           `url(https://s3.amazonaws.com/dev-fun-bucket/background${
+            this.state.background
+          }.jpg) no-repeat center /cover`
+          :
+          null
+        }}
         onMouseLeave={this.dragOff}
       >
+        <div className="pic-contain">
+          <div className="bradley" />
+          <div className="bubble" onClick={this.changePaper}>
+            Hi, I'm a Web Developer! Double-click the icon in the corner to
+            learn more about me.
+            <div className="change-wall">Change the Wallpaper?</div>
+          </div>
+        </div>
         <div
           className="icon"
           style={{
@@ -189,9 +217,7 @@ class Window extends Component {
                 Email
                 <ul className="email-menu" style={emailStyle}>
                   <li>
-                    <a href="mailto:brad.fojas@yahoo.com">
-                      brad.fojas@yahoo.com
-                    </a>
+                    <a href="mailto:bradfojas@gmail.com">bradfojas@gmail.com</a>
                   </li>
                 </ul>
               </li>
@@ -214,6 +240,15 @@ class Window extends Component {
                       rel="noopener noreferrer"
                     >
                       GitHub
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.hackerrank.com/dollartaco"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      HackerRank
                     </a>
                   </li>
                 </ul>

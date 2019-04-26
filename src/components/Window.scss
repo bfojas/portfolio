@@ -4,12 +4,85 @@
   align-items: center;
   width: 100vw;
   height: 100%;
-  background: url("../images/welcome_large.jpg") no-repeat center right fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+  // background: url("../images/welcome.jpg");
+  //  no-repeat bottom right fixed;
+  // -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
   background-size: cover;
   cursor: default;
+
+  .pic-contain {
+    position: absolute;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    bottom: 0;
+    right: 0;
+    height: 65%;
+    width: 60%;
+      
+    .bubble {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background:  rgb(178, 229, 236);
+      // height: 75%;
+      width: 40%;
+      max-width: 300px;
+      max-height: 300px;
+      background-size: cover;
+      border-radius: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      padding: 10px;
+
+      .change-wall {
+        position: absolute;
+        display: none;
+      }
+    }
+
+    .bubble:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      width: 0;
+      height: 0;
+      border: 20px solid transparent;
+      border-left-color: rgb(178, 229, 236);
+      border-right: 0;
+      margin-top: -20px;
+      margin-right: -20px;
+    }
+
+    .bradley {
+      position: relative;
+      width: 50%;
+      height: 100%;
+      background: url("../images/cartoon.png") no-repeat center bottom;
+      background-size: contain;
+
+    }
+
+    .bubble:hover {
+      color: rgb(178, 229, 236);
+      cursor: pointer;
+      .change-wall {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 90%;
+        width: 90%;
+        color: black;
+      }
+
+    }
+
+  }
 
   .icon,
   .icon-mobile {
@@ -17,6 +90,7 @@
     flex-direction: column;
     width: 75px;
     height: 75px;
+    background-color: white;
 
     .fa-keyboard {
       color: black;
@@ -138,7 +212,7 @@
 
           .about-menu {
             li {
-              height: 50%;
+              height: 33%;
             }
           }
 
@@ -180,9 +254,13 @@
   }
 
   @media (max-width: 1050px) {
-    background: url("../images/welcome_tablet.jpg") no-repeat fixed;
+    // background: url("../images/welcome_tablet.jpg") no-repeat fixed;
     background-position: 96% 90%;
-
+    .pic-contain{
+      .bubble {
+        font-size: 20px;
+      }
+    }
     .icon {
       display: none;
     }
@@ -232,8 +310,37 @@
     }
   }
 
-  @media (max-width: 680px) {
-    background: url("../images/welcome_small.jpg") no-repeat fixed;
-    background-position: 100% 60%;
+  @media screen and (max-width: 680px) and (orientation: portrait) {
+    // background: url("../images/welcome_small.jpg") no-repeat fixed;
+    // background-position: 100% 60%;
+
+    .pic-contain {
+      flex-direction: column-reverse;
+      height: 85%;
+      width: 65%;
+
+      .bubble {
+        width: 85%;
+        // height: 50%;
+        margin-bottom: 15px;
+      }
+
+      .bubble:after {
+        top: auto;
+        left: 25%;
+        bottom: 0;
+        border: 20px solid transparent;
+        border-top-color: rgb(178, 229, 236);
+        border-bottom: 0;
+        border-right: 0;
+        margin-left: -10px;
+        margin-bottom: -20px;
+      }
+
+      .bradley {
+        width: 100%;
+        height: 50%;
+      }
+    }
   }
 }

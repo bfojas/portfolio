@@ -109,7 +109,7 @@ const projects = [
       "https://s3.amazonaws.com/dev-fun-bucket/portfolio1.png"
     ],
     about:
-      "Woah, webception. This is my portfolio site. Basically the thing you are looking at right now. Don't let the simplistic looking design fool you. There's a lot going on here. This page that you are reading right now is a reusable component with props from Redux. This window is a styled modal. And the whole thing is mobile responsive",
+      "Woah, webception. This is my portfolio site. Basically the thing you are looking at right now. Don't let the simplistic looking design fool you. There's a lot going on here. This page that you are reading right now is a reusable component with props from Redux. This window is a styled modal. And the whole thing is mobile responsive.",
     projectLink: [
       {
         link: "https://bfojas.github.io/portfolio/#/project/portfolio",
