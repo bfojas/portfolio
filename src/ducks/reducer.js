@@ -5,16 +5,8 @@ const initialState = {
   techUsed: ""
 };
 
-export default function reducer(state = initialState, action) {
-  switch (action.type) {
-    case "RENDER_PROJECT":
-      return action.payload;
-    default:
-      return state;
-  }
-}
 
-const projects = [
+export const projects = [
   {
     name: "THE ROAD TRIP",
     imageHeight: "250px",
@@ -105,8 +97,8 @@ const projects = [
     imageHeight: "250px",
     image: [
       "https://s3.amazonaws.com/dev-fun-bucket/portfolio3.png",
-      "https://s3.amazonaws.com/dev-fun-bucket/portfolio2.png",
-      "https://s3.amazonaws.com/dev-fun-bucket/portfolio1.png"
+      "https://s3.amazonaws.com/dev-fun-bucket/portfolio5.png",
+      "https://s3.amazonaws.com/dev-fun-bucket/portfolio4.png"
     ],
     about:
       "Woah, webception. This is my portfolio site. Basically the thing you are looking at right now. Don't let the simplistic looking design fool you. There's a lot going on here. This page that you are reading right now is a reusable component with props from Redux. This window is a styled modal. And the whole thing is mobile responsive.",
@@ -122,8 +114,39 @@ const projects = [
     ],
     techUsed:
       "ReactJS  |  Redux  |  Amazon AWS  |  React-Router  |  JavaScript  |  HTML  |  CSS/SASS  |  Github Pages"
+  },
+  {
+    name: "THE MATH CHALLENGE",
+    imageHeight: "700px",
+    image: [
+      // "https://s3.amazonaws.com/dev-fun-bucket/math1.png",
+      "https://s3.amazonaws.com/dev-fun-bucket/math2.png"
+      // "https://s3.amazonaws.com/dev-fun-bucket/math3.png"
+    ],
+    about: `It's a small math game for mobile. Players are shown two math problems and have a set amount of time to figure out which one has the highest answer. This was my first time creating a React-Native app without expo.`,
+    projectLink: [
+      {
+        link: "https://s3.amazonaws.com/dev-fun-bucket/mathvid.mp4",
+        linkType: "fas fa-video"
+      },
+      {
+        link: "https://github.com/bfojas/math-challenge.git",
+        linkType: "fab fa-github"
+      }
+    ],
+    techUsed:
+      "ReactJs  |  Express/NodeJs  |  JavaScript  |  HTML  |  CSS/SASS  |  Redux  |  Web Sockets  |  PostgreSQL  |  Axios  |  Nginx  |  Digital Ocean  | Amazon AWS  |  Stripe  |   Auth0  |  ChartJs  |  React-Router"
   }
 ];
+
+export default function reducer(state = initialState, action) {
+  switch (action.type) {
+    case "RENDER_PROJECT":
+      return action.payload;
+    default:
+      return state;
+  }
+}
 
 export function renderProject(id) {
   return {

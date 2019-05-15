@@ -17,7 +17,7 @@ class Window extends Component {
       portfolio: false,
       email: false,
       screenHeight: window.innerHeight,
-      background: 0
+      background: 9
     };
   }
 
@@ -113,7 +113,7 @@ class Window extends Component {
 
   changePaper = () => {
     this.setState({
-      background: Math.floor(Math.random() * 9)
+      background: Math.floor(Math.random() * 13)
     });
   };
 
@@ -121,9 +121,10 @@ class Window extends Component {
     const { about, portfolio, email } = this.state;
     const portfolioArray = [
       { name: "Road Trip", route: "roadTrip" },
+      { name: "Math Challenge", route: "mathChallenge"},
+      { name: "Card Fun", route: "cardFun" },
       { name: "Ohm's Law", route: "ohmsLaw" },
       { name: "Blackjack", route: "blackjack" },
-      { name: "Card Fun", route: "cardFun" },
       { name: "Windows Clone", route: "portfolio" }
     ];
     const portfolioStyle = portfolio
@@ -157,20 +158,19 @@ class Window extends Component {
         style={{
           height: this.state.screenHeight,
           background: this.state.background
-          ?
-           `url(https://s3.amazonaws.com/dev-fun-bucket/background${
-            this.state.background
-          }.jpg) no-repeat center /cover`
-          :
-          null
+            ? `url(https://s3.amazonaws.com/dev-fun-bucket/background${
+                this.state.background
+              }.jpg) no-repeat center /cover`
+            : null
         }}
         onMouseLeave={this.dragOff}
       >
         <div className="pic-contain">
           <div className="bradley" />
           <div className="bubble" onClick={this.changePaper}>
-            Hi, I'm a Web Developer! Double-click the icon in the corner to
-            learn more about me.
+            <span>Hi, I'm a Web Developer! </span>
+            <p><span className="mobile-span"> Double-</span>
+            Click the icon in the corner to learn more about me.</p>
             <div className="change-wall">Change the Wallpaper?</div>
           </div>
         </div>
@@ -185,11 +185,11 @@ class Window extends Component {
           onDoubleClick={this.maximize}
         >
           <i className="fas fa-keyboard" />
-          Bradley
+          <div className="name">Bradley</div>
         </div>
         <div className="icon-mobile" onClick={this.maximize}>
           <i className="fas fa-keyboard" />
-          Bradley
+          <div className="name">Bradley</div>
         </div>
         <div
           className="window-container"

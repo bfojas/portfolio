@@ -22,13 +22,14 @@
     right: 0;
     height: 65%;
     width: 60%;
-      
+
     .bubble {
       position: relative;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      background:  rgb(178, 229, 236);
+      background: rgb(178, 229, 236);
       // height: 75%;
       width: 40%;
       max-width: 300px;
@@ -38,6 +39,10 @@
       font-size: 24px;
       font-weight: bold;
       padding: 10px;
+      
+      p {
+        margin: 5px 0;
+      }
 
       .change-wall {
         position: absolute;
@@ -46,7 +51,7 @@
     }
 
     .bubble:after {
-      content: '';
+      content: "";
       position: absolute;
       right: 0;
       top: 50%;
@@ -65,7 +70,6 @@
       height: 100%;
       background: url("../images/cartoon.png") no-repeat center bottom;
       background-size: contain;
-
     }
 
     .bubble:hover {
@@ -79,24 +83,30 @@
         width: 90%;
         color: black;
       }
-
     }
-
   }
 
   .icon,
   .icon-mobile {
     position: absolute;
     flex-direction: column;
+    align-items: center;
     width: 75px;
     height: 75px;
-    background-color: white;
 
     .fa-keyboard {
-      color: black;
+      color: rgba(34, 33, 33, 0.503);
       height: 100%;
       width: 100%;
       font-size: 50px;
+      -webkit-text-fill-color: rgba(34, 33, 33, 0.503);
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: white;
+    }
+
+    .name {
+      background-color: white;
+      width: 80%;
     }
   }
 
@@ -256,9 +266,13 @@
   @media (max-width: 1050px) {
     // background: url("../images/welcome_tablet.jpg") no-repeat fixed;
     background-position: 96% 90%;
-    .pic-contain{
+    .pic-contain {
       .bubble {
         font-size: 20px;
+
+        .mobile-span {
+          display: none;
+        }
       }
     }
     .icon {

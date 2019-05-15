@@ -1,6 +1,6 @@
 .home-container {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: block;
   flex-direction: column;
   align-items: center;
@@ -55,39 +55,43 @@
       }
     }
   }
-    .icon-container {
-      position: relative;
+  .icon-container {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 15px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    div {
+      width: 110px;
       display: flex;
-      width: 100%;
+      flex-direction: column;
       justify-content: center;
-      margin-top: 15px;
-      align-items: flex-start;
-      flex-wrap: wrap;
+      align-items: center;
+      margin: 15px;
+      font-weight: bold;
+      font-size: 18px;
 
-      div {
-        width: 110px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin: 15px;
-        font-weight: bold;
-        font-size: 18px;
-
-        i {
-          font-size: 64px;
-          font-weight: normal;
-        }
+      i {
+        font-size: 64px;
+        font-weight: normal;
       }
     }
-
-    .home-content {
+  }
+  .home-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .home-text {
       flex-direction: column;
       align-items: center;
       position: relative;
       justify-content: center;
       text-align: left;
-      width: 100%;
+      width: auto;
       min-height: calc(100% - 505px);
       font-size: 2.5vh;
 
@@ -100,7 +104,14 @@
         margin-bottom: 10px;
       }
     }
-  
+    .home-images {
+      width: 80%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      margin: 20px 0;
+    }
+  }
 
   @media (max-width: 1024px) {
     .head-content {
@@ -122,16 +133,22 @@
       }
     }
 
-      .icon-container {
-        div {
-          margin: 15px;
-          height: auto;
-        }
+    .icon-container {
+      div {
+        margin: 15px;
+        height: auto;
       }
+    }
 
-      .home-content {
-        font-size: 3vh;
-      }
+    .home-content {
+      font-size: 3vh;
+    }
+  }
+
+  @media (max-width: 1024px) and (orientation: landscape) {
+    .home-content {
+      font-size: 4vh;
+    }
   }
 
   @media (max-width: 680px) {
@@ -160,8 +177,23 @@
       }
     }
 
-      .icon-container {
-        height: auto;
+    .home-content {
+      .home-images {
+        flex-direction: column;
       }
+    }
+
+    .icon-container {
+      height: auto;
+
+      div {
+        font-size: 14px;
+        width: 60px;
+
+        i {
+          font-size: 48px;
+        }
+      }
+    }
   }
 }

@@ -37,9 +37,9 @@ class Project extends Component {
     this.setState({
       modalType: "video",
       imageStart: link,
-      imageModal: true   
-    })
-  }
+      imageModal: true
+    });
+  };
 
   closeImage = () => {
     this.setState({
@@ -61,6 +61,8 @@ class Project extends Component {
         return renderProject(3);
       case "portfolio":
         return renderProject(4);
+      case "mathChallenge":
+        return renderProject(5);
       default:
         return null;
     }
@@ -79,25 +81,35 @@ class Project extends Component {
     const images =
       image &&
       image.map((val, i) => {
+        let top = imageHeight === "700px" ? "-350px" : "10px";
+        let left= imageHeight === "700px" ? `${i * 5 + 10 }px` : "109x"
         return (
           <div
             key={i}
             className="images"
             onClick={() => this.openImages(i)}
-            style={{ backgroundImage: `url(${val})`, height: imageHeight }}
+            style={{
+              backgroundImage: `url(${val})`,
+              height: imageHeight,
+              marginTop: i ? top : "10px",
+              marginLeft: left
+            }}
           />
         );
       });
     const links =
       projectLink &&
       projectLink.map((val, i) => {
-        return (
-          val.linkType !== "fas fa-video"?
+        return val.linkType !== "fas fa-video" ? (
           <a key={i} href={val.link} target="_blank" rel="noopener noreferrer">
             <i className={val.linkType} />
           </a>
-          :
-            <i key={i} onClick={()=>this.openVideo(val.link)} className="fas fa-video"/>
+        ) : (
+          <i
+            key={i}
+            onClick={() => this.openVideo(val.link)}
+            className="fas fa-video"
+          />
         );
       });
     return (

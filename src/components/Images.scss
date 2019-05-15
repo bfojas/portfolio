@@ -55,6 +55,7 @@
       }
     }
     .nav-container {
+      background: inherit;
       i {
         cursor: pointer;
         position: absolute;
@@ -63,9 +64,12 @@
         font-size: 72px;
         color: rgba(204, 204, 204, 0.476);
         background-color: rgba(255, 255, 255, 0);
-        outline: 0;
+        -webkit-text-fill-color: rgba(204, 204, 204, 0.476);
+        -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: black;
         z-index: 750;
       }
+      
 
       .fa-caret-left {
         left: 15px;
@@ -94,7 +98,6 @@
     top: 2px;
     left: 2px;
     background-size: contain;
-    // background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     transition: width 250ms, left 250ms;
