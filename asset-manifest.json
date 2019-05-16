@@ -1,15 +1,15 @@
 {
-  "main.css": "/portfolio/static/css/main.279f18cf.chunk.css",
-  "main.js": "/portfolio/static/js/main.8fe51ed2.chunk.js",
-  "main.js.map": "/portfolio/static/js/main.8fe51ed2.chunk.js.map",
+  "main.css": "/portfolio/static/css/main.f7ab9a7f.chunk.css",
+  "main.js": "/portfolio/static/js/main.ae9ca0d6.chunk.js",
+  "main.js.map": "/portfolio/static/js/main.ae9ca0d6.chunk.js.map",
   "static/js/1.d8c85726.chunk.js": "/portfolio/static/js/1.d8c85726.chunk.js",
   "static/js/1.d8c85726.chunk.js.map": "/portfolio/static/js/1.d8c85726.chunk.js.map",
   "runtime~main.js": "/portfolio/static/js/runtime~main.ee2a1003.js",
   "runtime~main.js.map": "/portfolio/static/js/runtime~main.ee2a1003.js.map",
-  "static/css/main.279f18cf.chunk.css.map": "/portfolio/static/css/main.279f18cf.chunk.css.map",
+  "static/css/main.f7ab9a7f.chunk.css.map": "/portfolio/static/css/main.f7ab9a7f.chunk.css.map",
   "static/media/Home.scss": "/portfolio/static/media/dog_profile.da7789ee.jpg",
   "static/media/Window.scss": "/portfolio/static/media/cartoon.0d4054f0.png",
   "index.html": "/portfolio/index.html",
-  "precache-manifest.276765551e8351111e1309f76d29f35d.js": "/portfolio/precache-manifest.276765551e8351111e1309f76d29f35d.js",
+  "precache-manifest.86f18071e040dfb0cab2cadb4aca9f3f.js": "/portfolio/precache-manifest.86f18071e040dfb0cab2cadb4aca9f3f.js",
   "service-worker.js": "/portfolio/service-worker.js"
 }
