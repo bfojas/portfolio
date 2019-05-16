@@ -55,14 +55,25 @@
       }
     }
   }
-  .icon-container {
-    position: relative;
+  .icon-wrap {
     display: flex;
     width: 100%;
     justify-content: center;
+  .icon-container {
+    position: relative;
+    display: flex;
+    width: 95%;
+    justify-content: center;
     margin-top: 15px;
     align-items: flex-start;
+    justify-items: center;
     flex-wrap: wrap;
+    // @media screen and (max-width: 1170px ) {
+    //   max-width: 800px;
+    //   div {
+    //     margin: 10%;
+    //   }
+    // }
 
     div {
       width: 110px;
@@ -70,7 +81,8 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      margin: 15px;
+    margin: 15px .5%;
+    // margin: 15px;
       font-weight: bold;
       font-size: 18px;
 
@@ -79,7 +91,26 @@
         font-weight: normal;
       }
     }
+
+    @media screen and (max-width: 1250px ) {
+      max-width: 800px;
+      div {
+        margin: 15px 1.8% 10px 1.8%;
+      }
+
+    
+    }
+    @media (max-width: 760px) {
+      // max-width: 500px;
+      div {
+        margin: 15px 1% 10px 1%;
+        height: auto;
+      }
+    
+    } 
+    
   }
+}
   .home-content {
     display: flex;
     flex-direction: column;
@@ -93,7 +124,7 @@
       text-align: left;
       width: auto;
       min-height: calc(100% - 505px);
-      font-size: 2.5vh;
+      font-size: calc(12px + 1.5vh);
 
       p {
         display: flex;
@@ -115,6 +146,7 @@
 
   @media (max-width: 1024px) {
     .head-content {
+      height: 300px;
       .profile-image {
         width: 200px;
         height: 200px;
@@ -133,12 +165,13 @@
       }
     }
 
-    .icon-container {
-      div {
-        margin: 15px;
-        height: auto;
-      }
-    }
+    // .icon-container {
+      
+    //   div {
+    //     margin: 15px 1.5% 10px .5%;
+    //     height: auto;
+    //   }
+    // }
 
     .home-content {
       font-size: 3vh;
@@ -154,7 +187,7 @@
   @media (max-width: 680px) {
     .head-content {
       flex-direction: column;
-      height: 450px;
+      height: 400px;
 
       .profile-image {
         left: 0;
@@ -166,7 +199,7 @@
       .head-info {
         left: 0;
         width: 95%;
-        height: 250px;
+        height: 200px;
         h1 {
           font-size: 36px;
         }
@@ -182,18 +215,29 @@
         flex-direction: column;
       }
     }
-
+    .icon-wrap{
     .icon-container {
       height: auto;
+      max-width: 500px;
 
       div {
         font-size: 14px;
         width: 60px;
+        margin: 10px calc(2px + 2%) ;
 
         i {
           font-size: 48px;
         }
       }
+
+      @media (max-width: 440px) {
+        max-width: 300px;
+
+        div {
+          margin: 10px calc(5px + 2%);
+        }
+      }
     }
+  }
   }
 }

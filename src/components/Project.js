@@ -79,24 +79,34 @@ class Project extends Component {
       projectLink
     } = this.props;
     const images =
-      image &&
-      image.map((val, i) => {
-        let top = imageHeight === "700px" ? "-350px" : "10px";
-        let left= imageHeight === "700px" ? `${i * 5 + 10 }px` : "109x"
-        return (
-          <div
-            key={i}
-            className="images"
-            onClick={() => this.openImages(i)}
-            style={{
-              backgroundImage: `url(${val})`,
-              height: imageHeight,
-              marginTop: i ? top : "10px",
-              marginLeft: left
-            }}
-          />
-        );
-      });
+      imageHeight === "700px" ? (
+        <div
+          key={0}
+          className="images"
+          onClick={() => this.openImages(0)}
+          style={{
+            backgroundImage: `url(${image[[0]]})`,
+            height: imageHeight
+          }}
+        />
+      ) : (
+        image &&
+        image.map((val, i) => {
+          return (
+            <div
+              key={i}
+              className="images"
+              onClick={() => this.openImages(i)}
+              style={{
+                backgroundImage: `url(${val})`,
+                height: imageHeight
+                // marginTop: i ? top : "10px",
+                // marginLeft: left
+              }}
+            />
+          );
+        })
+      );
     const links =
       projectLink &&
       projectLink.map((val, i) => {

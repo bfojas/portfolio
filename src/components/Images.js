@@ -103,7 +103,7 @@ export class Images extends Component {
           <div className="image-top-bar">
             <div className="image-name">Preview</div>
             <button className="close-button" onClick={close}>
-              X
+            <i className="fas fa-times"></i>
             </button>
           </div>
           <div

@@ -39,7 +39,7 @@
       font-size: 24px;
       font-weight: bold;
       padding: 10px;
-      
+
       p {
         margin: 5px 0;
       }
@@ -188,7 +188,7 @@
           }
 
           ul {
-            top: 23px;
+            top: 21px;
             left: -2px;
             position: absolute;
             padding: 0;
@@ -294,7 +294,7 @@
         ul {
           li {
             ul {
-              top: 29px;
+              top: 28px;
               width: 140px;
             }
 
@@ -315,6 +315,10 @@
         .minimize-button {
           height: 36px;
           width: 36px;
+
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
         }
       }
 

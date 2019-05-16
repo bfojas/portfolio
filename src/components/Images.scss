@@ -46,12 +46,17 @@
       }
 
       .close-button {
-        font-weight: bold;
+        // font-weight: bold;
         position: absolute;
+        text-align: center;
+        font-size: 16px;
         height: 26px;
         width: 26px;
         top: 0;
         right: 0;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
       }
     }
     .nav-container {
@@ -80,9 +85,8 @@
       }
 
       i:hover {
-        color: white;
-        text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
-          2px 2px 0 #000;
+        color: rgb(112, 105, 105);
+        -webkit-text-fill-color: rgb(112, 105, 105)
       }
     }
   }

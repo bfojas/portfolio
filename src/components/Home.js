@@ -57,7 +57,9 @@ const Home = props => {
           <h3>FULL-STACK WEB DEVELOPER</h3>
         </div>
       </div>
+      <div className="icon-wrap">
       <div className="icon-container">{mapIcons}</div>
+      </div>
       <div className="home-content">
         <div className="home-text">
           <p>

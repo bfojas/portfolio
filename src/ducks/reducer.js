@@ -119,9 +119,9 @@ export const projects = [
     name: "THE MATH CHALLENGE",
     imageHeight: "700px",
     image: [
-      // "https://s3.amazonaws.com/dev-fun-bucket/math1.png",
-      "https://s3.amazonaws.com/dev-fun-bucket/math2.png"
-      // "https://s3.amazonaws.com/dev-fun-bucket/math3.png"
+      "https://s3.amazonaws.com/dev-fun-bucket/math2.png",
+      "https://s3.amazonaws.com/dev-fun-bucket/math1.png",
+      "https://s3.amazonaws.com/dev-fun-bucket/math3.png"
     ],
     about: `It's a small math game for mobile. Players are shown two math problems and have a set amount of time to figure out which one has the highest answer. This was my first time creating a React-Native app without expo.`,
     projectLink: [
@@ -135,7 +135,7 @@ export const projects = [
       }
     ],
     techUsed:
-      "ReactJs  |  Express/NodeJs  |  JavaScript  |  HTML  |  CSS/SASS  |  Redux  |  Web Sockets  |  PostgreSQL  |  Axios  |  Nginx  |  Digital Ocean  | Amazon AWS  |  Stripe  |   Auth0  |  ChartJs  |  React-Router"
+      "React-Native  |  React-Native CLI  |  JavaScript  |  HTML  |  CSS"
   }
 ];
 
