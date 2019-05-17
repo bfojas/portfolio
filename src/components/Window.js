@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import { withRouter, Link } from "react-router-dom";
 import Home from "./Home";
 import Project from "./Project";
-
-import "./Window.scss";
 import AllProjects from "./AllProjects";
+import "./Window.scss";
 
 class Window extends Component {
   constructor() {
@@ -124,7 +123,7 @@ class Window extends Component {
       { name: "Road Trip", route: "roadTrip" },
       { name: "Math Challenge", route: "mathChallenge" },
       { name: "Card Fun", route: "cardFun" },
-      { name: "Ohm's Law", route: "ohmsLaw" },
+      { name: "Ohm's Law", route: "ohmsLaw" }
     ];
 
     const portfolioStyle = portfolio
@@ -212,7 +211,9 @@ class Window extends Component {
                 Projects
                 <ul className="portfolio-menu" style={portfolioStyle}>
                   <li
-                    style={{borderBottom: portfolio ? "1px solid black" : "0"}}
+                    style={{
+                      borderBottom: portfolio ? "1px solid black" : "0"
+                    }}
                     key="all"
                     onClick={() => {
                       this.props.history.push(`/project`);

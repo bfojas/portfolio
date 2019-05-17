@@ -100,8 +100,6 @@ class Project extends Component {
               style={{
                 backgroundImage: `url(${val})`,
                 height: imageHeight
-                // marginTop: i ? top : "10px",
-                // marginLeft: left
               }}
             />
           );

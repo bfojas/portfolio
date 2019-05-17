@@ -37,7 +37,6 @@
       left: 2px;
       height: 26px;
       width: calc(100% - 4px);
-      // background-color: 
 
       .image-name {
         position: absolute;
@@ -46,7 +45,6 @@
       }
 
       .close-button {
-        // font-weight: bold;
         position: absolute;
         text-align: center;
         font-size: 16px;
@@ -71,10 +69,9 @@
         background-color: rgba(255, 255, 255, 0);
         -webkit-text-fill-color: rgba(204, 204, 204, 0.476);
         -webkit-text-stroke-width: 2px;
-      -webkit-text-stroke-color: black;
+        -webkit-text-stroke-color: black;
         z-index: 750;
       }
-      
 
       .fa-caret-left {
         left: 15px;
@@ -86,18 +83,17 @@
 
       i:hover {
         color: rgb(112, 105, 105);
-        -webkit-text-fill-color: rgb(112, 105, 105)
+        -webkit-text-fill-color: rgb(112, 105, 105);
       }
     }
   }
+
   .image-content {
     margin: 5px;
     overflow: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    // height: calc(100% - 38px);
-    // width: calc(100% - 14px);
     position: relative;
     top: 2px;
     left: 2px;

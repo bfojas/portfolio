@@ -13,8 +13,6 @@ const Head = (props) => {
     :
     "head-reverse"
 
-    
-    
   return (
     <div className={`head-content ${direction}`}>
       <div className="profile-image" style={{backgroundImage}}/>

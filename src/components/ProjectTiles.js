@@ -1,7 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import "./ProjectTiles.scss";
-import Project from "./Project";
 
 const ProjectTiles =  props  => {
     const {val} = props

@@ -11,7 +11,7 @@ export class Images extends Component {
       height: `calc(100% - 38px)`,
       width: `calc(100% - 14px)`,
       left: "3px",
-      zIndex: "500",
+      zIndex: "500"
     };
   }
 
@@ -36,7 +36,7 @@ export class Images extends Component {
     this.setState({
       width: "0",
       left: "calc(100% - 14px)",
-      zIndex: "-900",
+      zIndex: "-900"
     });
     if (position === 0) {
       this.setState({
@@ -51,7 +51,7 @@ export class Images extends Component {
     setTimeout(() => {
       this.setState({
         zIndex: "500",
-        width: `calc(100% - 14px)`,
+        width: `calc(100% - 14px)`
       });
     }, 500);
   };
@@ -86,13 +86,7 @@ export class Images extends Component {
   };
 
   render() {
-    const {
-      position,
-      width,
-      height,
-      left,
-      zIndex,
-    } = this.state;
+    const { position, width, height, left, zIndex } = this.state;
     const { image, close, type } = this.props;
     const imageHidden = type === "image" ? "flex" : "none";
     const videoHidden = type === "video" ? "flex" : "none";
@@ -103,7 +97,7 @@ export class Images extends Component {
           <div className="image-top-bar">
             <div className="image-name">Preview</div>
             <button className="close-button" onClick={close}>
-            <i className="fas fa-times"></i>
+              <i className="fas fa-times" />
             </button>
           </div>
           <div
@@ -114,7 +108,7 @@ export class Images extends Component {
               height: height,
               width: width,
               left: left,
-              zIndex: zIndex,
+              zIndex: zIndex
             }}
           />
           {type === "image" && image.length > 1 ? (

@@ -1,8 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import "./Home.scss";
-import AllProjects from "./AllProjects";
-import Head from "./Head"
+import Head from "./Head";
 
 const Home = props => {
   let iconsList = [
@@ -10,16 +9,13 @@ const Home = props => {
     { icon: "fab fa-node-js", text: "NodeJs/ Express" },
     { icon: "devicon-postgresql-plain", text: "PostgreSQL" },
     { icon: "fab fa-js-square", text: "JavaScript ES6" },
-
     { icon: "fab fa-html5", text: "HTML5" },
-    // { icon: "fab fa-css3-alt", text: "CSS3"},
     { icon: "fab fa-sass", text: "CSS/ SASS" },
     {
       icon: "https://s3.amazonaws.com/dev-fun-bucket/reduxLogo.png",
       text: "Redux",
       type: "image"
     },
-    // { icon: "devicon-amazonwebservices-original", text: "Amazon Web Services"},
     {
       icon: "https://s3.amazonaws.com/dev-fun-bucket/socket_icon.png",
       text: "Socket.io",
@@ -49,14 +45,7 @@ const Home = props => {
   let mapIcons = iconsList.map(iconMapper);
   return (
     <div className="home-container">
-      {/* <div className="head-content">
-        <div className="profile-image" />
-        <div className="head-info">
-          <h1>BRADLEY FOJAS</h1>
-          <h3>FULL-STACK WEB DEVELOPER</h3>
-        </div>
-      </div> */}
-    <Head />
+      <Head />
       <div className="icon-wrap">
         <div className="icon-container">{mapIcons}</div>
       </div>
@@ -82,9 +71,6 @@ const Home = props => {
             Bradley and his projects.
           </p>
         </div>
-        {/* <div className="home-images">
-          <AllProjects/>
-        </div> */}
       </div>
     </div>
   );

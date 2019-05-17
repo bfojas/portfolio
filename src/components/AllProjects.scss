@@ -6,7 +6,6 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  overflow: scroll;
   height: auto;
 
   .selector-container {
@@ -40,7 +39,7 @@
           color: $primary-grey;
         }
         @media screen and (min-width: 1200px) {
-             font-size: 36px;
+          font-size: 36px;
         }
       }
 
@@ -58,6 +57,5 @@
     width: 100%;
     padding: 20px;
     border-radius: 10px;
-
   }
 }

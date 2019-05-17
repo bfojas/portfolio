@@ -2,7 +2,6 @@
 .project-image {
   background-size: contain;
   border-radius: 10px;
-//   border: black solid 2px;
   margin: calc(4px + 1vw);
   background-repeat: no-repeat;
   background-position: center;
@@ -10,39 +9,35 @@
   position: relative;
 
   .hover-cover {
-      display: none;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      background-color: rgba(88, 85, 85, 0.76);
-      color: white;
-      border-radius: 10px;
-      border: $primary-blue solid 5px;
-      font-size: calc(16px + 1.25vw)
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(88, 85, 85, 0.76);
+    color: white;
+    border-radius: 10px;
+    border: $primary-blue solid 5px;
+    font-size: calc(16px + 1.25vw);
+    padding: 10px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+      1px 1px 0 #000;
   }
 }
 
 .project-image::before {
-    display: block;
-    border: black solid 3px;
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    border-radius: 10px;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+  display: block;
+  border: black solid 3px;
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
-
-// .project-image::before:hover {
-//     border: $primary-blue solid 10px;
-//     border-radius: 10px
-// }
-
-
 
 .web {
   height: 255px;
@@ -57,30 +52,28 @@
 }
 
 .project-image:hover {
-
-    .hover-cover {
-        display: flex;
-    }
+  .hover-cover {
+    display: flex;
+  }
 }
 
 @media (max-width: 680px), (max-width: 815px) and (orientation: landscape) {
-    .project-image{
-        .hover-cover {
-            display: flex;
-            background-color: rgba(68, 68, 68, 0.521);
-            border: 0;
-        }
+  .project-image {
+    .hover-cover {
+      display: flex;
+      background-color: rgba(68, 68, 68, 0.521);
+      border: 0;
+      font-size: calc(14px + 1.25vw);
     }
-    
-    .web {
-        width: 250px;
-        height: 145px;
-    }
+  }
 
-    .mobile {
-        height: 225px;
-        width: 120px;
-    }
+  .web {
+    width: 250px;
+    height: 145px;
+  }
+
+  .mobile {
+    height: 255px;
+    width: 130px;
+  }
 }
-
-
