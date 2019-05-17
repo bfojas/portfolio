@@ -1,3 +1,5 @@
+@import "../_variables.scss";
+$head-height: 250px;
 .project-container {
   position: absolute;
   display: flex;
@@ -13,7 +15,7 @@
     display: flex;
     height: 300px;
     width: 100%;
-    background-color: #164e98;
+    background-color: $primary-blue;
     background-size: cover;
     background-position: 50% 30%;
     justify-content: center;
@@ -29,7 +31,7 @@
     position: relative;
     display: flex;
     flex-direction: row;
-    height: calc(100% - 300px);
+    height: calc(100% - #{$head-height});
     width: 100%;
 
     .image-box {
@@ -51,14 +53,16 @@
     }
 
     .summary-box {
+      top: 300px;
       position: relative;
       width: calc(100% - 500px);
       padding-top: 15px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       font-size: calc(20px + 1.5vh);
-      color: #164e98;
+      color: $primary-blue;
 
       div {
         margin-bottom: 15px;
@@ -83,7 +87,7 @@
         }
 
         i {
-          color: #164e98;
+          color: $primary-blue;
           font-size: 48px;
           margin: 5px;
           cursor: pointer;
@@ -135,6 +139,7 @@
       }
 
       .summary-box {
+        top: 0;
         margin-top: 10px;
         width: 90%;
         height: auto;

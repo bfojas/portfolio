@@ -1,3 +1,5 @@
+@import "../_variables.scss";
+
 .home-container {
   width: 100%;
   height: auto;
@@ -7,54 +9,54 @@
   justify-content: center;
   position: relative;
   background-color: #f5f9f6;
-  color: #164e98;
+  color: $primary-blue;
   // cursor: default;
 
-  .head-content {
-    display: flex;
-    position: relative;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    height: 350px;
-    width: 100%;
-    background-color: #164e98;
-    color: white;
+  // .head-content {
+  //   display: flex;
+  //   position: relative;
+  //   flex-direction: row;
+  //   align-items: center;
+  //   justify-content: flex-start;
+  //   height: 350px;
+  //   width: 100%;
+  //   background-color: #164e98;
+  //   color: white;
 
-    .profile-image {
-      position: relative;
-      left: 25px;
-      display: flex;
-      height: 300px;
-      width: 300px;
-      border-radius: 50%;
-      border: solid 8px rgba(168, 167, 167, 0.714);
-      background-image: url("../images/dog_profile.jpg");
-      background-size: cover;
-    }
+  //   .profile-image {
+  //     position: relative;
+  //     left: 25px;
+  //     display: flex;
+  //     height: 300px;
+  //     width: 300px;
+  //     border-radius: 50%;
+  //     border: solid 8px rgba(168, 167, 167, 0.714);
+  //     background-image: url("../images/dog_profile.jpg");
+  //     background-size: cover;
+  //   }
 
-    .head-info {
-      height: 100%;
-      position: relative;
-      left: 25px;
-      width: calc(100% - 342px);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+  //   .head-info {
+  //     height: 100%;
+  //     position: relative;
+  //     left: 25px;
+  //     width: calc(100% - 342px);
+  //     display: flex;
+  //     flex-direction: column;
+  //     justify-content: center;
+  //     align-items: center;
 
-      h1 {
-        font-size: 100px;
-        font-weight: bold;
-        margin: 0;
-      }
+  //     h1 {
+  //       font-size: 100px;
+  //       font-weight: bold;
+  //       margin: 0;
+  //     }
 
-      h3 {
-        font-size: 36px;
-        margin: 10px;
-      }
-    }
-  }
+  //     h3 {
+  //       font-size: 36px;
+  //       margin: 10px;
+  //     }
+  //   }
+  // }
   .icon-wrap {
     display: flex;
     width: 100%;
@@ -145,25 +147,25 @@
   }
 
   @media (max-width: 1024px) {
-    .head-content {
-      height: 300px;
-      .profile-image {
-        width: 200px;
-        height: 200px;
-      }
+    // .head-content {
+    //   height: 300px;
+    //   .profile-image {
+    //     width: 200px;
+    //     height: 200px;
+    //   }
 
-      .head-info {
-        width: calc(95% - 200px);
-        height: 250px;
-        h1 {
-          font-size: 7vw;
-        }
+    //   .head-info {
+    //     width: calc(95% - 200px);
+    //     height: 250px;
+    //     h1 {
+    //       font-size: 7vw;
+    //     }
 
-        h3 {
-          font-size: 3.5vw;
-        }
-      }
-    }
+    //     h3 {
+    //       font-size: 3.5vw;
+    //     }
+    //   }
+    // }
 
     // .icon-container {
       
@@ -185,30 +187,30 @@
   }
 
   @media (max-width: 680px) {
-    .head-content {
-      flex-direction: column;
-      height: 400px;
+    // .head-content {
+    //   flex-direction: column;
+    //   height: 400px;
 
-      .profile-image {
-        left: 0;
-        top: 25px;
-        width: 200px;
-        height: 200px;
-      }
+    //   .profile-image {
+    //     left: 0;
+    //     top: 25px;
+    //     width: 200px;
+    //     height: 200px;
+    //   }
 
-      .head-info {
-        left: 0;
-        width: 95%;
-        height: 200px;
-        h1 {
-          font-size: 36px;
-        }
+    //   .head-info {
+    //     left: 0;
+    //     width: 95%;
+    //     height: 200px;
+    //     h1 {
+    //       font-size: 36px;
+    //     }
 
-        h3 {
-          font-size: 24px;
-        }
-      }
-    }
+    //     h3 {
+    //       font-size: 24px;
+    //     }
+    //   }
+    // }
 
     .home-content {
       .home-images {

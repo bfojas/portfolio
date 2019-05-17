@@ -1,33 +1,63 @@
-.project-image,
-.project-image-mobile {
-  background-size: cover;
-  border-radius: 10px;
-  margin-right: 15px;
-  border: black solid 2px;
-}
+@import "../variables.scss";
 
-.project-image {
-  height: 300px;
-  width: 450px;
-  display: flex;
-}
+.all-container {
+  display: block;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow: scroll;
+  height: auto;
 
-.project-image-mobile {
-  height: 160px;
-  width: 240px;
-  display: none;
-}
-
-.project-image-mobile:hover {
-  margin-top: 0;
-  width: 275px;
-}
-
-@media (max-width: 680px) {
-  .project-image {
-    display: none;
-  }
-  .project-image-mobile {
+  .selector-container {
+    width: 100%;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .selector-tabs {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      align-items: center;
+      height: calc(36px + 7.5vw);
+      max-height: 100px;
+      background-color: $primary-grey;
+      border-left: 1px solid black;
+      border-right: 1px solid black;
+
+      .selector {
+        display: flex;
+        width: calc(60px + 10vw);
+        height: 80%;
+        align-items: center;
+        justify-content: center;
+        font-size: calc(16px + 1.5vw);
+        border-radius: 10px 10px 0 0;
+
+        .break {
+          color: $primary-grey;
+        }
+        @media screen and (min-width: 1200px) {
+             font-size: 36px;
+        }
+      }
+
+      .active {
+        border-bottom: solid 5px $primary-blue;
+      }
+    }
+  }
+
+  .image-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+
   }
 }

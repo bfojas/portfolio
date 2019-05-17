@@ -1,40 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 import { projects } from "../ducks/reducer";
-import "./AllProjects.scss"
-
+import Head from "./Head";
+import ProjectTiles from "./ProjectTiles";
+import "./AllProjects.scss";
 
 const AllProjects = props => {
-    let imageMapper = (val, i) => {
-        return (
-          <React.Fragment>
-            <div
-              className="project-image"
-              style={{ 
-                backgroundImage: `url(${val.image[0]})`,
-                marginLeft: i ? `-100px` : 0,
-                marginTop: `${i * 5}px`}}
-            />
-    
-            <div
-              className="project-image-mobile"
-              style={{ 
-                backgroundImage: `url(${val.image[0]})`,
-                marginTop: i ? `-100px` : 0,
-                marginLeft: `${i * 5}px`}}
-            />
-          </React.Fragment>
-        );
-      };
+  const [selected, setSelected] = useState("web");
 
-  let mapImages = projects.slice().reverse().map(imageMapper);
+  let webProjects = [];
+  let mobileProjects = [];
 
-    return (
-        <React.Fragment>
-            {mapImages}
-            
-        </React.Fragment>
-    )
+  projects.forEach(val => {
+    val.imageHeight === "250px"
+      ? webProjects.push(val)
+      : mobileProjects.push(val);
+  });
 
-}
+  let imageMapper = (val, i) => {
+    return <ProjectTiles val={val} />;
+  };
 
-export default AllProjects
+  let selector = tab => {
+    setSelected(tab);
+  };
+
+  let webImages = webProjects.map(imageMapper);
+  let mobileImages = mobileProjects.map(imageMapper);
+
+  return (
+    <div className="all-container">
+      <Head />
+      <div className="selector-container">
+        <div className="selector-tabs">
+          <p
+            className={`selector ${selected === "web" ? "active" : null}`}
+            onClick={() => selector("web")}
+          >
+            <p className="break">|</p>Web Projects<p className="break">..</p>
+          </p>
+          <p
+            className={`selector ${selected === "mobile" ? "active" : null}`}
+            onClick={() => selector("mobile")}
+          >
+            Mobile Projects
+          </p>
+        </div>
+        <div className="image-container">
+          {selected === "web" ? webImages : mobileImages}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default AllProjects;

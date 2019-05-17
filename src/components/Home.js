@@ -1,7 +1,8 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import "./Home.scss";
-import AllProjects from "./AllProjects"
+import AllProjects from "./AllProjects";
+import Head from "./Head"
 
 const Home = props => {
   let iconsList = [
@@ -45,20 +46,19 @@ const Home = props => {
     );
   };
 
-  
-
   let mapIcons = iconsList.map(iconMapper);
   return (
     <div className="home-container">
-      <div className="head-content">
+      {/* <div className="head-content">
         <div className="profile-image" />
         <div className="head-info">
           <h1>BRADLEY FOJAS</h1>
           <h3>FULL-STACK WEB DEVELOPER</h3>
         </div>
-      </div>
+      </div> */}
+    <Head />
       <div className="icon-wrap">
-      <div className="icon-container">{mapIcons}</div>
+        <div className="icon-container">{mapIcons}</div>
       </div>
       <div className="home-content">
         <div className="home-text">

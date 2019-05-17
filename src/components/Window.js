@@ -4,6 +4,7 @@ import Home from "./Home";
 import Project from "./Project";
 
 import "./Window.scss";
+import AllProjects from "./AllProjects";
 
 class Window extends Component {
   constructor() {
@@ -121,16 +122,14 @@ class Window extends Component {
     const { about, portfolio, email } = this.state;
     const portfolioArray = [
       { name: "Road Trip", route: "roadTrip" },
-      { name: "Math Challenge", route: "mathChallenge"},
+      { name: "Math Challenge", route: "mathChallenge" },
       { name: "Card Fun", route: "cardFun" },
       { name: "Ohm's Law", route: "ohmsLaw" },
-      { name: "Blackjack", route: "blackjack" },
-      { name: "Windows Clone", route: "portfolio" }
     ];
-    const portfolioStyle = portfolio
-      ? { height: `${portfolioArray.length * 30}px` }
-      : { height: 0, border: 0, fontSize: 0 };
 
+    const portfolioStyle = portfolio
+      ? { height: `${(portfolioArray.length + 1) * 30}px` }
+      : { height: 0, border: 0, fontSize: 0 };
     const aboutStyle = about
       ? { height: "100px" }
       : { height: 0, border: 0, fontSize: 0 };
@@ -169,8 +168,10 @@ class Window extends Component {
           <div className="bradley" />
           <div className="bubble" onClick={this.changePaper}>
             <span>Hi, I'm a Web Developer! </span>
-            <p><span className="mobile-span"> Double-</span>
-            Click the icon in the corner to learn more about me.</p>
+            <p>
+              <span className="mobile-span"> Double-</span>
+              Click the icon in the corner to learn more about me.
+            </p>
             <div className="change-wall">Change the Wallpaper?</div>
           </div>
         </div>
@@ -210,6 +211,15 @@ class Window extends Component {
               <li id="portfolio" onClick={e => this.menuRender(e)}>
                 Projects
                 <ul className="portfolio-menu" style={portfolioStyle}>
+                  <li
+                    style={{borderBottom: portfolio ? "1px solid black" : "0"}}
+                    key="all"
+                    onClick={() => {
+                      this.props.history.push(`/project`);
+                    }}
+                  >
+                    View All
+                  </li>
                   {portfolioMap}
                 </ul>
               </li>
@@ -258,6 +268,7 @@ class Window extends Component {
           <div className="route-container">
             {this.props.match.path === "/home" && <Home />}
             {this.props.match.path === "/project/:id" && <Project />}
+            {this.props.match.path === "/project" && <AllProjects />}
           </div>
         </div>
       </div>

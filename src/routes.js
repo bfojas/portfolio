@@ -8,6 +8,7 @@ export default (
     <Switch>
         <Route path="/home" component={Window} />
         <Route path="/project/:id" component={Window} />
+        <Route path="/project" component={Window} />
         <Route path="/" component={Window} />
     </Switch>
 
