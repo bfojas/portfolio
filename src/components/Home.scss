@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  background-color: #f5f9f6;
+  background-color: $background;
   color: $primary-blue;
 
   .icon-wrap {
@@ -101,7 +101,7 @@
     }
   }
 
-  @media (max-width: 680px) {
+  @media #{$phone-media} {
     .home-content {
       .home-images {
         flex-direction: column;

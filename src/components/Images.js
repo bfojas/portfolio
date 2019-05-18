@@ -8,7 +8,6 @@ export class Images extends Component {
     super(props);
     this.state = {
       position: 0,
-      height: `calc(100% - 38px)`,
       width: `calc(100% - 14px)`,
       left: "3px",
       zIndex: "500"
@@ -22,6 +21,10 @@ export class Images extends Component {
     if (this.props.type === "image") {
       this.startInterval();
     }
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.startInterval)
   }
 
   startInterval = () => {
@@ -86,8 +89,8 @@ export class Images extends Component {
   };
 
   render() {
-    const { position, width, height, left, zIndex } = this.state;
-    const { image, close, type } = this.props;
+    const { position, width, left, zIndex } = this.state;
+    const { image, close, type, name } = this.props;
     const imageHidden = type === "image" ? "flex" : "none";
     const videoHidden = type === "video" ? "flex" : "none";
     return (
@@ -95,7 +98,7 @@ export class Images extends Component {
         <div className="image-cover" onClick={close} />
         <div className="image-window">
           <div className="image-top-bar">
-            <div className="image-name">Preview</div>
+            <div className="image-name">{name} Preview</div>
             <button className="close-button" onClick={close}>
               <i className="fas fa-times" />
             </button>
@@ -105,7 +108,6 @@ export class Images extends Component {
             style={{
               backgroundImage: `url(${image[position]})`,
               display: imageHidden,
-              height: height,
               width: width,
               left: left,
               zIndex: zIndex
@@ -137,6 +139,7 @@ export class Images extends Component {
 
 const mapStateToProps = state => {
   return {
+    name: state.name,
     image: state.image,
     imageHeight: state.imageHeight
   };

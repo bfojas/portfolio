@@ -73,7 +73,7 @@
   }
 }
 
-@media (max-width: 680px) {
+@media #{$phone-media} {
   .head-content {
     height: 125px;
     justify-content: center;

@@ -71,7 +71,7 @@ class Project extends Component {
   render() {
     const { imageModal, imageStart, modalType } = this.state;
     const {
-      name,
+      title,
       image,
       imageHeight,
       about,
@@ -122,7 +122,7 @@ class Project extends Component {
       });
     return (
       <div className="project-container">
-        <div className="project-head">{`${name} PROJECT`}</div>
+        <div className="project-head">{`${title} PROJECT`}</div>
         <div className="project-body">
           <div className="image-box">{images}</div>
           <div className="summary-box">
@@ -144,6 +144,7 @@ class Project extends Component {
 const mapStateToProps = state => {
   return {
     name: state.name,
+    title: state.title,
     image: state.image,
     imageHeight: state.imageHeight,
     about: state.about,

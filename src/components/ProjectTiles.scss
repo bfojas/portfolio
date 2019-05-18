@@ -9,13 +9,15 @@
   position: relative;
 
   .hover-cover {
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
     height: 100%;
     width: 100%;
     background-color: rgba(88, 85, 85, 0.76);
+    opacity: 0;
+    transition: all 400ms;
     color: white;
     border-radius: 10px;
     border: $primary-blue solid 5px;
@@ -53,14 +55,14 @@
 
 .project-image:hover {
   .hover-cover {
-    display: flex;
+    opacity: 1;
   }
 }
 
-@media (max-width: 680px), (max-width: 815px) and (orientation: landscape) {
+@media #{$phone-media}, (max-width: 815px) and (orientation: landscape) {
   .project-image {
     .hover-cover {
-      display: flex;
+      opacity: 1;
       background-color: rgba(68, 68, 68, 0.521);
       border: 0;
       font-size: calc(14px + 1.25vw);

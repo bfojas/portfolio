@@ -121,7 +121,7 @@
     height: 95%;
     width: 95%;
     max-width: 2000px;
-    background-color: #f5f9f6;
+    background-color: $background;
     border: 2px solid black;
 
     .window-top {
@@ -324,7 +324,7 @@
     }
   }
 
-  @media screen and (max-width: 680px) and (orientation: portrait) {
+  @media #{$phone-media} and (orientation: portrait) {
     .pic-contain {
       flex-direction: column-reverse;
       height: 85%;

@@ -1,14 +1,18 @@
 const initialState = {
   name: "",
+  title: "",
   image: "",
   about: "",
-  techUsed: ""
+  projectLink: "",
+  techUsed: "",
+  route:""
 };
 
 
 export const projects = [
   {
-    name: "THE ROAD TRIP",
+    name: "Road Trip",
+    title: "THE ROAD TRIP",
     imageHeight: "250px",
     image: [
       "https://s3.amazonaws.com/dev-fun-bucket/road_trip1.png",
@@ -33,7 +37,8 @@ export const projects = [
     route: "roadTrip"
   },
   {
-    name: "THE CARD GAME",
+    name: "Card Fun",
+    title: "THE CARD GAME",
     imageHeight: "250px",
     image: [
       "https://s3.amazonaws.com/dev-fun-bucket/card_fun1.png",
@@ -56,7 +61,8 @@ export const projects = [
     route: "cardFun"
   },
   {
-    name: "THE BLACKJACK",
+    name: "Blackjack",
+    title: "THE BLACKJACK",
     imageHeight: "250px",
     image: ["https://s3.amazonaws.com/dev-fun-bucket/blackjack.png"],
     about:
@@ -76,7 +82,8 @@ export const projects = [
     route: "blackjack"
   },
   {
-    name: "THE OHM'S LAW",
+    name: "Ohm's Law Calc",
+    title: "THE OHM'S LAW",
     imageHeight: "700px",
     image: [
       "https://lh3.googleusercontent.com/daCMT5ioYMFVZgY0ypIsYt14nHg1IAUdtOYvp3gyAjqc_qxo9c5PvhiXB0lFvo4qprLe=w400"
@@ -93,11 +100,12 @@ export const projects = [
         linkType: "fab fa-github"
       }
     ],
-    techUsed: "React-Native  |  Expo  |  JavaScript  |  HTML  |  CSS",
+    techUsed: "React-Native  |  Expo  |  JavaScript  |  CSS",
     route: "ohmsLaw"
   },
   {
-    name: "THE UH.. THIS THING",
+    name: "My Portfolio",
+    title: "THE UH.. THIS THING",
     imageHeight: "250px",
     image: [
       "https://s3.amazonaws.com/dev-fun-bucket/portfolio3.png",
@@ -121,7 +129,8 @@ export const projects = [
       route: "portfolio"
   },
   {
-    name: "THE MATH CHALLENGE",
+    name: "Math Challenge",
+    title: "THE MATH CHALLENGE",
     imageHeight: "700px",
     image: [
       "https://s3.amazonaws.com/dev-fun-bucket/math2.png",
@@ -140,7 +149,7 @@ export const projects = [
       }
     ],
     techUsed:
-      "React-Native  |  React-Native CLI  |  JavaScript  |  HTML  |  CSS",
+      "React-Native-CLI  |  Gradle  |  JavaScript  |  CSS",
       route: "mathChallenge"
   }
 ];
