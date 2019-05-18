@@ -59,6 +59,11 @@
         -moz-appearance: none;
         appearance: none;
       } //.close-button
+
+      .close-button:hover {
+        color: white;
+        background-color: red;
+      }
     } //.image-top-bar
 
     .nav-container {

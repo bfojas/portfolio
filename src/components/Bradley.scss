@@ -1,0 +1,109 @@
+@import "../_variables.scss";
+
+.pic-contain {
+  position: absolute;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  align-items: center;
+  bottom: 0;
+  right: 0;
+  height: 65%;
+  width: 60%;
+
+  .bubble {
+    @extend .flex-center;
+    position: relative;
+    flex-direction: column;
+    background: rgb(178, 229, 236);
+    // height: 75%;
+    width: 40%;
+    max-width: 300px;
+    max-height: 300px;
+    background-size: cover;
+    border-radius: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px;
+
+    p {
+      margin: 5px 0;
+    }
+
+    .change-wall {
+      position: absolute;
+      display: none;
+    } //.change-wall
+  } //.bubble
+
+  .bubble:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-left-color: rgb(178, 229, 236);
+    border-right: 0;
+    margin-top: -20px;
+    margin-right: -20px;
+  } //.bubble:after (arrow)
+
+  .bradley {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background: url("../images/cartoon.png") no-repeat center bottom;
+    background-size: contain;
+  } //.bradley
+
+  .bubble:hover {
+    color: rgb(178, 229, 236);
+    cursor: pointer;
+    .change-wall {
+      @extend .flex-center;
+      height: 90%;
+      width: 90%;
+      color: black;
+    } //:hover .change-wall
+  } //.bubble:hover
+
+  @media (max-width: 1050px) {
+    .bubble {
+      font-size: 20px;
+
+      .mobile-span {
+        display: none;
+      }
+    }
+  } //@media .pic-contain (iPad Pro)
+
+  @media #{$phone-media} and (orientation: portrait) {
+    flex-direction: column-reverse;
+    height: 85%;
+    width: 65%;
+
+    .bubble {
+      width: 85%;
+      margin-bottom: 15px;
+    } //@media (phone) .bubble
+
+    .bubble:after {
+      top: auto;
+      left: 25%;
+      bottom: 0;
+      border: 20px solid transparent;
+      border-top-color: rgb(178, 229, 236);
+      border-bottom: 0;
+      border-right: 0;
+      margin-left: -10px;
+      margin-bottom: -20px;
+    } //@media (phone) .bubble:after (arrow)
+
+    .bradley {
+      width: 100%;
+      height: 50%;
+    }
+  } //@media (phone) .pic-contain
+} //.pic-contain
