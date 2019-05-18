@@ -13,15 +13,13 @@ $head-mobile: 150px;
   background-color: $background;
 
   .project-head {
+    @extend .flex-center;
     position: absolute;
-    display: flex;
     height: $head-height;
     width: 100%;
     background-color: $primary-blue;
     background-size: cover;
     background-position: 50% 30%;
-    justify-content: center;
-    align-items: center;
     color: $background;
     padding: 10px;
     font-size: 64px;
@@ -57,14 +55,11 @@ $head-mobile: 150px;
     }
 
     .summary-box {
-      // top: 300px;
+      @extend .flex-center;
       position: relative;
       width: calc(100% - 500px);
       padding-top: 15px;
-      display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
       font-size: calc(20px + 1.5vh);
       color: $primary-blue;
 

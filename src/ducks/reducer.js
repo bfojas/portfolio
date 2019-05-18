@@ -33,7 +33,7 @@ export const projects = [
       }
     ],
     techUsed:
-      "ReactJs  |  Express/NodeJs  |  JavaScript  |  HTML  |  CSS/SASS  |  Redux  |  PostgreSQL  |  Axios  |  Amazon AWS  |  React-Router",
+      "ReactJs  |  Express/NodeJs  |  JavaScript  |  HTML  |  CSS/SASS  |  Redux  |  PostgreSQL  |  Axios  |  Amazon S3  |  React-Router",
     route: "roadTrip"
   },
   {
@@ -57,7 +57,7 @@ export const projects = [
       }
     ],
     techUsed:
-      "ReactJs  |  Express/NodeJs  |  JavaScript  |  HTML  |  CSS/SASS  |  Redux  |  Web Sockets  |  PostgreSQL  |  Axios  |  Nginx  |  Digital Ocean  | Amazon AWS  |  Stripe  |   Auth0  |  ChartJs  |  React-Router",
+      "ReactJs  |  Express/NodeJs  |  JavaScript  |  HTML  |  CSS/SASS  |  Redux  |  Web Sockets  |  PostgreSQL  |  Axios  |  Nginx  |  Digital Ocean  | Amazon S3  |  Stripe  |   Auth0  |  ChartJs  |  React-Router",
     route: "cardFun"
   },
   {
@@ -125,7 +125,7 @@ export const projects = [
       }
     ],
     techUsed:
-      "ReactJS  |  Redux  |  Amazon AWS  |  React-Router  |  JavaScript  |  HTML  |  CSS/SASS  |  Github Pages",
+      "ReactJS  |  Redux  |  Amazon S3  |  React-Router  |  JavaScript  |  HTML  |  CSS/SASS  |  Github Pages",
       route: "portfolio"
   },
   {

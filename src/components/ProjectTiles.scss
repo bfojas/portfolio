@@ -9,9 +9,7 @@
   position: relative;
 
   .hover-cover {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @extend .flex-center;
     position: absolute;
     height: 100%;
     width: 100%;
@@ -59,7 +57,7 @@
   }
 }
 
-@media #{$phone-media}, (max-width: 815px) and (orientation: landscape) {
+@media #{$phone-media}, #{$phone-rotate-media} {
   .project-image {
     .hover-cover {
       opacity: 1;

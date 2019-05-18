@@ -143,7 +143,6 @@ class Project extends Component {
 
 const mapStateToProps = state => {
   return {
-    name: state.name,
     title: state.title,
     image: state.image,
     imageHeight: state.imageHeight,

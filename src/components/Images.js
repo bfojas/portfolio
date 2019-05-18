@@ -8,8 +8,8 @@ export class Images extends Component {
     super(props);
     this.state = {
       position: 0,
-      width: `calc(100% - 14px)`,
-      left: "3px",
+      width: `calc(100% - 10px)`,
+      left: "5px",
       zIndex: "500"
     };
   }
@@ -38,7 +38,7 @@ export class Images extends Component {
     const { image } = this.props;
     this.setState({
       width: "0",
-      left: "calc(100% - 14px)",
+      left: "calc(100% - 10px)",
       zIndex: "-900"
     });
     if (position === 0) {
@@ -50,11 +50,11 @@ export class Images extends Component {
         position: position - 1
       });
     }
-    setTimeout(() => this.setState({ left: "3px" }), 250);
+    setTimeout(() => this.setState({ left: "5px" }), 250);
     setTimeout(() => {
       this.setState({
         zIndex: "500",
-        width: `calc(100% - 14px)`
+        width: `calc(100% - 10px)`
       });
     }, 500);
   };
@@ -64,7 +64,7 @@ export class Images extends Component {
     const { image } = this.props;
     this.setState({
       width: "0",
-      left: "3px",
+      left: "5px",
       zIndex: "-900",
       backgroundSize: "cover"
     });
@@ -77,13 +77,13 @@ export class Images extends Component {
         position: position + 1
       });
     }
-    setTimeout(() => this.setState({ left: "calc(100% - 14px)" }), 250);
+    setTimeout(() => this.setState({ left: "calc(100% - 10px)" }), 250);
     setTimeout(() => {
       this.setState({
         zIndex: "500",
-        width: `calc(100% - 14px)`,
+        width: `calc(100% - 10px)`,
         backgroundSize: "contain",
-        left: "3px"
+        left: "5px"
       });
     }, 500);
   };

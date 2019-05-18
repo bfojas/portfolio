@@ -21,11 +21,9 @@
     width: 60%;
 
     .bubble {
+      @extend .flex-center;
       position: relative;
-      display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
       background: rgb(178, 229, 236);
       // height: 75%;
       width: 40%;
@@ -44,8 +42,8 @@
       .change-wall {
         position: absolute;
         display: none;
-      }
-    }
+      } //.change-wall
+    } //.bubble
 
     .bubble:after {
       content: "";
@@ -59,7 +57,7 @@
       border-right: 0;
       margin-top: -20px;
       margin-right: -20px;
-    }
+    } //.bubble:after (arrow)
 
     .bradley {
       position: relative;
@@ -67,21 +65,19 @@
       height: 100%;
       background: url("../images/cartoon.png") no-repeat center bottom;
       background-size: contain;
-    }
+    } //.bradley
 
     .bubble:hover {
       color: rgb(178, 229, 236);
       cursor: pointer;
       .change-wall {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @extend .flex-center;
         height: 90%;
         width: 90%;
         color: black;
-      }
-    }
-  }
+      } //:hover .change-wall
+    } //.bubble:hover
+  } //.pic-contain
 
   .icon,
   .icon-mobile {
@@ -99,13 +95,13 @@
       -webkit-text-fill-color: rgba(34, 33, 33, 0.503);
       -webkit-text-stroke-width: 2px;
       -webkit-text-stroke-color: white;
-    }
+    } //.fa-keyboard
 
     .name {
       background-color: white;
       width: 80%;
-    }
-  }
+    } //.name
+  } //.icon
 
   .icon {
     display: flex;
@@ -133,13 +129,12 @@
       height: 26px;
       width: calc(100% - 4px);
       background-color: $secondary-blue;
-      // cursor: default;
 
       .window-name {
         position: absolute;
         left: 10px;
         color: white;
-      }
+      } //.window-name
 
       .minimize-button {
         position: absolute;
@@ -147,8 +142,8 @@
         width: 26px;
         top: 0;
         right: 0;
-      }
-    }
+      } //.minimize-button
+    } //.window-top
 
     .window-menu {
       display: flex;
@@ -182,7 +177,7 @@
           a {
             text-decoration: none;
             color: black;
-          }
+          } //a (links)
 
           ul {
             top: 21px;
@@ -210,12 +205,12 @@
               a:hover {
                 color: white;
               }
-            }
+            } //li (sub menus)
 
             li:hover {
               background-color: $secondary-blue;
             }
-          }
+          } //us (sub menus)
 
           .about-menu {
             li {
@@ -230,14 +225,15 @@
               height: 100%;
             }
           }
-        }
+        } //li (menu heads)
 
         li:hover {
           color: white;
         }
-      }
-    }
-  }
+      } //ul (menu heads)
+    } //.window-menu
+  } //.window-container
+
   .window-container::before {
     position: absolute;
     display: block;
@@ -248,7 +244,7 @@
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-  }
+  } //.window-container-before (border)
 
   .route-container {
     overflow: auto;
@@ -258,10 +254,9 @@
     position: relative;
     top: 2px;
     left: 2px;
-  }
+  } //.route-container
 
   @media (max-width: 1050px) {
-    background-position: 96% 90%;
     .pic-contain {
       .bubble {
         font-size: 20px;
@@ -270,7 +265,8 @@
           display: none;
         }
       }
-    }
+    } //@media .pic-contain (iPad Pro)
+
     .icon {
       display: none;
     }
@@ -303,7 +299,7 @@
             }
           }
         }
-      }
+      } //@media iPad pro .window-menu
 
       .window-top {
         height: 36px;
@@ -311,18 +307,17 @@
         .minimize-button {
           height: 36px;
           width: 36px;
-
           -webkit-appearance: none;
           -moz-appearance: none;
           appearance: none;
-        }
-      }
+        } //@media (iPad pro) .minimize-button
+      } //@media (iPad pro) .window-top
 
       .route-container {
         height: calc(100% - 84px);
-      }
+      } //@media (iPad pro) .route-container
     }
-  }
+  } //@media (iPad pro) .home 
 
   @media #{$phone-media} and (orientation: portrait) {
     .pic-contain {
@@ -332,9 +327,8 @@
 
       .bubble {
         width: 85%;
-        // height: 50%;
         margin-bottom: 15px;
-      }
+      } //@media (phone) .bubble
 
       .bubble:after {
         top: auto;
@@ -346,12 +340,12 @@
         border-right: 0;
         margin-left: -10px;
         margin-bottom: -20px;
-      }
+      } //@media (phone) .bubble:after (arrow)
 
       .bradley {
         width: 100%;
         height: 50%;
       }
-    }
-  }
-}
+    } //@media (phone) .pic-contain
+  } //@media (phone)
+} //.home

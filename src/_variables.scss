@@ -3,4 +3,12 @@ $secondary-blue: blue;
 $primary-grey: rgb(173, 173, 173);
 $background: #f5f9f6;
 
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 $phone-media: "(max-width: 680px)";
+$phone-rotate-media: "(max-width: 815px) and (orientation: landscape)";
