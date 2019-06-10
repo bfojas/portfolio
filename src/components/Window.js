@@ -9,41 +9,45 @@ class Window extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      about: false, 
-      portfolio: false, 
-      email: false 
+      about: false,
+      portfolio: false,
+      email: false
     };
   }
 
   menuRender = e => {
-    const { portfolio, about, email } = this.state;
+    e.stopPropagation();
+    // const { portfolio, about, email } = this.state;
     const { id } = e.target;
+    console.log("hit", id);
     if (id === "about") {
       this.setState({
-        about: !about,
+        about: true,
         portfolio: false,
         email: false
       });
     } else if (id === "portfolio") {
       this.setState({
-        portfolio: !portfolio,
+        portfolio: true,
         about: false,
         email: false
       });
     } else if (id === "email") {
       this.setState({
-        email: !email,
+        email: true,
         about: false,
         portfolio: false
       });
-    } else {
-      this.setState({
-        about: false,
-        portfolio: false,
-        email: false
-      });
     }
   }; //Window (menus)
+
+  menuClose = () => {
+    this.setState({
+      about: false,
+      portfolio: false,
+      email: false
+    });
+  };
 
   render() {
     const { about, portfolio, email } = this.state;
@@ -81,7 +85,7 @@ class Window extends Component {
     return (
       <div
         className="window-container"
-        onClick={e => this.menuRender(e)}
+        onClick={this.menuClose}
         style={{ display: `${this.props.hidden}` }}
       >
         <div className="window-top">
@@ -92,12 +96,25 @@ class Window extends Component {
         </div>
         <div className="window-menu">
           <ul>
-            <Link to="/home" style={{ textDecoration: "none" }}>
+            <Link
+              to="/home"
+              style={{ textDecoration: "none" }}
+              onClick={this.menuClose}
+              onMouseEnter={this.menuClose}
+            >
               <li>Home</li>
             </Link>
-            <li id="portfolio" onClick={e => this.menuRender(e)}>
+            <li
+              id="portfolio"
+              onMouseEnter={e => this.menuRender(e)}
+              onClick={e => this.menuRender(e)}
+            >
               Projects
-              <ul className="portfolio-menu" style={portfolioStyle}>
+              <ul
+                className="portfolio-menu"
+                style={portfolioStyle}
+                onClick={this.menuClose}
+              >
                 <li
                   style={{
                     borderBottom: portfolio ? "1px solid black" : "0"
@@ -112,17 +129,33 @@ class Window extends Component {
                 {portfolioMap}
               </ul>
             </li>
-            <li id="email" onClick={e => this.menuRender(e)}>
+            <li
+              id="email"
+              onMouseEnter={e => this.menuRender(e)}
+              onClick={e => this.menuRender(e)}
+            >
               Email
-              <ul className="email-menu" style={emailStyle}>
+              <ul
+                className="email-menu"
+                style={emailStyle}
+                onClick={this.menuClose}
+              >
                 <li>
                   <a href="mailto:bradfojas@gmail.com">bradfojas@gmail.com</a>
                 </li>
               </ul>
             </li>
-            <li id="about" onClick={e => this.menuRender(e)}>
+            <li
+              id="about"
+              onMouseEnter={e => this.menuRender(e)}
+              onClick={e => this.menuRender(e)}
+            >
               About
-              <ul className="about-menu" style={aboutStyle}>
+              <ul
+                className="about-menu"
+                style={aboutStyle}
+                onClick={this.menuClose}
+              >
                 <li>
                   <a
                     href="https://www.linkedin.com/in/bradley-fojas/"
@@ -157,7 +190,7 @@ class Window extends Component {
         <div className="route-container">
           <Switch>
             <Route path="/home" component={Home} />
-            <Route path="/project/:id" component={Project} />
+            <Route path="/project/:id" render={props => <Project />} />
             <Route exact path="/project" component={AllProjects} />
           </Switch>
         </div>

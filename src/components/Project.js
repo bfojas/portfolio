@@ -11,19 +11,22 @@ class Project extends Component {
     this.state = {
       modalType: "",
       imageModal: false,
-      imageStart: 0
+      imageStart: 0,
     };
   }
 
   componentDidMount = () => {
     this.renderPage();
+
   };
 
   componentDidUpdate = prevProps => {
-    if (prevProps.match.params !== this.props.match.params) {
+    if (prevProps.match.params.id !== this.props.match.params.id) {
       this.renderPage();
+      
     }
   };
+
 
   openImages = index => {
     this.setState({
@@ -50,6 +53,7 @@ class Project extends Component {
   renderPage = () => {
     const { renderProject } = this.props;
     const { id } = this.props.match.params;
+    
     switch (id) {
       case "roadTrip":
         return renderProject(0);
@@ -110,19 +114,21 @@ class Project extends Component {
       projectLink.map((val, i) => {
         return val.linkType !== "fas fa-video" ? (
           <a key={i} href={val.link} target="_blank" rel="noopener noreferrer">
-            <i className={val.linkType} />
+            <i className={`links ${val.linkType}`} />
           </a>
         ) : (
           <i
             key={i}
             onClick={() => this.openVideo(val.link)}
-            className="fas fa-video"
+            className="links fas fa-video"
           />
         );
       });
     return (
-      <div className="project-container">
-        <div className="project-head">{`${title} PROJECT`}</div>
+      <div className="project-container" key={this.props.match.params.id}>
+        <div className="project-head">
+          <div className="project-name">{`${title} PROJECT`}</div>
+        </div>
         <div className="project-body">
           <div className="image-box">{images}</div>
           <div className="summary-box">

@@ -3,6 +3,7 @@ $head-height: 250px;
 $head-mobile: 150px;
 
 .project-container {
+  overflow-x: hidden;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -22,19 +23,25 @@ $head-mobile: 150px;
     background-position: 50% 30%;
     color: $background;
     padding: 10px;
+
+    div {
     font-size: 64px;
     font-weight: bold;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
       1px 1px 0 #000;
+      animation: slide-in 1s;
+    }
   }
 
   .project-body {
+    
     top: $head-height;
     position: relative;
     display: flex;
     flex-direction: row;
-    // height: calc(100% - #{$head-height});
     width: 100%;
+    animation: showup 3s;
+    
 
     .image-box {
       flex-direction: column;
@@ -91,6 +98,11 @@ $head-mobile: 150px;
           margin: 5px;
           cursor: pointer;
         }
+
+        .links:hover {
+          color: $secondary-blue;
+          transition: all 50ms;
+        }
       }
     }
 
@@ -113,8 +125,11 @@ $head-mobile: 150px;
     height: auto;
 
     .project-head {
-      font-size: 36px;
       height: $head-mobile;
+      
+      .project-name{
+      font-size: 36px;
+      }
     }
 
     .project-body {
@@ -156,5 +171,23 @@ $head-mobile: 150px;
         }
       }
     }
+  }
+}
+
+@keyframes showup {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    margin-left: -2500px;
+  }
+  100% {
+    margin-left: 0;
   }
 }

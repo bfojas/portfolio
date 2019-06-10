@@ -6,6 +6,7 @@
   align-items: center;
   width: 100vw;
   height: 100%;
+  background-image: url('https://dev-fun-bucket.s3.amazonaws.com/bliss.jpg');
   background-size: cover;
   cursor: default;
 
@@ -41,19 +42,7 @@
     display: none;
   }
 
-
-  .route-container {
-    overflow: auto;
-    display: flex;
-    height: calc(100% - 56px);
-    width: calc(100% - 4px);
-    position: relative;
-    top: 2px;
-    left: 2px;
-  } //.route-container
-
   @media (max-width: 1050px) {
-
     .icon {
       display: none;
     }
@@ -63,6 +52,5 @@
       bottom: 25px;
       left: 25px;
     }
-
   } //@media (iPad pro) .desktop 
 } //.desktop

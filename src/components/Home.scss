@@ -100,8 +100,14 @@
 
   @media #{$phone-media} {
     .home-content {
+      
       .home-images {
         flex-direction: column;
+      }
+      .home-text {
+        p {
+          margin: 20px;
+        }
       }
     }
     .icon-wrap {

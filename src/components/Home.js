@@ -12,12 +12,12 @@ const Home = props => {
     { icon: "fab fa-html5", text: "HTML5" },
     { icon: "fab fa-sass", text: "CSS/ SASS" },
     {
-      icon: "https://s3.amazonaws.com/dev-fun-bucket/reduxLogo.png",
+      icon: "https://s3.amazonaws.com/dev-fun-bucket/redux_transparent.png",
       text: "Redux",
       type: "image"
     },
     {
-      icon: "https://s3.amazonaws.com/dev-fun-bucket/socket_icon.png",
+      icon: "https://s3.amazonaws.com/dev-fun-bucket/socket_transparent.png",
       text: "Socket.io",
       type: "image"
     },
@@ -52,23 +52,14 @@ const Home = props => {
       <div className="home-content">
         <div className="home-text">
           <p>
-            After many years as a biomedical technician tackling complex
-            technical issues, Bradley recently completed the Full-Stack Web
-            Development Immersive program at DevMountain where he received much
-            praise from his instructors and peers for his enthusiastic approach
-            to learning and troubleshooting.
+            I'm a Web Developer focusing mostly on React, React-Native, NodeJS, and PostgreSQL. I got my start in development after finishing the DevMountain (Phoenix) Web Dev Immersive program as a fully badged graduate and hackathon champion. 
           </p>
           <p>
-            Although he attended the coding bootcamp with no prior coding
-            experience, Bradley was not only able to quickly gain comprehension
-            of JavaScript, HTML and CSS, but also of a full-stack that included
-            ReactJs, NodeJs and PostgreSQL. Other technologies Bradley has been
-            able to learn include SASS, React-Native, Firebase, Nginx, Amazon
-            S3, Socket.io, jQuery, and Jest.
+            I've also got a brain full of useless facts, in case you're down for some bar trivia.
           </p>
           <p className="last-p">
             Feel free to click around the menus above to find more info about
-            Bradley and his projects.
+            me and my projects.
           </p>
         </div>
       </div>

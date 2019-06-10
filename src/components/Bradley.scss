@@ -58,16 +58,16 @@
     background-size: contain;
   } //.bradley
 
-  .bubble:hover {
-    color: rgb(178, 229, 236);
-    cursor: pointer;
-    .change-wall {
-      @extend .flex-center;
-      height: 90%;
-      width: 90%;
-      color: black;
-    } //:hover .change-wall
-  } //.bubble:hover
+  // .bubble:hover {
+  //   color: rgb(178, 229, 236);
+  //   cursor: pointer;
+  //   .change-wall {
+  //     @extend .flex-center;
+  //     height: 90%;
+  //     width: 90%;
+  //     color: black;
+  //   } //:hover .change-wall
+  // } //.bubble:hover
 
   @media (max-width: 1050px) {
     .bubble {

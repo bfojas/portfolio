@@ -13,7 +13,7 @@ class Desktop extends Component {
       dragging: false,
       hidden: "block", //prop to window
       screenHeight: window.innerHeight,
-      background: 9
+      // background: 9
     };
   }
 
@@ -55,6 +55,7 @@ class Desktop extends Component {
       dragging: true
     });
   };
+
   mouseMove = e => {
     if (this.state.dragging) {
       this.setState({
@@ -78,11 +79,6 @@ class Desktop extends Component {
     this.setState({ hidden: "none" });
   };
 
-  changePaper = () => {
-    this.setState({
-      background: Math.floor(Math.random() * 13)
-    });
-  }; //Desktop
 
   render() {
     return (
@@ -91,15 +87,10 @@ class Desktop extends Component {
         onMouseMove={e => this.mouseMove(e)}
         style={{
           height: this.state.screenHeight,
-          background: this.state.background
-            ? `url(https://s3.amazonaws.com/dev-fun-bucket/background${
-                this.state.background
-              }.jpg) no-repeat center /cover`
-            : null
         }}
         onMouseLeave={this.dragOff}
       >
-        <Bradley changePaper={this.changePaper} />
+        <Bradley/>
         <div
           className="icon"
           style={{

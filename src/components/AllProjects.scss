@@ -4,6 +4,7 @@
   display: block;
   width: 100%;
   height: auto;
+  overflow-x: hidden;
 
   .selector-container {
     @extend .flex-center;
@@ -50,5 +51,32 @@
     width: 100%;
     padding: 20px;
     border-radius: 10px;
+    
   } //.image-container
+
+  .web-images {
+    animation: slide-in-left 500ms;
+  }
+
+  .mobile-images {
+    animation: slide-in-right 500ms;
+  }
 } //.all-container
+
+@keyframes slide-in-left {
+  0% {
+    margin-left: -2500px;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    margin-right: -2500px;
+  }
+  100% {
+    margin-right: 0;
+  }
+}

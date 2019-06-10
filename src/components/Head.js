@@ -18,7 +18,7 @@ const Head = (props) => {
       <div className="profile-image" style={{backgroundImage}}/>
       <div className="head-info">
         <h1>BRADLEY FOJAS</h1>
-        <h3>FULL-STACK WEB DEVELOPER</h3>
+        <h3>SOFTWARE ENGINEER</h3>
       </div>
     </div>
   );

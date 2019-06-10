@@ -9,7 +9,7 @@
   height: 350px;
   width: 100%;
   background-color: $primary-blue;
-  color: white;
+  color: $background;
 
   .profile-image {
     position: relative;
@@ -35,11 +35,14 @@
       font-size: 100px;
       font-weight: bold;
       margin: 0;
+      animation: showup 4s;
     }
 
     h3 {
       font-size: 36px;
       margin: 10px;
+      animation: showup 4s;
+      animation: slidein 1s;
     }
   } //.head-info
 }
@@ -98,3 +101,14 @@
     } //@media head-info
   } //@media head-content
 } //@media phone
+
+
+@keyframes showup {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@keyframes slidein {
+  0% { margin-top:-800px; }
+  100% { margin-top:0px; }
+}

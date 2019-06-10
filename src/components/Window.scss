@@ -8,6 +8,7 @@
     max-width: 2000px;
     background-color: $background;
     border: 2px solid black;
+    
 
     .window-top {
       display: flex;
@@ -23,6 +24,7 @@
         position: absolute;
         left: 10px;
         color: white;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       } //.window-name
 
       .minimize-button {
@@ -47,6 +49,7 @@
       height: 26px;
       width: calc(100% - 4px);
       background-color: $primary-grey;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
       ul {
         width: 100%;
@@ -126,6 +129,16 @@
       } //ul (menu heads)
     } //.window-menu
 
+    .route-container {
+        overflow: auto;
+        display: flex;
+        height: calc(100% - 56px);
+        width: calc(100% - 4px);
+        position: relative;
+        top: 2px;
+        left: 2px;
+      } //.route-container
+
     @media (max-width: 1050px) {
             font-size: 18px;
       
@@ -135,7 +148,7 @@
               ul {
                 li {
                   ul {
-                    top: 28px;
+                    top: 27px;
                     width: 140px;
                   }
       
@@ -166,7 +179,17 @@
               height: calc(100% - 84px);
             } //@media (iPad pro) .route-container
         } //@media .window-container
-  } //.window-container
+        
+        
+        @media #{$phone-media} {
+          height: 99%;
+          width: 99%;
+        }
+  
+      } //.window-container
+
+  
+
 
   .window-container::before {
     position: absolute;

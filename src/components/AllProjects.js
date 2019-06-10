@@ -45,7 +45,7 @@ const AllProjects = props => {
             Mobile Projects
           </p>
         </div>
-        <div className="image-container">
+        <div className={`image-container ${selected === 'web' ? 'web-images' : 'mobile-images'}`}>
           {selected === "web" ? webImages : mobileImages}
         </div>
       </div>
