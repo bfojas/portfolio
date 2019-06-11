@@ -3,7 +3,6 @@ import { withRouter, Link, Switch, Route } from "react-router-dom";
 import Home from "./Home";
 import Project from "./Project";
 import AllProjects from "./AllProjects";
-import Head from "./Head"
 import "./Window.scss";
 
 class Window extends Component {
@@ -18,9 +17,7 @@ class Window extends Component {
 
   menuRender = e => {
     e.stopPropagation();
-    // const { portfolio, about, email } = this.state;
     const { id } = e.target;
-    console.log("hit", id);
     if (id === "about") {
       this.setState({
         about: true,
@@ -97,14 +94,6 @@ class Window extends Component {
         </div>
         <div className="window-menu">
           <ul>
-            {/* <Link
-              to="/home"
-              style={{ textDecoration: "none" }}
-              onClick={this.menuClose}
-              onMouseEnter={this.menuClose}
-            >
-              <li>Home</li>
-            </Link> */}
             <li
               id="portfolio"
               onMouseEnter={e => this.menuRender(e)}
@@ -122,7 +111,7 @@ class Window extends Component {
                   }}
                   key="all"
                   onClick={() => {
-                    this.props.history.push(`/project`);
+                    this.props.history.push(`/`);
                   }}
                 >
                   View All
@@ -201,7 +190,7 @@ class Window extends Component {
           <Switch>
             <Route path="/home" component={Home} />
             <Route path="/project/:id" render={props => <Project />} />
-            <Route exact path="/project" component={AllProjects} />
+            <Route path="/" component={AllProjects} />
           </Switch>
         </div>
       </div>

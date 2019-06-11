@@ -130,7 +130,8 @@
     } //.window-menu
 
     .route-container {
-        overflow: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
         display: flex;
         flex-direction: column;
         height: calc(100% - 56px);

@@ -67,7 +67,7 @@ $head-mobile: 150px;
       width: calc(100% - 500px);
       padding-top: 15px;
       flex-direction: column;
-      font-size: calc(20px + 1.5vh);
+      font-size: calc(12px + 1.25vmin);
       color: $primary-blue;
 
       div {
@@ -78,6 +78,7 @@ $head-mobile: 150px;
         width: 95%;
         p {
           margin-top: 20px;
+          text-align: left;
         }
       }
 
@@ -161,7 +162,7 @@ $head-mobile: 150px;
         margin-top: 10px;
         width: 90%;
         height: auto;
-        font-size: calc(12px + 1.5vh);
+        font-size: calc(12px + 1.5vmin);
 
         .project-about {
           display: flex;

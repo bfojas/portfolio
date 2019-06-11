@@ -17,20 +17,11 @@ class Desktop extends Component {
   }
 
   componentDidMount() {
-    this.windowCheck();
     window.addEventListener("resize", this.updateWindow());
   }
 
   componentWillUnmount = () => {
     window.removeEventListener("scroll", this.handleScroll);
-  };
-
-  windowCheck = () => {
-    if (this.props.match.path !== "/") {
-      this.setState({ hidden: "block" });
-    } else {
-      this.props.history.push("/project");
-    }
   };
 
   updateWindow = () => {

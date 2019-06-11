@@ -10,6 +10,7 @@
 
   .image-cover {
     @extend .flex-center;
+    cursor: pointer;
     position: absolute;
     height: 100%;
     width: 100%;

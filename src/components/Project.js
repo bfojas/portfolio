@@ -135,11 +135,11 @@ class Project extends Component {
           <div className="summary-box">
             <div className="project-about">
               {about &&
-                about.map(val => {
-                  return <p>{val}</p>;
+                about.map((val,i) => {
+                  return <p key={i}>{val}</p>;
                 })}
             </div>
-            <div className="project-subject">LINK:</div>
+            <div className="project-subject">LINKS:</div>
             <div className="links-box">{links}</div>
             <div className="project-subject">TECHNOLOGIES USED:</div>
             <div className="project-tech">{techUsed}</div>

@@ -34,7 +34,7 @@ class AllProjects extends Component {
     });
 
     let imageMapper = (val, i) => {
-      return <ProjectTiles val={val} />;
+      return <ProjectTiles val={val} key={val.route}/>;
     };
 
     let webImages = webProjects.map(imageMapper);
@@ -50,7 +50,7 @@ class AllProjects extends Component {
               className={`selector ${selected === "web" ? "active" : null}`}
               onClick={() => this.selector("web")}
             >
-              <p className="break">|</p>Web Projects<p className="break">..</p>
+              <span className="break">|</span>Web Projects<span className="break">..</span>
             </p>
             <p
               className={`selector ${selected === "mobile" ? "active" : null}`}

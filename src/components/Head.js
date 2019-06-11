@@ -1,7 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom"
 import "./Head.scss";
-import IconMap from "./IconMap"
 
 const Head = (props) => {
 

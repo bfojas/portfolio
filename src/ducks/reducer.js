@@ -67,8 +67,8 @@ export const projects = [
     imageHeight: "250px",
     image: [
       "https://s3.amazonaws.com/dev-fun-bucket/portfolio3.png",
-      "https://s3.amazonaws.com/dev-fun-bucket/portfolio5.png",
-      "https://s3.amazonaws.com/dev-fun-bucket/portfolio4.png"
+      "https://s3.amazonaws.com/dev-fun-bucket/portfolio1.png",
+      "https://s3.amazonaws.com/dev-fun-bucket/portfolio2.png"
     ],
     about:
       ["Woah, webception. This is my portfolio site. Basically the thing you are looking at right now. Don't let the simplistic looking design fool you. There's a lot going on here. This page that you are reading right now is a reusable component with props from Redux. This window is a styled modal. And the whole thing is mobile responsive."],
