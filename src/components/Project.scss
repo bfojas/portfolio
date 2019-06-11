@@ -76,6 +76,9 @@ $head-mobile: 150px;
 
       .project-about {
         width: 95%;
+        p {
+          margin-top: 20px;
+        }
       }
 
       .project-subject {
@@ -100,7 +103,7 @@ $head-mobile: 150px;
         }
 
         .links:hover {
-          color: $secondary-blue;
+          color: $window-blue;
           transition: all 50ms;
         }
       }
@@ -163,6 +166,7 @@ $head-mobile: 150px;
         .project-about {
           display: flex;
           height: auto;
+          flex-direction: column;
         }
 
         .project-subject {
@@ -185,9 +189,8 @@ $head-mobile: 150px;
 
 @keyframes slide-in {
   0% {
-    margin-left: -2500px;
+    margin-top: -1000px;
   }
   100% {
-    margin-left: 0;
-  }
+    margin-top: 010  }
 }

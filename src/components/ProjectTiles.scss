@@ -1,25 +1,23 @@
 @import "../_variables.scss";
 .project-image {
   background-size: contain;
-  border-radius: 10px;
+  border-radius: 3px;
   margin: calc(4px + 1vw);
   background-repeat: no-repeat;
   background-position: center;
   overflow: hidden;
   position: relative;
 
-  .hover-cover {
+  .image-cover {
     @extend .flex-center;
     position: absolute;
     height: 100%;
     width: 100%;
     background-color: rgba(88, 85, 85, 0.76);
-    opacity: 0;
-    transition: all 400ms;
     color: white;
-    border-radius: 10px;
-    border: $primary-blue solid 5px;
-    font-size: calc(16px + 1.25vw);
+    border-radius: 3px;
+    border: $primary-grey solid 1px;
+    font-size: calc(16px + 1.25vh);
     padding: 10px;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
       1px 1px 0 #000;
@@ -28,12 +26,12 @@
 
 .project-image::before {
   display: block;
-  border: black solid 3px;
+  border: lightgray solid 1px;
   content: "";
   position: absolute;
   height: 100%;
   width: 100%;
-  border-radius: 10px;
+  border-radius: 3px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -51,18 +49,10 @@
   display: flex;
 }
 
-.project-image:hover {
-  .hover-cover {
-    opacity: 1;
-  }
-}
 
 @media #{$phone-media}, #{$phone-rotate-media} {
   .project-image {
-    .hover-cover {
-      opacity: 1;
-      background-color: rgba(68, 68, 68, 0.521);
-      border: 0;
+    .image-cover {
       font-size: calc(14px + 1.25vw);
     }
   }

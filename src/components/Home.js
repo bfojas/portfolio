@@ -2,53 +2,13 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import "./Home.scss";
 import Head from "./Head";
+import IconMap from "./IconMap"
 
 const Home = props => {
-  let iconsList = [
-    { icon: "fab fa-react", text: "React/ React-Native" },
-    { icon: "fab fa-node-js", text: "NodeJs/ Express" },
-    { icon: "devicon-postgresql-plain", text: "PostgreSQL" },
-    { icon: "fab fa-js-square", text: "JavaScript ES6" },
-    { icon: "fab fa-html5", text: "HTML5" },
-    { icon: "fab fa-sass", text: "CSS/ SASS" },
-    {
-      icon: "https://s3.amazonaws.com/dev-fun-bucket/redux_transparent.png",
-      text: "Redux",
-      type: "image"
-    },
-    {
-      icon: "https://s3.amazonaws.com/dev-fun-bucket/socket_transparent.png",
-      text: "Socket.io",
-      type: "image"
-    },
-    { icon: "fab fa-github-square", text: "Git/ GitHub" }
-  ];
-
-  let iconMapper = (val, i) => {
-    return val.type === "image" ? (
-      <div key={i}>
-        <img
-          style={{ height: "64px", width: "64px" }}
-          src={val.icon}
-          alt={val.text}
-        />
-        {val.text}
-      </div>
-    ) : (
-      <div key={i}>
-        <i className={val.icon} />
-        {val.text}
-      </div>
-    );
-  };
-
-  let mapIcons = iconsList.map(iconMapper);
   return (
     <div className="home-container">
       <Head />
-      <div className="icon-wrap">
-        <div className="icon-container">{mapIcons}</div>
-      </div>
+      <IconMap/>
       <div className="home-content">
         <div className="home-text">
           <p>
@@ -59,9 +19,10 @@ const Home = props => {
           </p>
           <p className="last-p">
             Feel free to click around the menus above to find more info about
-            me and my projects.
+            me and my projects. Check out this picture of me awkwardly holding my dog.
           </p>
         </div>
+        <div className="home-image"/>
       </div>
     </div>
   );

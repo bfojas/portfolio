@@ -18,7 +18,7 @@
       left: 2px;
       height: 26px;
       width: calc(100% - 4px);
-      background-color: $secondary-blue;
+      background-color: $window-blue;
 
       .window-name {
         position: absolute;
@@ -104,13 +104,13 @@
             } //li (sub menus)
 
             li:hover {
-              background-color: $secondary-blue;
+              background-color: $window-blue;
             }
           } //us (sub menus)
 
           .about-menu {
             li {
-              height: 33%;
+              height: 25%;
             }
           }
 
@@ -132,6 +132,7 @@
     .route-container {
         overflow: auto;
         display: flex;
+        flex-direction: column;
         height: calc(100% - 56px);
         width: calc(100% - 4px);
         position: relative;

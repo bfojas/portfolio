@@ -11,22 +11,19 @@ class Project extends Component {
     this.state = {
       modalType: "",
       imageModal: false,
-      imageStart: 0,
+      imageStart: 0
     };
   }
 
   componentDidMount = () => {
     this.renderPage();
-
   };
 
   componentDidUpdate = prevProps => {
     if (prevProps.match.params.id !== this.props.match.params.id) {
       this.renderPage();
-      
     }
   };
-
 
   openImages = index => {
     this.setState({
@@ -53,20 +50,24 @@ class Project extends Component {
   renderPage = () => {
     const { renderProject } = this.props;
     const { id } = this.props.match.params;
-    
+
     switch (id) {
       case "roadTrip":
         return renderProject(0);
-      case "cardFun":
+      case "jobsForHope":
         return renderProject(1);
-      case "blackjack":
-        return renderProject(2);
-      case "ohmsLaw":
-        return renderProject(3);
       case "portfolio":
+        return renderProject(2);
+        case "cardFun":
+        return renderProject(3);
+      case "blackjack":
         return renderProject(4);
-      case "mathChallenge":
+      case "hotelReservation":
         return renderProject(5);
+      case "mathChallenge":
+        return renderProject(6);
+      case "ohmsLaw":
+        return renderProject(7);
       default:
         return null;
     }
@@ -132,7 +133,12 @@ class Project extends Component {
         <div className="project-body">
           <div className="image-box">{images}</div>
           <div className="summary-box">
-            <div className="project-about">{about}</div>
+            <div className="project-about">
+              {about &&
+                about.map(val => {
+                  return <p>{val}</p>;
+                })}
+            </div>
             <div className="project-subject">LINK:</div>
             <div className="links-box">{links}</div>
             <div className="project-subject">TECHNOLOGIES USED:</div>

@@ -8,87 +8,44 @@
   background-color: $background;
   color: $primary-blue;
 
-  .icon-wrap {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-
-    .icon-container {
-      position: relative;
-      display: flex;
-      width: 95%;
-      justify-content: center;
-      margin-top: 15px;
-      align-items: flex-start;
-      justify-items: center;
-      flex-wrap: wrap;
-
-      div {
-        @extend .flex-center;
-        width: 110px;
-        flex-direction: column;
-        margin: 15px 0.5%;
-        font-weight: bold;
-        font-size: 18px;
-
-        i {
-          font-size: 64px;
-          font-weight: normal;
-        } //i
-      } //div
-
-      @media screen and (max-width: 1250px) {
-        max-width: 800px;
-        div {
-          margin: 15px 1.8% 10px 1.8%;
-        }
-      }
-      @media (max-width: 760px) {
-        div {
-          margin: 15px 1% 10px 1%;
-          height: auto;
-        }
-      }
-    } //.icon-container
-  } //.icon-wrap
-
   .home-content {
     @extend .flex-center;
-    flex-direction: column;
+    flex-direction: row;
+
     .home-text {
-
-
-
       flex-direction: column;
       align-items: center;
       position: relative;
       justify-content: center;
-      text-align: left;
-      width: auto;
+      text-align: justify;
+      width: 65%;
       min-height: calc(100% - 505px);
-      font-size: calc(12px + 1.5vh);
+      font-size: calc(12px + 1vmin);
 
       p {
         display: flex;
-        margin: 35px 50px;
+        margin: 35px 25px;
       }
 
       .last-p {
         margin-bottom: 10px;
       }
     }
-    .home-images {
-      width: 80%;
-      height: 100%;
-      display: flex;
-      flex-direction: row;
-      margin: 20px 0;
+    .home-image {
+      margin-top: 20px;
+      width: 30%;
+      height: 400px;
+      background-image: url('https://dev-fun-bucket.s3.amazonaws.com/brad_dog.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: right top;
+      border-radius: 5px;
     }
   }
 
   @media (max-width: 1024px) {
     .home-content {
-      font-size: 3vh;
+      font-size: 3vmin;
     }
   }
 
@@ -100,9 +57,14 @@
 
   @media #{$phone-media} {
     .home-content {
-      
-      .home-images {
-        flex-direction: column;
+      flex-direction: column;
+      .home-text {
+        width: 95%;
+      }
+      .home-image {
+        width: 95%;
+        height: auto;
+        min-height: 350px;
       }
       .home-text {
         p {
@@ -110,29 +72,14 @@
         }
       }
     }
-    .icon-wrap {
-      .icon-container {
-        height: auto;
-        max-width: 500px;
-
-        div {
-          font-size: 14px;
-          width: 60px;
-          margin: 10px calc(2px + 2%);
-
-          i {
-            font-size: 48px;
-          }
-        }
-
-        @media (max-width: 440px) {
-          max-width: 300px;
-
-          div {
-            margin: 10px calc(5px + 2%);
-          }
-        }
-      }
-    }
   }
 } //.home-container
+
+@keyframes slide-in-left {
+  0% {
+    margin-left: -2500px;
+  }
+  100% {
+    margin-left: 0;
+  }
+}

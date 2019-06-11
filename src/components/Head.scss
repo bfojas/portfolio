@@ -3,36 +3,24 @@
 .head-content {
   display: flex;
   position: relative;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  height: 350px;
+  justify-content: center;
+  // height: 350px;
   width: 100%;
   background-color: $primary-blue;
   color: $background;
 
-  .profile-image {
-    position: relative;
-    left: 25px;
-    display: flex;
-    height: 300px;
-    width: 300px;
-    border-radius: 50%;
-    border: solid 8px rgba(102, 116, 128, 0.904);
-    background-size: cover;
-    background-repeat: no-repeat;
-  } //.profile-image
-
   .head-info {
     @extend .flex-center;
-    height: 100%;
+    height: 200px;
     position: relative;
     left: 25px;
-    width: calc(100% - 342px);
+    width: 100%;
     flex-direction: column;
 
     h1 {
-      font-size: 100px;
+      font-size: calc(80px + 1.5vmin);
       font-weight: bold;
       margin: 0;
       animation: showup 4s;
@@ -47,14 +35,10 @@
   } //.head-info
 }
 
-.head-reverse {
-  flex-direction: row-reverse;
-  justify-content: flex-end;
-} //.head-reverse
 
 @media (max-width: 1024px) {
   .head-content {
-    height: 300px;
+    // height: 300px;
     .profile-image {
       width: 200px;
       height: 200px;
@@ -62,7 +46,7 @@
 
     .head-info {
       width: calc(95% - 200px);
-      height: 250px;
+      height: 150px;
       h1 {
         font-size: 7vw;
       }
@@ -76,21 +60,11 @@
 
 @media #{$phone-media} {
   .head-content {
-    height: 125px;
-    justify-content: center;
-
-    .profile-image {
-      display: none;
-      left: 0;
-      top: 25px;
-      width: 200px;
-      height: 200px;
-    } //@media profile-image
 
     .head-info {
       left: 0;
       width: 95%;
-      height: 125px;
+      height: 100px;
       h1 {
         font-size: 36px;
       }

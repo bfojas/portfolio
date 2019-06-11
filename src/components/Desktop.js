@@ -13,7 +13,6 @@ class Desktop extends Component {
       dragging: false,
       hidden: "block", //prop to window
       screenHeight: window.innerHeight,
-      // background: 9
     };
   }
 
@@ -30,7 +29,7 @@ class Desktop extends Component {
     if (this.props.match.path !== "/") {
       this.setState({ hidden: "block" });
     } else {
-      this.props.history.push("/home");
+      this.props.history.push("/project");
     }
   };
 

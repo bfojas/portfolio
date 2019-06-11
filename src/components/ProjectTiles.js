@@ -16,7 +16,7 @@ const ProjectTiles =  props  => {
           props.history.push(`/project/${val.route}`);
         }}
       >
-        <div className="hover-cover">{`${val.title} PROJECT`}</div>
+        <div className="image-cover">{`${val.title} PROJECT`}</div>
       </div>
     </React.Fragment>
   );

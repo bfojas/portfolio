@@ -3,6 +3,7 @@ import { withRouter, Link, Switch, Route } from "react-router-dom";
 import Home from "./Home";
 import Project from "./Project";
 import AllProjects from "./AllProjects";
+import Head from "./Head"
 import "./Window.scss";
 
 class Window extends Component {
@@ -54,16 +55,16 @@ class Window extends Component {
     const { minimize } = this.props;
     const portfolioArray = [
       { name: "Road Trip", route: "roadTrip" },
+      { name: "Hotel Project", route: "hotelReservation" },
       { name: "Math Challenge", route: "mathChallenge" },
-      { name: "Card Fun", route: "cardFun" },
-      { name: "Ohm's Law", route: "ohmsLaw" }
+      { name: "Card Fun", route: "cardFun" }
     ];
 
     const portfolioStyle = portfolio
       ? { height: `${(portfolioArray.length + 1) * 30}px` }
       : { height: 0, border: 0, fontSize: 0 };
     const aboutStyle = about
-      ? { height: "100px" }
+      ? { height: "120px" }
       : { height: 0, border: 0, fontSize: 0 };
     const emailStyle = email
       ? { height: "30px" }
@@ -96,14 +97,14 @@ class Window extends Component {
         </div>
         <div className="window-menu">
           <ul>
-            <Link
+            {/* <Link
               to="/home"
               style={{ textDecoration: "none" }}
               onClick={this.menuClose}
               onMouseEnter={this.menuClose}
             >
               <li>Home</li>
-            </Link>
+            </Link> */}
             <li
               id="portfolio"
               onMouseEnter={e => this.menuRender(e)}
@@ -134,7 +135,7 @@ class Window extends Component {
               onMouseEnter={e => this.menuRender(e)}
               onClick={e => this.menuRender(e)}
             >
-              Email
+              Contact
               <ul
                 className="email-menu"
                 style={emailStyle}
@@ -156,6 +157,15 @@ class Window extends Component {
                 style={aboutStyle}
                 onClick={this.menuClose}
               >
+                
+              <li><Link
+              to="/home"
+              style={{ textDecoration: "none" }}
+              onClick={this.menuClose}
+            >
+              Bradley
+              </Link></li>
+            
                 <li>
                   <a
                     href="https://www.linkedin.com/in/bradley-fojas/"
