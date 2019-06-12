@@ -6,7 +6,7 @@ const Head = (props) => {
 
   return (
     <div className="head-content">
-      <div className="head-info">
+      <div className="head-info" onClick={()=>props.history.push("/home")}>
         <h1>BRADLEY FOJAS</h1>
         <h3>SOFTWARE ENGINEER</h3>
       </div>

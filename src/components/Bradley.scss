@@ -10,6 +10,7 @@
   right: 0;
   height: 65%;
   width: 60%;
+  overflow: hidden;
 
   .bubble {
     @extend .flex-center;
@@ -54,20 +55,10 @@
     position: relative;
     width: 50%;
     height: 100%;
+    bottom: -10%;
     background: url("../images/cartoon.png") no-repeat center bottom;
     background-size: contain;
   } //.bradley
-
-  // .bubble:hover {
-  //   color: rgb(178, 229, 236);
-  //   cursor: pointer;
-  //   .change-wall {
-  //     @extend .flex-center;
-  //     height: 90%;
-  //     width: 90%;
-  //     color: black;
-  //   } //:hover .change-wall
-  // } //.bubble:hover
 
   @media (max-width: 1050px) {
     .bubble {

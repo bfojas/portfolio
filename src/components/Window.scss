@@ -33,6 +33,7 @@
         width: 26px;
         top: 0;
         right: 0;
+        font-size: 16px;
       } //.minimize-button
       .minimize-button:hover {
           color: white;
@@ -61,6 +62,7 @@
         margin: 0;
         padding-left: 4px;
         list-style: none;
+        z-index: 950;
 
         li {
           position: relative;
@@ -183,9 +185,11 @@
         } //@media .window-container
         
         
-        @media #{$phone-media} {
-          height: 99%;
-          width: 99%;
+        @media (max-width: 820px) {
+          height: 97%;
+          width: 97%;
+          font-weight: bold;
+          font-size: 20px;
         }
   
       } //.window-container

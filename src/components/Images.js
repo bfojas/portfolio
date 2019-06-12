@@ -123,7 +123,7 @@ export class Images extends Component {
           <div className="image-content" style={{ display: videoHidden }}>
             <video
               controls
-              autoplay
+              autoPlay
               height="100%"
               width="auto"
               style={{ maxWidth: "calc(100% - 6px" }}

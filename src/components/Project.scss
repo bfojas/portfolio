@@ -59,6 +59,10 @@ $head-mobile: 150px;
         border: 2px solid black;
         cursor: pointer;
       }
+
+      .images:hover {
+        opacity: .5;
+      }
     }
 
     .summary-box {

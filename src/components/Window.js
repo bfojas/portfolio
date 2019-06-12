@@ -4,6 +4,7 @@ import Home from "./Home";
 import Project from "./Project";
 import AllProjects from "./AllProjects";
 import "./Window.scss";
+import Desktop from "./Desktop";
 
 class Window extends Component {
   constructor(props) {
@@ -89,7 +90,7 @@ class Window extends Component {
         <div className="window-top">
           <div className="window-name">Bradley Fojas</div>
           <button className="minimize-button" onClick={minimize}>
-            <i className="fas fa-caret-down" />
+            <i className="fas fa-times" />
           </button>
         </div>
         <div className="window-menu">
@@ -111,7 +112,7 @@ class Window extends Component {
                   }}
                   key="all"
                   onClick={() => {
-                    this.props.history.push(`/`);
+                    this.props.history.push(`/project`);
                   }}
                 >
                   View All
@@ -190,7 +191,7 @@ class Window extends Component {
           <Switch>
             <Route path="/home" component={Home} />
             <Route path="/project/:id" render={props => <Project />} />
-            <Route path="/" component={AllProjects} />
+            <Route path="/project" component={AllProjects} />
           </Switch>
         </div>
       </div>

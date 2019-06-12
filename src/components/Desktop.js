@@ -11,17 +11,28 @@ class Desktop extends Component {
       top: `${window.innerHeight - 125}`,
       left: 50,
       dragging: false,
-      hidden: "block", //prop to window
+      hidden: "none", //prop to window
       screenHeight: window.innerHeight,
     };
   }
 
   componentDidMount() {
     window.addEventListener("resize", this.updateWindow());
+    this.windowCheck();
   }
 
   componentWillUnmount = () => {
     window.removeEventListener("scroll", this.handleScroll);
+    // this.windowCheck();
+  };
+
+  windowCheck = () => {
+    console.log('match', this.props.match)
+    if (this.props.match.path !== "/") {
+      this.maximize();
+    } else {
+      this.props.history.push("/project");
+    }
   };
 
   updateWindow = () => {
@@ -91,11 +102,13 @@ class Desktop extends Component {
           onMouseUp={e => this.dragOff(e)}
           onDoubleClick={this.maximize}
         >
-          <i className="fas fa-keyboard" />
+          {/* <i className="fas fa-keyboard" /> */}
+          <img src="https://dev-fun-bucket.s3.amazonaws.com/icon-transparent.png"/>
           <div className="name">Bradley</div>
         </div>
         <div className="icon-mobile" onClick={this.maximize}>
-          <i className="fas fa-keyboard" />
+          {/* <i className="fas fa-keyboard" /> */}
+          <img src="https://dev-fun-bucket.s3.amazonaws.com/icon-transparent.png"/>
           <div className="name">Bradley</div>
         </div>
         <Window minimize={this.minimize} hidden={this.state.hidden} />
