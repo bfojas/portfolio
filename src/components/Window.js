@@ -4,7 +4,6 @@ import Home from "./Home";
 import Project from "./Project";
 import AllProjects from "./AllProjects";
 import "./Window.scss";
-import Desktop from "./Desktop";
 
 class Window extends Component {
   constructor(props) {

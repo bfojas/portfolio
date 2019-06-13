@@ -10,48 +10,4 @@
   background-image: url('https://dev-fun-bucket.s3.amazonaws.com/bliss.jpg');
   background-size: cover;
   cursor: default;
-
-  .icon,
-  .icon-mobile {
-    position: absolute;
-    flex-direction: column;
-    align-items: center;
-    width: 75px;
-    height: 75px;
-
-    .fa-keyboard {
-      color: rgba(34, 33, 33, 0.503);
-      height: 100%;
-      width: 100%;
-      font-size: 50px;
-      -webkit-text-fill-color: rgba(34, 33, 33, 0.503);
-      -webkit-text-stroke-width: 2px;
-      -webkit-text-stroke-color: white;
-    } //.fa-keyboard
-
-    .name {
-      background-color: white;
-      width: 80%;
-    } //.name
-  } //.icon
-
-  .icon {
-    display: flex;
-  }
-
-  .icon-mobile {
-    display: none;
-  }
-
-  @media (max-width: 1050px) {
-    .icon {
-      display: none;
-    }
-
-    .icon-mobile {
-      display: flex;
-      bottom: 25px;
-      left: 25px;
-    }
-  } //@media (iPad pro) .desktop 
 } //.desktop

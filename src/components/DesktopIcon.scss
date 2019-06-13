@@ -1,0 +1,48 @@
+@import "../_variables.scss";
+
+.draggable-icon-container,
+  .icon-mobile-container {
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    width: 75px;
+    height: 75px;
+
+
+    .name {
+      background-color: white;
+      width: 95%;
+    } //.name
+  } //.icon
+
+  .draggable-icon-container {
+    display: flex;
+    .icon {
+      height: 100%;
+      width: 100%;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .icon-mobile-container {
+    display: none;
+
+    .icon-mobile {
+        width: 48px;
+        height: 48px;
+    }
+
+  }
+
+  @media (max-width: 1050px) {
+    .draggable-icon-container {
+      display: none;
+    }
+
+    .icon-mobile-container {
+      display: flex;
+
+    }
+  }

@@ -19,8 +19,8 @@
     background: rgb(178, 229, 236);
     // height: 75%;
     width: 40%;
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 375px;
+    max-height: 325px;
     background-size: cover;
     border-radius: 20px;
     font-size: 24px;
@@ -30,11 +30,6 @@
     p {
       margin: 5px 0;
     }
-
-    .change-wall {
-      position: absolute;
-      display: none;
-    } //.change-wall
   } //.bubble
 
   .bubble:after {
@@ -56,7 +51,7 @@
     width: 50%;
     height: 100%;
     bottom: -10%;
-    background: url("../images/cartoon.png") no-repeat center bottom;
+    background: url("../images/cartoon.png") no-repeat right bottom;
     background-size: contain;
   } //.bradley
 

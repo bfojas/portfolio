@@ -12,7 +12,7 @@ const initialState = {
 export const projects = [
   {
     name: "Road Trip",
-    title: "THE ROAD TRIP",
+    title: "ROAD TRIP",
     imageHeight: "250px",
     image: [
       "https://s3.amazonaws.com/dev-fun-bucket/road_trip1.png",
@@ -38,7 +38,7 @@ export const projects = [
   },
   {
     name: "Jobs For Hope",
-    title: "THE JOBS FOR HOPE",
+    title: "JOBS FOR HOPE",
     imageHeight: "250px",
     image: [
       "https://s3.amazonaws.com/dev-fun-bucket/JFH1.png",
@@ -63,7 +63,7 @@ export const projects = [
   },
   {
     name: "My Portfolio",
-    title: "THE UH.. THIS THING",
+    title: "UH.. THIS THING",
     imageHeight: "250px",
     image: [
       "https://s3.amazonaws.com/dev-fun-bucket/portfolio3.png",
@@ -88,7 +88,7 @@ export const projects = [
   },
   {
     name: "Card Fun",
-    title: "THE CARD GAME",
+    title: "CARD GAME",
     imageHeight: "250px",
     image: [
       "https://s3.amazonaws.com/dev-fun-bucket/card_fun1.png",
@@ -112,7 +112,7 @@ export const projects = [
   },
   {
     name: "Blackjack",
-    title: "THE BLACKJACK",
+    title: "BLACKJACK",
     imageHeight: "250px",
     image: ["https://s3.amazonaws.com/dev-fun-bucket/blackjack.png"],
     about:
@@ -133,7 +133,7 @@ export const projects = [
   },
   {
     name: "React-Native Reservation",
-    title: "THE HOTEL RESERVATION",
+    title: "HOTEL RESERVATION",
     imageHeight: "700px",
     image: [
       "https://s3.amazonaws.com/dev-fun-bucket/reservationList.png",
@@ -154,7 +154,7 @@ export const projects = [
   },
   {
     name: "Math Challenge",
-    title: "THE MATH CHALLENGE",
+    title: "MATH CHALLENGE",
     imageHeight: "700px",
     image: [
       "https://s3.amazonaws.com/dev-fun-bucket/math2.png",
@@ -178,7 +178,7 @@ export const projects = [
   },
   {
     name: "Ohm's Law Calc",
-    title: "THE OHM'S LAW",
+    title: "OHM'S LAW",
     imageHeight: "700px",
     image: [
       "https://lh3.googleusercontent.com/daCMT5ioYMFVZgY0ypIsYt14nHg1IAUdtOYvp3gyAjqc_qxo9c5PvhiXB0lFvo4qprLe=w400"

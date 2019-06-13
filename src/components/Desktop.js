@@ -3,16 +3,17 @@ import { withRouter } from "react-router-dom";
 import Window from "./Window";
 import Bradley from "./Bradley";
 import "./Desktop.scss";
+import DesktopIcon from "./DesktopIcon";
 
 class Desktop extends Component {
   constructor() {
     super();
     this.state = {
-      top: `${window.innerHeight - 125}`,
-      left: 50,
-      dragging: false,
+      bradDragging: false,
+      home: [window.innerHeight - 125, 50],
+      project: [window.innerHeight - 125, 150],
       hidden: "none", //prop to window
-      screenHeight: window.innerHeight,
+      screenHeight: window.innerHeight
     };
   }
 
@@ -27,9 +28,9 @@ class Desktop extends Component {
   };
 
   windowCheck = () => {
-    console.log('match', this.props.match)
-    if (this.props.match.path !== "/") {
-      this.maximize();
+    const { match } = this.props;
+    if (match.path !== "/") {
+      this.maximize(match.path);
     } else {
       this.props.history.push("/project");
     }
@@ -40,39 +41,45 @@ class Desktop extends Component {
       this.setState({
         screenHeight: window.innerHeight
       });
-      this.mouseDefault();
+      this.iconDefault();
     });
   };
 
-  mouseDefault = () => {
+  iconDefault = () => {
     this.setState({
-      top: `${window.innerHeight - 125}`,
-      left: 50
+      home: [window.innerHeight - 125, 50],
+      project: [window.innerHeight - 125, 150],
     });
   };
 
-  dragOn = () => {
+  dragOn = iconName => {
     this.setState({
-      dragging: true
+      dragging: iconName
     });
+    window.addEventListener("mousemove", this.mouseMove);
+    window.addEventListener("mouseup", this.dragOff);
   };
 
   mouseMove = e => {
     if (this.state.dragging) {
       this.setState({
-        top: e.clientY - 25,
-        left: e.clientX - 25
+        [this.state.dragging]: [e.clientY - 25, e.clientX - 25]
       });
     }
   };
 
-  dragOff = e => {
+  dragOff = () => {
     this.setState({
       dragging: false
     });
+    window.removeEventListener("mousemove", this.mouseMove);
+    window.removeEventListener("mouseup", this.dragOff);
   };
 
-  maximize = () => {
+  maximize = value => {
+    if (value !== this.props.match.path) {
+      this.props.history.push(`/${value}`);
+    }
     this.setState({ hidden: "block" });
   };
 
@@ -80,37 +87,32 @@ class Desktop extends Component {
     this.setState({ hidden: "none" });
   };
 
-
   render() {
     return (
       <div
         className="desktop"
-        onMouseMove={e => this.mouseMove(e)}
         style={{
-          height: this.state.screenHeight,
+          height: this.state.screenHeight
         }}
         onMouseLeave={this.dragOff}
       >
-        <Bradley/>
-        <div
-          className="icon"
-          style={{
-            top: `${this.state.top}px`,
-            left: `${this.state.left}px`
-          }}
-          onMouseDown={this.dragOn}
-          onMouseUp={e => this.dragOff(e)}
-          onDoubleClick={this.maximize}
-        >
-          {/* <i className="fas fa-keyboard" /> */}
-          <img src="https://dev-fun-bucket.s3.amazonaws.com/icon-transparent.png"/>
-          <div className="name">Bradley</div>
-        </div>
-        <div className="icon-mobile" onClick={this.maximize}>
-          {/* <i className="fas fa-keyboard" /> */}
-          <img src="https://dev-fun-bucket.s3.amazonaws.com/icon-transparent.png"/>
-          <div className="name">Bradley</div>
-        </div>
+        <Bradley />
+        <DesktopIcon
+          value="home"
+          name="Bradley"
+          position={this.state.home}
+          maximize={this.maximize}
+          dragOn={this.dragOn}
+          dragOff={this.dragOff}
+        />
+        <DesktopIcon
+          value="project"
+          name="Projects"
+          position={this.state.project}
+          maximize={this.maximize}
+          dragOn={this.dragOn}
+          dragOff={this.dragOff}
+        />
         <Window minimize={this.minimize} hidden={this.state.hidden} />
       </div>
     );

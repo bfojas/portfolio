@@ -12,7 +12,7 @@ const Home = props => {
       <div className="home-content">
         <div className="home-text">
           <p>
-            I'm a Web Developer focusing mostly on React, React-Native, NodeJS, and PostgreSQL. I got my start in development after finishing the DevMountain (Phoenix) Web Dev Immersive program as a fully badged graduate and hackathon champion. 
+            I'm a Software Engineer focusing mostly on React, React-Native, NodeJS, and PostgreSQL. I got my start in development after finishing the DevMountain (Phoenix) Web Dev Immersive program as a fully badged graduate and hackathon champion. 
           </p>
           <p>
             I've also got a brain full of useless facts, in case you're down for some bar trivia.

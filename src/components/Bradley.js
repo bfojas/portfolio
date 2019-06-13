@@ -9,9 +9,8 @@ const Bradley = (props) => {
             <span>Hi, I'm a Web Developer! </span>
             <p>
               <span className="mobile-span"> Double-</span>
-              Click the icon in the corner to learn more about me.
+              Click an icon in the corner to learn more about me.
             </p>
-            <div className="change-wall">Change the Wallpaper?</div>
           </div>
         </div>
     )
