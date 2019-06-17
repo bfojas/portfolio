@@ -11,7 +11,7 @@
   .image-cover {
     @extend .flex-center;
     cursor: pointer;
-    position: absolute;
+    position: relative;
     height: 100%;
     width: 100%;
     background-color: rgba(88, 85, 85, 0.76);
@@ -30,19 +30,6 @@
     font-weight: bold;
     text-shadow: none;
   }
-}
-
-.project-image::before {
-  display: block;
-  border: lightgray solid 1px;
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  border-radius: 3px;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
 }
 
 .web {

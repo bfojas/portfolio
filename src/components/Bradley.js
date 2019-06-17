@@ -6,7 +6,7 @@ const Bradley = (props) => {
         <div className="pic-contain">
           <div className="bradley" />
           <div className="bubble">
-            <span>Hi, I'm a Web Developer! </span>
+            <span>Hi, I'm a Software Engineer! </span>
             <p>
               <span className="mobile-span"> Double-</span>
               Click an icon in the corner to learn more about me.

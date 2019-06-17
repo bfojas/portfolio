@@ -71,7 +71,7 @@ export const projects = [
       "https://s3.amazonaws.com/dev-fun-bucket/portfolio2.png"
     ],
     about:
-      ["Woah, webception. This is my portfolio site. Basically the thing you are looking at right now. Don't let the simplistic looking design fool you. There's a lot going on here. This page that you are reading right now is a reusable component with props from Redux. This window is a styled modal. And the whole thing is mobile responsive."],
+      ["Woah, webception. This is my portfolio site. Basically the thing you are looking at right now.  Don't let the simplistic looking design fool you. There's a lot going on here  (did you drag the desktop icons?).", "This page that you are reading right now is a reusable component with props from Redux. This window is a styled modal. And the whole thing is mobile responsive."],
     projectLink: [
       {
         link: "https://bfojas.github.io/portfolio/#/project/portfolio",
@@ -184,7 +184,7 @@ export const projects = [
       "https://lh3.googleusercontent.com/daCMT5ioYMFVZgY0ypIsYt14nHg1IAUdtOYvp3gyAjqc_qxo9c5PvhiXB0lFvo4qprLe=w400"
     ],
     about:
-      ["I wanted to learn React-Native, then build and publish an App, all in one day. This is what I came up with. It's a tool for calculating Ohm's Law. Plenty of apps like it out there, but this one also has a link that takes you back to this portfolio..."],
+      ["I wanted to learn React-Native, then build and publish an App, all in one day. This is what I came up with. It's a tool for calculating the electrical principle Ohm's Law. Plenty of apps like it out there, but this one also has a link that takes you back to this portfolio..."],
     projectLink: [
       {
         link: "http://play.google.com/store/apps/details?id=bfojas.github.io",

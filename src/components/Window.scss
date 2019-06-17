@@ -49,9 +49,11 @@
       top: 2px;
       height: 26px;
       width: calc(100% - 4px);
+      z-index: 150;
       background-color: $primary-grey;
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
+      
       ul {
         width: 100%;
         height: 100%;
@@ -87,7 +89,6 @@
             width: 135px;
             background-color: white;
             border: 1px solid black;
-            z-index: 100;
             transition: height 200ms, font-size 100ms;
 
             li {
@@ -129,6 +130,13 @@
           color: white;
         }
       } //ul (menu heads)
+
+      .menu-mobile {
+        // background-color: red;
+        display: none;
+        position: absolute;
+        // z-index: 955;
+      } //menu-mobile (hidden)
     } //.window-menu
 
     .route-container {
@@ -141,6 +149,7 @@
         position: relative;
         top: 2px;
         left: 2px;
+        // z-index: -100;
       } //.route-container
 
     @media (max-width: 1050px) {
@@ -165,6 +174,10 @@
                   }
                 }
               }
+
+              .menu-mobile {
+                display: flex;
+              }// menu-mobile
             } //@media iPad pro .window-menu
       
             .window-top {
@@ -188,7 +201,6 @@
         @media (max-width: 820px) {
           height: 97%;
           width: 97%;
-          // font-weight: bold;
           font-size: 18px;
         }
   

@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { withRouter, Link, Switch, Route } from "react-router-dom";
+import { withRouter, Switch, Route } from "react-router-dom";
 import Home from "./Home";
 import Project from "./Project";
 import AllProjects from "./AllProjects";
+import Images from "./Images";
 import "./Window.scss";
 
 class Window extends Component {
@@ -11,28 +12,32 @@ class Window extends Component {
     this.state = {
       about: false,
       portfolio: false,
-      email: false
+      email: false,
+      modalType: "",
+      imageModal: false,
+      imageStart: 0
     };
   }
 
   menuRender = e => {
+    const { about, portfolio, email } = this.state;
     e.stopPropagation();
     const { id } = e.target;
     if (id === "about") {
       this.setState({
-        about: true,
+        about: e.type === "click" ? !about : true,
         portfolio: false,
         email: false
       });
     } else if (id === "portfolio") {
       this.setState({
-        portfolio: true,
+        portfolio: e.type === "click" ? !portfolio : true,
         about: false,
         email: false
       });
     } else if (id === "email") {
       this.setState({
-        email: true,
+        email: e.type === "click" ? !email : true,
         about: false,
         portfolio: false
       });
@@ -47,8 +52,37 @@ class Window extends Component {
     });
   };
 
+  openImages = index => {
+    this.setState({
+      modalType: "image",
+      imageStart: index,
+      imageModal: true
+    });
+  };
+
+  openVideo = link => {
+    this.setState({
+      modalType: "video",
+      imageStart: link,
+      imageModal: true
+    });
+  };
+
+  closeImage = () => {
+    this.setState({
+      imageModal: false
+    });
+  };
+
   render() {
-    const { about, portfolio, email } = this.state;
+    const {
+      about,
+      portfolio,
+      email,
+      imageModal,
+      imageStart,
+      modalType
+    } = this.state;
     const { minimize } = this.props;
     const portfolioArray = [
       { name: "Road Trip", route: "roadTrip" },
@@ -146,15 +180,14 @@ class Window extends Component {
                 style={aboutStyle}
                 onClick={this.menuClose}
               >
-                
-              <li><Link
-              to="/home"
-              style={{ textDecoration: "none" }}
-              onClick={this.menuClose}
-            >
-              Bradley
-              </Link></li>
-            
+                <li
+                  style={{ textDecoration: "none" }}
+                  onClick={() => {
+                    this.props.history.push("/home");
+                  }}
+                >
+                  Bradley
+                </li>
                 <li>
                   <a
                     href="https://www.linkedin.com/in/bradley-fojas/"
@@ -185,14 +218,54 @@ class Window extends Component {
               </ul>
             </li>
           </ul>
+          <ul className="menu-mobile">
+            <li
+              id="portfolio"
+              style={{ color: portfolio ? "white" : "black" }}
+              onClick={e => this.menuRender(e)}
+            >
+              Projects
+            </li>
+            <li
+              id="email"
+              style={{ color: email ? "white" : "black" }}
+              onClick={e => this.menuRender(e)}
+            >
+              Contact
+            </li>
+            <li
+              id="about"
+              style={{ color: about ? "white" : "black" }}
+              onClick={e => this.menuRender(e)}
+            >
+              About
+            </li>
+          </ul>
         </div>
         <div className="route-container">
           <Switch>
             <Route path="/home" component={Home} />
-            <Route path="/project/:id" render={props => <Project />} />
+            <Route
+              path="/project/:id"
+              render={props => (
+                <Project
+                  openVideo={this.openVideo}
+                  openImages={this.openImages}
+                />
+              )}
+            />
             <Route path="/project" component={AllProjects} />
           </Switch>
+          {/* {this.props.match.path === "/home" && <Home />}
+          {this.props.match.path === "project/:id" && <Project
+                  openVideo={this.openVideo}
+                  openImages={this.openImages}
+                />}
+          {this.props.match.path === "/project" && <AllProject/>} */}
         </div>
+        {imageModal ? (
+          <Images start={imageStart} type={modalType} close={this.closeImage} />
+        ) : null}
       </div>
     );
   }

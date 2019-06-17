@@ -67,6 +67,7 @@ $head-mobile: 150px;
 
     .summary-box {
       @extend .flex-center;
+      justify-content: flex-start;
       position: relative;
       width: calc(100% - 500px);
       padding-top: 15px;

@@ -10,8 +10,8 @@ class Desktop extends Component {
     super();
     this.state = {
       bradDragging: false,
-      home: [window.innerHeight - 125, 50],
-      project: [window.innerHeight - 125, 150],
+      home: [window.innerHeight - 125, 25],
+      project: [window.innerHeight - 125, 125],
       hidden: "none", //prop to window
       screenHeight: window.innerHeight
     };
@@ -24,16 +24,15 @@ class Desktop extends Component {
 
   componentWillUnmount = () => {
     window.removeEventListener("scroll", this.handleScroll);
-    // this.windowCheck();
   };
 
   windowCheck = () => {
     const { match } = this.props;
     if (match.path !== "/") {
-      this.maximize(match.path);
-    } else {
-      this.props.history.push("/project");
-    }
+      this.setState({
+        hidden: "block"
+      });
+    } 
   };
 
   updateWindow = () => {
@@ -63,7 +62,7 @@ class Desktop extends Component {
   mouseMove = e => {
     if (this.state.dragging) {
       this.setState({
-        [this.state.dragging]: [e.clientY - 25, e.clientX - 25]
+        [this.state.dragging]: [e.clientY - 50, e.clientX - 35]
       });
     }
   };
@@ -77,9 +76,6 @@ class Desktop extends Component {
   };
 
   maximize = value => {
-    if (value !== this.props.match.path) {
-      this.props.history.push(`/${value}`);
-    }
     this.setState({ hidden: "block" });
   };
 
@@ -99,19 +95,23 @@ class Desktop extends Component {
         <Bradley />
         <DesktopIcon
           value="home"
-          name="Bradley"
+          name="About"
+          route="home"
           position={this.state.home}
           maximize={this.maximize}
           dragOn={this.dragOn}
           dragOff={this.dragOff}
+          icon="https://dev-fun-bucket.s3.amazonaws.com/icon-transparent.png"
         />
         <DesktopIcon
           value="project"
           name="Projects"
+          route="project"
           position={this.state.project}
           maximize={this.maximize}
           dragOn={this.dragOn}
           dragOff={this.dragOff}
+          icon="https://dev-fun-bucket.s3.amazonaws.com/folder_icon_transparent.png"
         />
         <Window minimize={this.minimize} hidden={this.state.hidden} />
       </div>

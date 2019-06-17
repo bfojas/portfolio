@@ -1,19 +1,10 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import Images from "./Images";
 import { renderProject } from "../ducks/reducer";
 import "./Project.scss";
 
 class Project extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      modalType: "",
-      imageModal: false,
-      imageStart: 0
-    };
-  }
 
   componentDidMount = () => {
     this.renderPage();
@@ -23,28 +14,6 @@ class Project extends Component {
     if (prevProps.match.params.id !== this.props.match.params.id) {
       this.renderPage();
     }
-  };
-
-  openImages = index => {
-    this.setState({
-      modalType: "image",
-      imageStart: index,
-      imageModal: true
-    });
-  };
-
-  openVideo = link => {
-    this.setState({
-      modalType: "video",
-      imageStart: link,
-      imageModal: true
-    });
-  };
-
-  closeImage = () => {
-    this.setState({
-      imageModal: false
-    });
   };
 
   renderPage = () => {
@@ -74,7 +43,7 @@ class Project extends Component {
   };
 
   render() {
-    const { imageModal, imageStart, modalType } = this.state;
+    const { openImages, openVideo } = this.props
     const {
       title,
       image,
@@ -88,7 +57,7 @@ class Project extends Component {
         <div
           key={0}
           className="images"
-          onClick={() => this.openImages(0)}
+          onClick={() => openImages(0)}
           style={{
             backgroundImage: `url(${image[[0]]})`,
             height: imageHeight
@@ -101,7 +70,7 @@ class Project extends Component {
             <div
               key={i}
               className="images"
-              onClick={() => this.openImages(i)}
+              onClick={() => openImages(i)}
               style={{
                 backgroundImage: `url(${val})`,
                 height: imageHeight
@@ -120,12 +89,13 @@ class Project extends Component {
         ) : (
           <i
             key={i}
-            onClick={() => this.openVideo(val.link)}
+            onClick={() => openVideo(val.link)}
             className="links fas fa-video"
           />
         );
       });
     return (
+      <React.Fragment>
       <div className="project-container" key={this.props.match.params.id}>
         <div className="project-head">
           <div className="project-name">{`${title} PROJECT`}</div>
@@ -145,10 +115,8 @@ class Project extends Component {
             <div className="project-tech">{techUsed}</div>
           </div>
         </div>
-        {imageModal ? (
-          <Images start={imageStart} type={modalType} close={this.closeImage} />
-        ) : null}
       </div>
+      </React.Fragment>
     );
   }
 }

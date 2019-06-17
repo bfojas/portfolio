@@ -4,18 +4,18 @@ import "./IconMap.scss";
 
 const IconMap = props => {
   let iconsList = [
-    { icon: "fab fa-react", text: "React/ React-Native" },
+    { icon: "fab fa-react", text: "React/React-Native" },
     { icon: "fab fa-node-js", text: "NodeJs/ Express" },
     { icon: "devicon-postgresql-plain", text: "PostgreSQL" },
     { icon: "fab fa-js-square", text: "JavaScript ES6" },
     { icon: "fab fa-html5", text: "HTML5" },
-    { icon: "fab fa-sass", text: "CSS/ SASS" },
+    { icon: "fab fa-sass", text: "CSS/SASS" },
     {
       icon: "https://s3.amazonaws.com/dev-fun-bucket/redux_transparent.png",
       text: "Redux",
       type: "image"
     },
-    { icon: "fab fa-github-square", text: "Git/ GitHub" }
+    { icon: "fab fa-github-square", text: "Git/GitHub" }
   ];
 
   let iconMapper = val => {

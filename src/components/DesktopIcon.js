@@ -9,7 +9,6 @@ class DesktopIcon extends Component {
       top: `${this.props.position[0]}`,
       left: this.props.position[1],
       dragging: false,
-      cursor: "pointer"
     };
   }
 
@@ -18,13 +17,18 @@ class DesktopIcon extends Component {
       this.setState({
         top: `${this.props.position[0]}`,
         left: this.props.position[1]
-        // cursor: "grab"
       });
     }
   };
 
+  maximize = () => {
+      const { route } = this.props
+      this.props.history.push(`/${route}`)
+      this.props.maximize()
+  }
+
   render() {
-    const { name, maximize, dragOn, dragOff, value } = this.props;
+    const { name, dragOn, dragOff, value, icon } = this.props;
     return (
       <React.Fragment>
         <div
@@ -32,16 +36,15 @@ class DesktopIcon extends Component {
           style={{
             top: `${this.state.top}px`,
             left: `${this.state.left}px`,
-            cursor: this.state.cursor
           }}
           onMouseDown={() => dragOn(value)}
           onMouseUp={dragOff}
-          onDoubleClick={() => maximize(value)}
+          onDoubleClick={this.maximize}
         >
           <div
             className="icon"
             style={{
-              backgroundImage: `url("https://dev-fun-bucket.s3.amazonaws.com/icon-transparent.png")`
+              backgroundImage: `url(${icon})`
             }}
           />
           <div className="name">{name}</div>
@@ -49,13 +52,12 @@ class DesktopIcon extends Component {
         <div
           className="icon-mobile-container"
           style={{
-            bottom: `${this.state.left-35}px`,
+            bottom: `${this.state.left-15}px`,
             left: `20px`,
-            cursor: this.state.cursor
           }}
-          onClick={()=>maximize(value)}
+          onClick={this.maximize}
         >
-          <img className="icon-mobile" src="https://dev-fun-bucket.s3.amazonaws.com/icon-transparent.png" alt="icon" />
+          <img className="icon-mobile" src={icon} alt="icon" />
           <div className="name">{name}</div>
         </div>
       </React.Fragment>

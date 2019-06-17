@@ -6,18 +6,18 @@ import IconMap from "./IconMap";
 import "./AllProjects.scss";
 
 class AllProjects extends Component {
-  // const [selected, setSelected] = useState("web");
   constructor(props) {
     super(props);
     this.state = {
       selected: "web"
     };
-    this.scrollRef = React.createRef();
   }
+
+  selectorRef = React.createRef();
 
   selector = tab => {
     this.setState({ selected: tab });
-    this.scrollRef.current.scrollIntoView({
+    this.selectorRef.current.scrollIntoView({
       behavior: "smooth"
     });
   };
@@ -45,7 +45,7 @@ class AllProjects extends Component {
         <Head />
         <IconMap />
         <div className="selector-container">
-          <div ref={this.scrollRef} className="selector-tabs">
+          <div ref={this.selectorRef} className="selector-tabs">
             <p
               className={`selector ${selected === "web" ? "active" : null}`}
               onClick={() => this.selector("web")}
@@ -60,7 +60,7 @@ class AllProjects extends Component {
             </p>
           </div>
           <div
-            className={`image-container ${
+            className={`all-image-container ${
               selected === "web" ? "web-images" : "mobile-images"
             }`}
           >
