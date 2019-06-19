@@ -12,7 +12,7 @@ class Desktop extends Component {
       bradDragging: false,
       home: [window.innerHeight - 125, 25],
       project: [window.innerHeight - 125, 125],
-      hidden: "none", //prop to window
+      hidden: "block", //prop to window
       screenHeight: window.innerHeight
     };
   }
@@ -28,11 +28,9 @@ class Desktop extends Component {
 
   windowCheck = () => {
     const { match } = this.props;
-    if (match.path !== "/") {
-      this.setState({
-        hidden: "block"
-      });
-    } 
+    if (match.path === "/") {
+      this.props.history.push("/home")
+    }
   };
 
   updateWindow = () => {
