@@ -15,7 +15,8 @@ class Window extends Component {
       email: false,
       modalType: "",
       imageModal: false,
-      imageStart: 0
+      imageStart: 0,
+      renderPath: false
     };
   }
 
@@ -74,6 +75,14 @@ class Window extends Component {
     });
   };
 
+  scrollToRef = comp => {
+    if (this.props.match.path !== comp) {
+      this.props.history.push(comp);
+    } else {
+      this.setState({ renderPath: !this.state.renderPath });
+    }
+  };
+
   render() {
     const {
       about,
@@ -86,9 +95,9 @@ class Window extends Component {
     const { minimize } = this.props;
     const portfolioArray = [
       { name: "Road Trip", route: "roadTrip" },
+      { name: "Jobs for Hope", route: "jobsForHope" },
       { name: "Hotel Project", route: "hotelReservation" },
-      { name: "Math Challenge", route: "mathChallenge" },
-      { name: "Card Fun", route: "cardFun" }
+      { name: "Math Challenge", route: "mathChallenge" }
     ];
 
     const portfolioStyle = portfolio
@@ -121,7 +130,7 @@ class Window extends Component {
         style={{ display: `${this.props.hidden}` }}
       >
         <div className="window-top">
-          <div className="window-name">Bradley Fojas</div>
+          <div className="window-name">Bradley Fojas - Software Engineer</div>
           <button className="minimize-button" onClick={minimize}>
             <i className="fas fa-times" />
           </button>
@@ -145,7 +154,8 @@ class Window extends Component {
                   }}
                   key="all"
                   onClick={() => {
-                    this.props.history.push(`/project`);
+                    // this.props.history.push(`/project`);
+                    this.scrollToRef("/project");
                   }}
                 >
                   View All
@@ -183,7 +193,8 @@ class Window extends Component {
                 <li
                   style={{ textDecoration: "none" }}
                   onClick={() => {
-                    this.props.history.push("/home");
+                    // this.props.history.push("/about");
+                    this.scrollToRef("/about");
                   }}
                 >
                   Bradley
@@ -244,7 +255,10 @@ class Window extends Component {
         </div>
         <div className="route-container">
           <Switch>
-            <Route path="/home" component={Home} />
+            <Route
+              path="/about"
+              render={props => <Home renderPath={this.state.renderPath} />}
+            />
             <Route
               path="/project/:id"
               render={props => (
@@ -254,14 +268,11 @@ class Window extends Component {
                 />
               )}
             />
-            <Route path="/project" component={AllProjects} />
+            <Route
+              path="/project"
+              render={props => <Home renderPath={this.state.renderPath} />}
+            />
           </Switch>
-          {/* {this.props.match.path === "/home" && <Home />}
-          {this.props.match.path === "project/:id" && <Project
-                  openVideo={this.openVideo}
-                  openImages={this.openImages}
-                />}
-          {this.props.match.path === "/project" && <AllProject/>} */}
         </div>
         {imageModal ? (
           <Images start={imageStart} type={modalType} close={this.closeImage} />

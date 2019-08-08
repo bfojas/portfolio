@@ -29,7 +29,7 @@ class Desktop extends Component {
   windowCheck = () => {
     const { match } = this.props;
     if (match.path === "/") {
-      this.props.history.push("/home")
+      this.props.history.push("/about")
     }
   };
 

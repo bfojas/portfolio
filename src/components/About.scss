@@ -1,0 +1,143 @@
+@import "../_variables.scss";
+
+.about-container {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  background-color: $background;
+  color: $primary-blue;
+  margin: 25px 0 10px 0;
+
+  .about-content {
+    @extend .flex-center;
+    flex-direction: row;
+
+    .about-text {
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      justify-content: center;
+      text-align: left;
+      width: 65%;
+      min-height: calc(100% - 505px);
+      font-size: calc(12px + 1vmin);
+
+      p, .about-icons-container {
+        display: flex;
+        margin: 25px 25px;
+      }
+
+      .about-icons-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+
+        .single-about-icon {
+          display: flex;
+          margin: 5px 10px;
+          width: 100px;;
+          cursor: pointer;
+          align-items: center;
+          flex-direction: column;
+          text-decoration: none;
+          color: $primary-blue;
+
+          .about-icon {
+            font-size: 36px;
+            width: 40px;
+            text-align: center;
+          }
+          
+          .about-icon-text {
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+            font-size: calc(12px + 1vmin);
+            font-weight: normal;
+          }
+        }
+
+        .single-about-icon:hover {
+          position: relative;
+          .about-icon {
+            font-size: 42px;
+            position: absolute;
+          }
+
+          .about-icon-text {
+            position: absolute;
+            bottom: 0;
+          }
+
+        }
+      }
+    }
+
+    
+    .about-image {
+      margin: 20px 5px 10px 5px;
+      width: 30%;
+      height: 400px;
+      background-image: url('https://dev-fun-bucket.s3.amazonaws.com/brad_dog.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: right top;
+      border-radius: 5px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .about-content {
+      font-size: 3vmin;
+    }
+  }
+
+  @media (max-width: 1024px) and (orientation: landscape) {
+    .about-content {
+      font-size: 4vh;
+    }
+  }
+
+  @media #{$phone-media} {
+    margin: 10px 0 0 0;
+
+    .about-content {
+      flex-direction: column;
+      .about-text {
+        width: 95%;
+      }
+      .about-image {
+        width: 95%;
+        height: auto;
+        min-height: 350px;
+      }
+      .about-text {
+        p {
+          margin: 20px;
+        }
+
+        .about-icons-container {
+          // flex-direction: column;
+          // justify-content: center;
+          // align-items: center;
+
+          .single-about-icon {
+            flex-direction: column;
+            align-items: center;
+          }
+
+        }
+      }
+    }
+  }
+}//about
+
+@keyframes slide-in-left {
+  0% {
+    margin-left: -2500px;
+  }
+  100% {
+    margin-left: 0;
+  }
+}

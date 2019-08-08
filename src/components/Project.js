@@ -6,6 +6,8 @@ import "./Project.scss";
 
 class Project extends Component {
 
+  selectorRef = React.createRef();
+
   componentDidMount = () => {
     this.renderPage();
   };
@@ -13,12 +15,21 @@ class Project extends Component {
   componentDidUpdate = prevProps => {
     if (prevProps.match.params.id !== this.props.match.params.id) {
       this.renderPage();
+      
     }
   };
+
+  scrollIn = () => {
+    this.selectorRef.current.scrollIntoView({
+      behavior: "smooth"
+    });
+  }
 
   renderPage = () => {
     const { renderProject } = this.props;
     const { id } = this.props.match.params;
+
+    this.scrollIn()
 
     switch (id) {
       case "roadTrip":
@@ -96,7 +107,7 @@ class Project extends Component {
       });
     return (
       <React.Fragment>
-      <div className="project-container" key={this.props.match.params.id}>
+      <div className="project-container" key={this.props.match.params.id} ref={this.selectorRef}>
         <div className="project-head">
           <div className="project-name">{`${title} PROJECT`}</div>
         </div>

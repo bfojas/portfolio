@@ -20,7 +20,7 @@ export const projects = [
       "https://s3.amazonaws.com/dev-fun-bucket/road_trip4.png"
     ],
     about:
-      ["A collaborative group project to bring the power of the Google Maps API to a user-friendly road trip planning app. Users can edit routes with a quick drag and drop, explore other trips and other road trippers."],
+      ["A project to bring the power of the Google Maps API to a user-friendly road trip planning app. Users can edit routes with a quick drag and drop, explore other trips and other road trippers."],
     projectLink: [
       {
         link:
@@ -63,7 +63,7 @@ export const projects = [
   },
   {
     name: "My Portfolio",
-    title: "UH.. THIS THING",
+    title: "PORTFOLIO",
     imageHeight: "250px",
     image: [
       "https://s3.amazonaws.com/dev-fun-bucket/portfolio3.png",

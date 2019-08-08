@@ -42,29 +42,33 @@ class AllProjects extends Component {
 
     return (
       <div className="all-container">
-        <Head />
-        <IconMap />
+        {/* <Head /> */}
+        {/* <IconMap /> */}
         <div className="selector-container">
           <div ref={this.selectorRef} className="selector-tabs">
             <p
               className={`selector ${selected === "web" ? "active" : null}`}
               onClick={() => this.selector("web")}
             >
-              <span className="break">|</span>Web Projects<span className="break">..</span>
+              {/* <span className="break">|</span> */}
+              Web <br/>Projects
+              {/* <span className="break">..</span> */}
             </p>
             <p
               className={`selector ${selected === "mobile" ? "active" : null}`}
               onClick={() => this.selector("mobile")}
             >
-              Mobile Projects
+              Mobile<br/>Projects
             </p>
           </div>
           <div
-            className={`all-image-container ${
-              selected === "web" ? "web-images" : "mobile-images"
-            }`}
+            className={`all-image-container`}
           >
+            <div className={
+              selected === "web" ? "web-images" : "mobile-images"
+            }>
             {selected === "web" ? webImages : mobileImages}
+            </div>
           </div>
         </div>
       </div>

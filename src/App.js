@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <Switch>
-          <Route path="/home" component={Desktop} />
+          <Route path="/about" component={Desktop} />
           <Route path="/project/:id" component={Desktop} />
           <Route path="/project" component={Desktop} />
           <Route path="/" component={Desktop} />
