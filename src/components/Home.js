@@ -16,6 +16,7 @@ class Home extends React.Component {
 
   componentDidMount = () => {
     this.setState({ path: this.props.match.path });
+    this.scrollIn();
   };
 
   componentDidUpdate = prevProps => {
