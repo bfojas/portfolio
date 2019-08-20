@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { withRouter, Switch, Route } from "react-router-dom";
 import Home from "./Home";
 import Project from "./Project";
-import AllProjects from "./AllProjects";
 import Images from "./Images";
 import "./Window.scss";
 

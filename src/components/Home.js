@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { withRouter, Link } from "react-router-dom";
+import React from "react";
+import { withRouter } from "react-router-dom";
 import "./Home.scss";
 import Head from "./Head";
 import IconMap from "./IconMap";
@@ -16,7 +16,7 @@ class Home extends React.Component {
 
   componentDidMount = () => {
     this.setState({ path: this.props.match.path });
-    this.scrollIn();
+    // this.scrollIn();
   };
 
   componentDidUpdate = prevProps => {

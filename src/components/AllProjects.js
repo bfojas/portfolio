@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { projects } from "../ducks/reducer";
-import Head from "./Head";
 import ProjectTiles from "./ProjectTiles";
-import IconMap from "./IconMap";
 import "./AllProjects.scss";
 
 class AllProjects extends Component {

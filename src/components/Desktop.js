@@ -10,7 +10,7 @@ class Desktop extends Component {
     super();
     this.state = {
       bradDragging: false,
-      home: [window.innerHeight - 125, 25],
+      about: [window.innerHeight - 125, 25],
       project: [window.innerHeight - 125, 125],
       hidden: "block", //prop to window
       screenHeight: window.innerHeight
@@ -44,7 +44,7 @@ class Desktop extends Component {
 
   iconDefault = () => {
     this.setState({
-      home: [window.innerHeight - 125, 50],
+      about: [window.innerHeight - 125, 50],
       project: [window.innerHeight - 125, 150],
     });
   };
@@ -92,10 +92,10 @@ class Desktop extends Component {
       >
         <Bradley />
         <DesktopIcon
-          value="home"
+          value="about"
           name="About"
-          route="home"
-          position={this.state.home}
+          route="about"
+          position={this.state.about}
           maximize={this.maximize}
           dragOn={this.dragOn}
           dragOff={this.dragOff}

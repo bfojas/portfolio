@@ -1,8 +1,6 @@
 import React from "react";
-import { withRouter, Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import "./About.scss";
-import Head from "./Head";
-import IconMap from "./IconMap";
 
 const About = props => {
   return (
