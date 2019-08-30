@@ -37,7 +37,7 @@ const IconMap = props => {
   };
 
   return (
-    <div className={`icon-wrap ${props.className}`}>
+    <div className={`icon-wrap`}>
       <div className="icon-container">
         <div className="four-icons">
           <div className="two-icons">

@@ -5,8 +5,6 @@ import "./About.scss";
 const About = props => {
   return (
     <div className="about-container">
-      {/* <Head />
-      <IconMap /> */}
       <div className="about-content">
         <div className="about-text">
           <p>

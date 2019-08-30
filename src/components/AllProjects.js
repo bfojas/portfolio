@@ -40,8 +40,6 @@ class AllProjects extends Component {
 
     return (
       <div className="all-container">
-        {/* <Head /> */}
-        {/* <IconMap /> */}
         <div className="selector-container">
           <div ref={this.selectorRef} className="selector-tabs">
             <p

@@ -22,10 +22,10 @@ class Home extends React.Component {
   componentDidUpdate = prevProps => {
     if (prevProps.match.path !== this.props.match.path) {
       this.setState({ path: this.props.match.path });
-      this.scrollIn()
+      this.scrollIn();
     }
     if (prevProps.renderPath !== this.props.renderPath) {
-      this.scrollIn()
+      this.scrollIn();
     }
   };
 
@@ -37,10 +37,17 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div className="home-container" >
-        <Head />
-        <IconMap />
-        <div ref={this.homeSelector}/>
+      <div className="home-container">
+        <div className="home-top">
+          <div className="home-top-transparent">
+          <div className="home-top-split-1" />
+          <div className="home-top-split-2" />
+          <div className="home-top-split-3" />
+          </div>
+          <Head />
+          <IconMap />
+        </div>
+        <div ref={this.homeSelector} />
         <div
           className="home-path"
           style={{

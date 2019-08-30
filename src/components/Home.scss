@@ -1,1 +1,55 @@
 @import "../_variables.scss";
+
+.home-container {
+  .home-top {
+    position: relative;
+    background-image: url("https://dev-fun-bucket.s3.amazonaws.com/computer-1836330_1920.png");
+    background-size: cover;
+    overflow: hidden;
+    width: 100%;
+    
+    .home-top-transparent {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        top: -25%;
+        width: 100%;
+        height: 150%;
+        transform: skew(0deg, 5deg);
+        overflow: hidden;
+      .home-top-split-1 {
+        position: relative;
+        height: 25%;
+        background-color: $primary-transparent;
+        width: 100%;
+      }
+
+      .home-top-split-2 {
+        position: relative;
+        height: 50%;
+        background-color: $secondary-transparent;
+        width: 100%;
+      }
+
+      .home-top-split-3 {
+          position: relative;
+          height: 25%;
+          background-color: $primary-transparent;
+          width: 100%;
+      }
+
+      @media screen and (max-width: 440px) {
+          top: -30%;
+        transform: skew(0deg, 15deg);
+        .home-top-split-1 {
+            height: 50%;
+        }
+        .home-top-split-3 {
+            display: none;
+        }
+      }
+    }
+  }
+}
