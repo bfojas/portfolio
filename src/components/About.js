@@ -4,7 +4,7 @@ import "./About.scss";
 
 const About = props => {
   return (
-    <div className="about-container">
+    <div className="about-container" >
       <div className="about-content">
         <div className="about-text">
           <p>

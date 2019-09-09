@@ -39,7 +39,7 @@ class AllProjects extends Component {
     let mobileImages = mobileProjects.map(imageMapper);
 
     return (
-      <div className="all-container">
+      <div className="all-container" ref={this.props.scrollRef}>
         <div className="selector-container">
           <div ref={this.selectorRef} className="selector-tabs">
             <p

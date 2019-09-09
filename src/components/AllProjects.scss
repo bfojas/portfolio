@@ -87,11 +87,11 @@
   } //.all-image-container
 
   .web-images {
-    animation: slide-in-left 750ms;
+    animation: slide-in-left 500ms;
   }
 
   .mobile-images {
-    animation: slide-in-right 750ms;
+    animation: slide-in-right 500ms;
   }
 
   @media #{$phone-media} {

@@ -23,7 +23,9 @@ class DesktopIcon extends Component {
 
   maximize = () => {
       const { route } = this.props
-      this.props.history.push(`/${route}`)
+      if (this.props.match.path !== route) {
+      this.props.history.push(`${route}`)
+      }
       this.props.maximize()
   }
 

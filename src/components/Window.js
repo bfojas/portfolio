@@ -77,7 +77,8 @@ class Window extends Component {
   scrollToRef = comp => {
     if (this.props.match.path !== comp) {
       this.props.history.push(comp);
-    } else {
+    } 
+    else {
       this.setState({ renderPath: !this.state.renderPath });
     }
   };
@@ -123,10 +124,11 @@ class Window extends Component {
     });
 
     return (
+      this.props.hidden === "block" ?
       <div
         className="window-container"
         onClick={this.menuClose}
-        style={{ display: `${this.props.hidden}` }}
+        style={{ display: `block` }}
       >
         <div className="window-top">
           <div className="window-name">Bradley Fojas - Software Engineer</div>
@@ -277,6 +279,8 @@ class Window extends Component {
           <Images start={imageStart} type={modalType} close={this.closeImage} />
         ) : null}
       </div>
+      :
+      null
     );
   }
 }

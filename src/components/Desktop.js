@@ -94,7 +94,7 @@ class Desktop extends Component {
         <DesktopIcon
           value="about"
           name="About"
-          route="about"
+          route="/about"
           position={this.state.about}
           maximize={this.maximize}
           dragOn={this.dragOn}
@@ -104,7 +104,7 @@ class Desktop extends Component {
         <DesktopIcon
           value="project"
           name="Projects"
-          route="project"
+          route="/project"
           position={this.state.project}
           maximize={this.maximize}
           dragOn={this.dragOn}

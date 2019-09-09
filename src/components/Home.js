@@ -13,16 +13,27 @@ class Home extends React.Component {
   }
 
   homeSelector = React.createRef();
+  aboutRef = React.createRef();
+  projectRef = React.createRef();
 
   componentDidMount = () => {
     this.setState({ path: this.props.match.path });
-    // this.scrollIn();
+    if (this.props.match.path === "/project") {
+      setTimeout(()=>{
+      this.scrollIn()}, 500)
+    } else {
+      this.scrollIn()
+    }
   };
 
   componentDidUpdate = prevProps => {
     if (prevProps.match.path !== this.props.match.path) {
-      this.setState({ path: this.props.match.path });
-      this.scrollIn();
+      if (this.props.match.path === "/project") {
+        setTimeout(()=>{
+        this.scrollIn()}, 500)
+      } else {
+        this.scrollIn()
+      }
     }
     if (prevProps.renderPath !== this.props.renderPath) {
       this.scrollIn();
@@ -30,14 +41,16 @@ class Home extends React.Component {
   };
 
   scrollIn = () => {
-    this.homeSelector.current.scrollIntoView({
+    let scrollRef = this.props.match.path === "/about" ? this.aboutRef : this.projectRef
+    scrollRef.current.scrollIntoView({
       behavior: "smooth"
     });
+    return
   };
 
   render() {
     return (
-      <div className="home-container">
+      <div className="home-container" ref={this.aboutRef}>
         <div className="home-top">
           <div className="home-top-transparent">
           <div className="home-top-split-1" />
@@ -52,12 +65,12 @@ class Home extends React.Component {
           className="home-path"
           style={{
             display: "flex",
-            flexDirection:
-              this.state.path === "/project" ? "column" : "column-reverse"
+            flexDirection: "column"
+              // this.state.path === "/project" ? "column" : "column-reverse"
           }}
         >
-          <AllProjects />
           <About />
+          <AllProjects scrollRef={this.projectRef} />
         </div>
       </div>
     );
